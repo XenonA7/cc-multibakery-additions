@@ -1,0 +1,35 @@
+[
+  {
+    "type": "ENTER",
+    "index": "entities"
+  },
+  {
+    "type": "ADD_ARRAY_ELEMENT",
+    "content": {
+      "type": "TeleportField",
+      "x": 1164,
+      "y": 460,
+      "level": 2,
+      "settings": {
+        "mapId": 163,
+        "name": "mba",
+        "dir": "SOUTH",
+        "map": "multibakery.mba-lobby",
+        "marker": "d1",
+        "teleportLabel": {
+          "en_US": "To: Multibakery Additions",
+          "de_DE": "",
+          "ja_JP": "",
+          "ko_KR": "",
+          "zh_CN": "",
+          "zh_TW": ""
+        },
+        "longTelCond": "false",
+        "gfxType": "AR"
+      }
+    }
+  },
+  {
+    "type": "EXIT"
+  }
+]

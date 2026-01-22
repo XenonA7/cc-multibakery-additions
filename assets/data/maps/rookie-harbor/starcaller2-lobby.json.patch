@@ -1,0 +1,38 @@
+[
+  {
+    "type": "ENTER",
+    "index": "entities"
+  },
+  {
+    "type": "IF",
+    "cond": "activeMods.find(e => e.name === 'starcaller-2') && false",
+    "thenSteps": [
+      {
+        "type": "ADD_ARRAY_ELEMENT",
+        "content": {
+          "type": "TeleportField",
+          "x": 532,
+          "y": 340,
+          "level": 0,
+          "settings": {
+            "mapId": 315,
+            "name": "mba-teleporter",
+            "dir": "SOUTH",
+            "map": "multibakery.pvp-test",
+            "marker": "sc2-config",
+            "teleportLabel": {
+              "en_US": "To: Multibakery pvp dev room",
+              "de_DE": "",
+              "ja_JP": "",
+              "ko_KR": "",
+              "zh_CN": "",
+              "zh_TW": ""
+            },
+            "gfxType": "AR",
+            "longTelCond": "false"
+          }
+        }
+      }
+    ]
+  }
+]

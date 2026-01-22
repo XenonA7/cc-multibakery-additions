@@ -1,0 +1,1312 @@
+[
+  {
+    "type": "ENTER",
+    "index": "entities"
+  },
+  {
+    "type": "IF",
+    "cond": "activeMods.find(e => e.name === 'xenons-playable-classes')",
+    "thenSteps": [
+      {
+        "type": "ADD_ARRAY_ELEMENT",
+        "content": {
+          "type": "Prop",
+          "x": 548,
+          "y": 184,
+          "level": {
+            "level": 0,
+            "offset": 8
+          },
+          "settings": {
+            "name": "characterSelect",
+            "interact": {
+              "icon": "INFO",
+              "hoverText": {
+                "en_US": "\\c[5]<XPC>\\c[0] Character Selection"
+              },
+              "event": [
+                {
+                  "type": "CHANGE_VAR_BOOL",
+                  "varName": "tmp.characterSelect",
+                  "changeType": "set",
+                  "value": true
+                }
+              ]
+            },
+            "mapId": 90,
+            "propType": {
+              "sheet": "trading-autumn",
+              "name": "signHuge"
+            },
+            "propAnim": "news",
+            "condAnims": [],
+            "spawnCondition": "",
+            "permaEffect": {
+              "sheet": "xpc-utility",
+              "name": "classLogosAura"
+            }
+          }
+        }
+      },
+      {
+        "type": "ADD_ARRAY_ELEMENT",
+        "content": {
+          "type": "EventTrigger",
+          "x": 506,
+          "y": 182,
+          "level": 0,
+          "settings": {
+            "name": "characterSelect",
+            "eventType": "CUTSCENE",
+            "endCondition": "false",
+            "event": [
+              {
+                "type": "CHANGE_VAR_BOOL",
+                "varName": "tmp.characterSelect",
+                "changeType": "set",
+                "value": false
+              },
+              {
+                "type": "SHOW_BOARD_MSG",
+                "side": "RIGHT",
+                "text": {
+                  "en_US": "Choose a character",
+                  "de_DE": "",
+                  "ja_JP": "",
+                  "ko_KR": "",
+                  "zh_CN": "",
+                  "zh_TW": ""
+                },
+                "autoContinue": true
+              },
+              {
+                "person": {
+                  "person": "main.lea",
+                  "expression": "BLANK"
+                },
+                "type": "ADD_MSG_PERSON",
+                "side": "RIGHT"
+              },
+              {
+                "type": "IF",
+                "condition": "map.charMenuSelect == 0",
+                "thenStep": [
+                  {
+                    "name": "MENU_SPHERO",
+                    "type": "GOTO_LABEL"
+                  }
+                ]
+              },
+              {
+                "type": "IF",
+                "condition": "map.charMenuSelect == 1",
+                "thenStep": [
+                  {
+                    "name": "MENU_TRI",
+                    "type": "GOTO_LABEL"
+                  }
+                ]
+              },
+              {
+                "type": "IF",
+                "condition": "map.charMenuSelect == 2",
+                "thenStep": [
+                  {
+                    "name": "MENU_HEXA",
+                    "type": "GOTO_LABEL"
+                  }
+                ]
+              },
+              {
+                "name": "MENU_SPHERO",
+                "type": "LABEL"
+              },
+              {
+                "type": "CHANGE_VAR_NUMBER",
+                "varName": "map.charMenuSelect",
+                "changeType": "set",
+                "value": 0
+              },
+              {
+                "0": [
+                  {
+                    "type": "CLEAR_MSG",
+                    "side": "ALL"
+                  },
+                  {
+                    "type": "REMOVE_PROXIES"
+                  },
+                  {
+                    "type": "SHOW_EFFECT",
+                    "entity": {
+                      "player": true
+                    },
+                    "effect": {
+                      "sheet": "area.arid",
+                      "name": "switchActivateNoOffset"
+                    },
+                    "duration": 0,
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "align": "CENTER",
+                    "group": "0"
+                  },
+                  {
+                    "type": "WAIT",
+                    "time": 1
+                  },
+                  {
+                    "type": "SWITCH_PLAYER_CONFIG",
+                    "name": "Lea"
+                  },
+                  {
+                    "type": "SHOW_EFFECT",
+                    "entity": {
+                      "player": true
+                    },
+                    "effect": {
+                      "sheet": "scene.hacking",
+                      "name": "hackingShowSlow"
+                    },
+                    "duration": 2,
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "align": "CENTER"
+                  },
+                  {
+                    "type": "SHOW_BOARD_MSG",
+                    "text": {
+                      "en_US": "Special properties of \\c[3]Lea\\c[0]:\n* Extensive custom skill support",
+                      "de_DE": "",
+                      "ja_JP": "",
+                      "ko_KR": "",
+                      "zh_CN": "",
+                      "zh_TW": ""
+                    }
+                  },
+                  {
+                    "name": "END",
+                    "type": "GOTO_LABEL"
+                  }
+                ],
+                "1": [
+                  {
+                    "name": "MENU_TRI",
+                    "type": "GOTO_LABEL"
+                  }
+                ],
+                "2": [
+                  {
+                    "name": "END",
+                    "type": "GOTO_LABEL"
+                  }
+                ],
+                "type": "SHOW_CHOICE",
+                "person": {
+                  "person": "main.lea",
+                  "expression": "BLANK"
+                },
+                "options": [
+                  {
+                    "label": {
+                      "en_US": "\\i[class-sphero] Lea"
+                    }
+                  },
+                  {
+                    "label": {
+                      "en_US": "Next page --> \\i[class-tri]"
+                    }
+                  },
+                  {
+                    "label": {
+                      "en_US": "Cancel"
+                    }
+                  }
+                ]
+              },
+              {
+                "name": "MENU_TRI",
+                "type": "LABEL"
+              },
+              {
+                "type": "CHANGE_VAR_NUMBER",
+                "varName": "map.charMenuSelect",
+                "changeType": "set",
+                "value": 1
+              },
+              {
+                "0": [
+                  {
+                    "type": "CLEAR_MSG",
+                    "side": "ALL"
+                  },
+                  {
+                    "type": "REMOVE_PROXIES"
+                  },
+                  {
+                    "type": "SHOW_EFFECT",
+                    "entity": {
+                      "player": true
+                    },
+                    "effect": {
+                      "sheet": "area.arid",
+                      "name": "switchActivateNoOffset"
+                    },
+                    "duration": 0,
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "align": "CENTER",
+                    "group": "0"
+                  },
+                  {
+                    "type": "WAIT",
+                    "time": 1
+                  },
+                  {
+                    "type": "SWITCH_PLAYER_CONFIG",
+                    "name": "triblader-lea"
+                  },
+                  {
+                    "type": "SHOW_EFFECT",
+                    "entity": {
+                      "player": true
+                    },
+                    "effect": {
+                      "sheet": "scene.hacking",
+                      "name": "hackingShowSlow"
+                    },
+                    "duration": 2,
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "align": "CENTER"
+                  },
+                  {
+                    "type": "SHOW_BOARD_MSG",
+                    "text": {
+                      "en_US": "Special properties of \\c[3]Triblader Lea\\c[0]:\n* Custom sprites for Daybreak, Sunfury, and wave charged shot\n* Custom level-up animation",
+                      "de_DE": "",
+                      "ja_JP": "",
+                      "ko_KR": "",
+                      "zh_CN": "",
+                      "zh_TW": ""
+                    }
+                  },
+                  {
+                    "name": "END",
+                    "type": "GOTO_LABEL"
+                  }
+                ],
+                "1": [
+                  {
+                    "type": "CLEAR_MSG",
+                    "side": "ALL"
+                  },
+                  {
+                    "type": "REMOVE_PROXIES"
+                  },
+                  {
+                    "type": "SHOW_EFFECT",
+                    "entity": {
+                      "player": true
+                    },
+                    "effect": {
+                      "sheet": "area.arid",
+                      "name": "switchActivateNoOffset"
+                    },
+                    "duration": 0,
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "align": "CENTER",
+                    "group": "0"
+                  },
+                  {
+                    "type": "WAIT",
+                    "time": 1
+                  },
+                  {
+                    "type": "SWITCH_PLAYER_CONFIG",
+                    "name": "Schneider"
+                  },
+                  {
+                    "type": "SHOW_EFFECT",
+                    "entity": {
+                      "player": true
+                    },
+                    "effect": {
+                      "sheet": "scene.hacking",
+                      "name": "hackingShowSlow"
+                    },
+                    "duration": 2,
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "align": "CENTER"
+                  },
+                  {
+                    "name": "END",
+                    "type": "GOTO_LABEL"
+                  }
+                ],
+                "2": [
+                  {
+                    "type": "CLEAR_MSG",
+                    "side": "ALL"
+                  },
+                  {
+                    "type": "REMOVE_PROXIES"
+                  },
+                  {
+                    "type": "SHOW_EFFECT",
+                    "entity": {
+                      "player": true
+                    },
+                    "effect": {
+                      "sheet": "area.arid",
+                      "name": "switchActivateNoOffset"
+                    },
+                    "duration": 0,
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "align": "CENTER",
+                    "group": "0"
+                  },
+                  {
+                    "type": "WAIT",
+                    "time": 1
+                  },
+                  {
+                    "type": "SWITCH_PLAYER_CONFIG",
+                    "name": "Luke"
+                  },
+                  {
+                    "type": "SHOW_EFFECT",
+                    "entity": {
+                      "player": true
+                    },
+                    "effect": {
+                      "sheet": "scene.hacking",
+                      "name": "hackingShowSlow"
+                    },
+                    "duration": 2,
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "align": "CENTER"
+                  },
+                  {
+                    "name": "END",
+                    "type": "GOTO_LABEL"
+                  }
+                ],
+                "3": [
+                  {
+                    "type": "CLEAR_MSG",
+                    "side": "ALL"
+                  },
+                  {
+                    "type": "REMOVE_PROXIES"
+                  },
+                  {
+                    "type": "SHOW_EFFECT",
+                    "entity": {
+                      "player": true
+                    },
+                    "effect": {
+                      "sheet": "area.arid",
+                      "name": "switchActivateNoOffset"
+                    },
+                    "duration": 0,
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "align": "CENTER",
+                    "group": "0"
+                  },
+                  {
+                    "type": "WAIT",
+                    "time": 1
+                  },
+                  {
+                    "type": "SWITCH_PLAYER_CONFIG",
+                    "name": "triblader2"
+                  },
+                  {
+                    "type": "SHOW_EFFECT",
+                    "entity": {
+                      "player": true
+                    },
+                    "effect": {
+                      "sheet": "scene.hacking",
+                      "name": "hackingShowSlow"
+                    },
+                    "duration": 2,
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "align": "CENTER"
+                  },
+                  {
+                    "name": "END",
+                    "type": "GOTO_LABEL"
+                  }
+                ],
+                "4": [
+                  {
+                    "type": "CLEAR_MSG",
+                    "side": "ALL"
+                  },
+                  {
+                    "type": "REMOVE_PROXIES"
+                  },
+                  {
+                    "type": "SHOW_EFFECT",
+                    "entity": {
+                      "player": true
+                    },
+                    "effect": {
+                      "sheet": "area.arid",
+                      "name": "switchActivateNoOffset"
+                    },
+                    "duration": 0,
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "align": "CENTER",
+                    "group": "0"
+                  },
+                  {
+                    "type": "WAIT",
+                    "time": 1
+                  },
+                  {
+                    "type": "SWITCH_PLAYER_CONFIG",
+                    "name": "triblader3"
+                  },
+                  {
+                    "type": "SHOW_EFFECT",
+                    "entity": {
+                      "player": true
+                    },
+                    "effect": {
+                      "sheet": "scene.hacking",
+                      "name": "hackingShowSlow"
+                    },
+                    "duration": 2,
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "align": "CENTER"
+                  },
+                  {
+                    "name": "END",
+                    "type": "GOTO_LABEL"
+                  }
+                ],
+                "5": [
+                  {
+                    "type": "CLEAR_MSG",
+                    "side": "ALL"
+                  },
+                  {
+                    "type": "REMOVE_PROXIES"
+                  },
+                  {
+                    "type": "SHOW_EFFECT",
+                    "entity": {
+                      "player": true
+                    },
+                    "effect": {
+                      "sheet": "area.arid",
+                      "name": "switchActivateNoOffset"
+                    },
+                    "duration": 0,
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "align": "CENTER",
+                    "group": "0"
+                  },
+                  {
+                    "type": "WAIT",
+                    "time": 1
+                  },
+                  {
+                    "type": "SWITCH_PLAYER_CONFIG",
+                    "name": "triblader4"
+                  },
+                  {
+                    "type": "SHOW_EFFECT",
+                    "entity": {
+                      "player": true
+                    },
+                    "effect": {
+                      "sheet": "scene.hacking",
+                      "name": "hackingShowSlow"
+                    },
+                    "duration": 2,
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "align": "CENTER"
+                  },
+                  {
+                    "type": "SHOW_BOARD_MSG",
+                    "text": {
+                      "en_US": "Special properties of \\c[3]Triblader4\\c[0]:\n* Weaker melee attacks\n* Faster melee attacks\n* Faster and longer dash",
+                      "de_DE": "",
+                      "ja_JP": "",
+                      "ko_KR": "",
+                      "zh_CN": "",
+                      "zh_TW": ""
+                    }
+                  },
+                  {
+                    "name": "END",
+                    "type": "GOTO_LABEL"
+                  }
+                ],
+                "6": [
+                  {
+                    "type": "CLEAR_MSG",
+                    "side": "ALL"
+                  },
+                  {
+                    "type": "REMOVE_PROXIES"
+                  },
+                  {
+                    "type": "SHOW_EFFECT",
+                    "entity": {
+                      "player": true
+                    },
+                    "effect": {
+                      "sheet": "area.arid",
+                      "name": "switchActivateNoOffset"
+                    },
+                    "duration": 0,
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "align": "CENTER",
+                    "group": "0"
+                  },
+                  {
+                    "type": "WAIT",
+                    "time": 1
+                  },
+                  {
+                    "type": "SWITCH_PLAYER_CONFIG",
+                    "name": "triblader5"
+                  },
+                  {
+                    "type": "SHOW_EFFECT",
+                    "entity": {
+                      "player": true
+                    },
+                    "effect": {
+                      "sheet": "scene.hacking",
+                      "name": "hackingShowSlow"
+                    },
+                    "duration": 2,
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "align": "CENTER"
+                  },
+                  {
+                    "type": "SHOW_BOARD_MSG",
+                    "text": {
+                      "en_US": "Special properties of \\c[3]Triblader5\\c[0]:\n* Steerable Dash",
+                      "de_DE": "",
+                      "ja_JP": "",
+                      "ko_KR": "",
+                      "zh_CN": "",
+                      "zh_TW": ""
+                    }
+                  },
+                  {
+                    "type": "SHOW_BOARD_MSG",
+                    "text": {
+                      "en_US": "Use directional inputs to precisely and rapidly change directions while dashing, unlike other characters which only dash in straight lines.\\. If aiming, dash will follow the crosshair.\\. Move the crosshair while aim-dashing for precise pathing.",
+                      "de_DE": "",
+                      "ja_JP": "",
+                      "ko_KR": "",
+                      "zh_CN": "",
+                      "zh_TW": ""
+                    },
+                    "center": true
+                  },
+                  {
+                    "name": "END",
+                    "type": "GOTO_LABEL"
+                  }
+                ],
+                "7": [],
+                "8": [
+                  {
+                    "name": "END",
+                    "type": "GOTO_LABEL"
+                  }
+                ],
+                "type": "SHOW_CHOICE",
+                "person": {
+                  "person": "main.lea",
+                  "expression": "BLANK"
+                },
+                "options": [
+                  {
+                    "label": {
+                      "en_US": "\\i[class-tri] Lea"
+                    }
+                  },
+                  {
+                    "label": {
+                      "en_US": "\\i[class-tri] Schneider"
+                    }
+                  },
+                  {
+                    "label": {
+                      "en_US": "\\i[class-tri] Luke"
+                    }
+                  },
+                  {
+                    "label": {
+                      "en_US": "\\i[class-tri] Triblader2"
+                    }
+                  },
+                  {
+                    "label": {
+                      "en_US": "\\i[class-tri] Triblader3"
+                    }
+                  },
+                  {
+                    "label": {
+                      "en_US": "\\i[class-tri] Triblader4"
+                    }
+                  },
+                  {
+                    "label": {
+                      "en_US": "\\i[class-tri] Triblader5"
+                    }
+                  },
+                  {
+                    "label": {
+                      "en_US": "Next page --> \\i[class-hexa]"
+                    }
+                  },
+                  {
+                    "label": {
+                      "en_US": "Cancel"
+                    }
+                  }
+                ],
+                "columns": 2
+              },
+              {
+                "name": "MENU_HEXA",
+                "type": "LABEL"
+              },
+              {
+                "type": "CHANGE_VAR_NUMBER",
+                "varName": "map.charMenuSelect",
+                "changeType": "set",
+                "value": 2
+              },
+              {
+                "0": [
+                  {
+                    "type": "CLEAR_MSG",
+                    "side": "ALL"
+                  },
+                  {
+                    "type": "REMOVE_PROXIES"
+                  },
+                  {
+                    "type": "SHOW_EFFECT",
+                    "entity": {
+                      "player": true
+                    },
+                    "effect": {
+                      "sheet": "area.arid",
+                      "name": "switchActivateNoOffset"
+                    },
+                    "duration": 0,
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "align": "CENTER",
+                    "group": "0"
+                  },
+                  {
+                    "type": "WAIT",
+                    "time": 1
+                  },
+                  {
+                    "type": "SWITCH_PLAYER_CONFIG",
+                    "name": "Hexacast1"
+                  },
+                  {
+                    "type": "SHOW_EFFECT",
+                    "entity": {
+                      "player": true
+                    },
+                    "effect": {
+                      "sheet": "scene.hacking",
+                      "name": "hackingShowSlow"
+                    },
+                    "duration": 2,
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "align": "CENTER"
+                  },
+                  {
+                    "type": "SHOW_BOARD_MSG",
+                    "text": {
+                      "en_US": "Special properties of \\c[3]Hexacast1\\c[0]:\n* Extensive custom skill support\n* Straight charged shots",
+                      "de_DE": "",
+                      "ja_JP": "",
+                      "ko_KR": "",
+                      "zh_CN": "",
+                      "zh_TW": ""
+                    }
+                  },
+                  {
+                    "name": "END",
+                    "type": "GOTO_LABEL"
+                  }
+                ],
+                "1": [
+                  {
+                    "type": "CLEAR_MSG",
+                    "side": "ALL"
+                  },
+                  {
+                    "type": "REMOVE_PROXIES"
+                  },
+                  {
+                    "type": "SHOW_EFFECT",
+                    "entity": {
+                      "player": true
+                    },
+                    "effect": {
+                      "sheet": "area.arid",
+                      "name": "switchActivateNoOffset"
+                    },
+                    "duration": 0,
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "align": "CENTER",
+                    "group": "0"
+                  },
+                  {
+                    "type": "WAIT",
+                    "time": 1
+                  },
+                  {
+                    "type": "SWITCH_PLAYER_CONFIG",
+                    "name": "Hexacast2"
+                  },
+                  {
+                    "type": "SHOW_EFFECT",
+                    "entity": {
+                      "player": true
+                    },
+                    "effect": {
+                      "sheet": "scene.hacking",
+                      "name": "hackingShowSlow"
+                    },
+                    "duration": 2,
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "align": "CENTER"
+                  },
+                  {
+                    "type": "SHOW_BOARD_MSG",
+                    "text": {
+                      "en_US": "Special properties of \\c[3]Hexacast2\\c[0]:\n* Extensive custom skill support\n* Homing charged shots",
+                      "de_DE": "",
+                      "ja_JP": "",
+                      "ko_KR": "",
+                      "zh_CN": "",
+                      "zh_TW": ""
+                    }
+                  },
+                  {
+                    "name": "END",
+                    "type": "GOTO_LABEL"
+                  }
+                ],
+                "2": [
+                  {
+                    "name": "MENU_SPHERO",
+                    "type": "GOTO_LABEL"
+                  }
+                ],
+                "3": [
+                  {
+                    "name": "END",
+                    "type": "GOTO_LABEL"
+                  }
+                ],
+                "type": "SHOW_CHOICE",
+                "person": {
+                  "person": "main.lea",
+                  "expression": "BLANK"
+                },
+                "options": [
+                  {
+                    "label": {
+                      "en_US": "\\i[class-hexa] Hexacast1"
+                    }
+                  },
+                  {
+                    "label": {
+                      "en_US": "\\i[class-hexa] Hexacast2"
+                    }
+                  },
+                  {
+                    "label": {
+                      "en_US": "Next page --> \\i[class-sphero]"
+                    }
+                  },
+                  {
+                    "label": {
+                      "en_US": "Cancel"
+                    }
+                  }
+                ],
+                "columns": 1
+              },
+              {
+                "name": "END",
+                "type": "LABEL"
+              }
+            ],
+            "triggerType": "ALWAYS",
+            "mapId": 91,
+            "startCondition": "tmp.characterSelect"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "type": "IF",
+    "cond": "!activeMods.find(e => e.name === 'starcaller-2')",
+    "thenSteps": [
+      {
+        "type": "ADD_ARRAY_ELEMENT",
+        "content": {
+          "type": "TeleportField",
+          "x": 268,
+          "y": 124,
+          "level": 0,
+          "settings": {
+            "mapId": 315,
+            "name": "sc2-config",
+            "dir": "SOUTH",
+            "map": "rookie-harbor.starcaller2-lobby",
+            "marker": "mba-teleporter",
+            "teleportLabel": {
+              "en_US": "To: \\c[3]Starcaller2\\c[0] - Summoner Lobby",
+              "de_DE": "",
+              "ja_JP": "",
+              "ko_KR": "",
+              "zh_CN": "",
+              "zh_TW": ""
+            },
+            "gfxType": "AR",
+            "longTelCond": "false",
+            "blockEventCondition": "true",
+            "blockEvent": [
+              {
+                "type": "SHOW_BOARD_MSG",
+                "text": {
+                  "en_US": "The \\c[3]Starcaller2\\c[0] mod is required to enter.",
+                  "de_DE": "",
+                  "ja_JP": "",
+                  "ko_KR": "",
+                  "zh_CN": "",
+                  "zh_TW": ""
+                },
+                "center": true
+              }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "type": "IF",
+    "cond": "activeMods.find(e => e.name === 'starcaller-2')",
+    "thenSteps": [
+      {
+        "type": "ADD_ARRAY_ELEMENT",
+        "content": {
+          "type": "TeleportField",
+          "x": 268,
+          "y": 124,
+          "level": 0,
+          "settings": {
+            "mapId": 315,
+            "name": "sc2-config",
+            "dir": "SOUTH",
+            "map": "rookie-harbor.starcaller2-lobby",
+            "marker": "mba-teleporter",
+            "teleportLabel": {
+              "en_US": "To: \\c[3]Starcaller2\\c[0] - Summoner Lobby",
+              "de_DE": "",
+              "ja_JP": "",
+              "ko_KR": "",
+              "zh_CN": "",
+              "zh_TW": ""
+            },
+            "gfxType": "AR",
+            "longTelCond": "false"
+          }
+        }
+      },
+      {
+        "type": "ADD_ARRAY_ELEMENT",
+        "content": {
+          "type": "Prop",
+          "x": 243,
+          "y": 168,
+          "level": {
+            "level": 0,
+            "offset": 8
+          },
+          "settings": {
+            "size": {
+              "x": 16,
+              "y": 16
+            },
+            "mapId": 269,
+            "propType": {
+              "sheet": "starcaller2-props",
+              "name": "signClass"
+            },
+            "propAnim": "starcaller2",
+            "permaEffect": {
+              "sheet": "utility-starcaller2",
+              "name": "scale120"
+            },
+            "interact": {
+              "icon": "INFO",
+              "hoverText": {
+                "en_US": "Character Change"
+              },
+              "event": [
+                {
+                  "side": "RIGHT",
+                  "order": 0,
+                  "clearSide": false,
+                  "type": "ADD_MSG_PERSON",
+                  "person": {
+                    "person": "main.lea",
+                    "expression": "BLANK"
+                  }
+                },
+                {
+                  "type": "SHOW_BOARD_MSG",
+                  "side": "RIGHT",
+                  "text": {
+                    "en_US": "Select a character.",
+                    "de_DE": "",
+                    "ja_JP": "",
+                    "ko_KR": "",
+                    "zh_CN": "",
+                    "zh_TW": ""
+                  }
+                },
+                {
+                  "0": [
+                    {
+                      "name": "Lea",
+                      "type": "SWITCH_PLAYER_CONFIG"
+                    },
+                    {
+                      "type": "CLEAR_BOARD_MSG"
+                    }
+                  ],
+                  "1": [
+                    {
+                      "name": "Starcaller2",
+                      "type": "SWITCH_PLAYER_CONFIG"
+                    },
+                    {
+                      "type": "CLEAR_BOARD_MSG"
+                    }
+                  ],
+                  "2": [],
+                  "type": "SHOW_CHOICE",
+                  "person": {
+                    "person": "main.lea",
+                    "expression": "BLANK"
+                  },
+                  "options": [
+                    {
+                      "0": " ",
+                      "label": {
+                        "en_US": "Lea"
+                      },
+                      "activeCondition": "true"
+                    },
+                    {
+                      "0": " ",
+                      "label": {
+                        "en_US": "\\i[class-star]Starcaller2"
+                      },
+                      "activeCondition": "true"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "type": "IF",
+    "cond": "activeMods.find(e => e.name === 'lqm-joern-mod')",
+    "thenSteps": [
+      {
+        "type": "ADD_ARRAY_ELEMENT",
+        "content": {
+          "type": "Prop",
+          "x": 212,
+          "y": 216,
+          "level": {
+            "level": 0,
+            "offset": 8
+          },
+          "settings": {
+            "name": "lpcSign",
+            "mapId": 142,
+            "propType": {
+              "sheet": "trading-autumn",
+              "name": "signClass"
+            },
+            "propAnim": "quadroguard",
+            "permaEffect": {
+              "sheet": "drops",
+              "name": "blink"
+            },
+            "interact": {
+              "icon": "INFO",
+              "hoverText": {
+                "en_US": "\\c[7]<LQM>\\c[0] Character Change"
+              },
+              "event": [
+                {
+                  "side": "RIGHT",
+                  "order": 0,
+                  "clearSide": false,
+                  "type": "ADD_MSG_PERSON",
+                  "person": {
+                    "person": "main.lea",
+                    "expression": "DEFAULT"
+                  }
+                },
+                {
+                  "0": [
+                    {
+                      "name": "Lea",
+                      "type": "SWITCH_PLAYER_CONFIG"
+                    },
+                    {
+                      "changeType": "set",
+                      "type": "CHANGE_VAR_NUMBER",
+                      "varName": "plot.xtm.character",
+                      "value": 1
+                    },
+                    {
+                      "text": {
+                        "en_US": "Character:\\. \\c[3]Lea\\c[0]\n\\!Class:\\. \\c[1]Spheromancer\\c[0]\n\\!Special attributes:\\. None"
+                      },
+                      "center": true,
+                      "autoContinue": false,
+                      "type": "SHOW_BOARD_MSG"
+                    },
+                    {
+                      "type": "CLEAR_MSG",
+                      "side": "ALL"
+                    }
+                  ],
+                  "1": [
+                    {
+                      "name": "joern2",
+                      "type": "SWITCH_PLAYER_CONFIG"
+                    },
+                    {
+                      "changeType": "set",
+                      "type": "CHANGE_VAR_NUMBER",
+                      "varName": "plot.xtm.character",
+                      "value": 8
+                    },
+                    {
+                      "changeType": "set",
+                      "type": "CHANGE_VAR_BOOL",
+                      "varName": "joern2.active",
+                      "value": true
+                    },
+                    {
+                      "text": {
+                        "en_US": "Character:\\. \\c[3]Joern2\\c[0]\n\\!Class:\\. \\c[7]Quadroguard\\c[0]\n\\!Special attributes:\\. None"
+                      },
+                      "center": true,
+                      "autoContinue": false,
+                      "type": "SHOW_BOARD_MSG"
+                    },
+                    {
+                      "type": "CLEAR_MSG",
+                      "side": "ALL"
+                    }
+                  ],
+                  "2": [
+                    {
+                      "name": "joern",
+                      "type": "SWITCH_PLAYER_CONFIG"
+                    },
+                    {
+                      "changeType": "set",
+                      "type": "CHANGE_VAR_BOOL",
+                      "varName": "plot.xtm.character",
+                      "value": 9
+                    },
+                    {
+                      "text": {
+                        "en_US": "Character:\\. \\c[3]Joern\\c[0]\n\\!Class:\\. \\c[7]Quadroguard\\c[0]\n\\!Special attributes:\\. None"
+                      },
+                      "center": true,
+                      "autoContinue": false,
+                      "type": "SHOW_BOARD_MSG"
+                    },
+                    {
+                      "type": "CLEAR_MSG",
+                      "side": "ALL"
+                    }
+                  ],
+                  "3": [
+                    {
+                      "name": "Quadroguard-Lea",
+                      "type": "SWITCH_PLAYER_CONFIG"
+                    },
+                    {
+                      "changeType": "set",
+                      "type": "CHANGE_VAR_BOOL",
+                      "varName": "qLea.active",
+                      "value": true
+                    },
+                    {
+                      "text": {
+                        "en_US": "Character:\\. \\c[3]Quadroguard Lea\\c[0]\n\\!Class:\\. \\c[7]Quadroguard\\c[0]\n\\!Special attributes:\\. Uses the shield for the alternative attacks"
+                      },
+                      "center": true,
+                      "autoContinue": false,
+                      "type": "SHOW_BOARD_MSG"
+                    },
+                    {
+                      "type": "CLEAR_MSG",
+                      "side": "ALL"
+                    }
+                  ],
+                  "4": [],
+                  "type": "SHOW_CHOICE",
+                  "person": {
+                    "person": "main.lea",
+                    "expression": "DEFAULT"
+                  },
+                  "options": [
+                    {
+                      "0": " ",
+                      "label": {
+                        "en_US": "Lea"
+                      },
+                      "activeCondition": "true"
+                    },
+                    {
+                      "0": " ",
+                      "label": {
+                        "en_US": "Joern2"
+                      },
+                      "activeCondition": "true"
+                    },
+                    {
+                      "0": " ",
+                      "label": {
+                        "en_US": "Joern"
+                      },
+                      "activeCondition": "true"
+                    },
+                    {
+                      "0": " ",
+                      "label": {
+                        "en_US": "Quadroguard-Lea"
+                      },
+                      "activeCondition": "true"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "type": "EXIT"
+  }
+]

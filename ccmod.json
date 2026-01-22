@@ -1,0 +1,32 @@
+{
+	"id": "cc-multibakery-additions",
+	"version": "0.2.0",
+	"title": {
+		"en_US": "Multibakery Additions",
+		"de_DE": "Multibakery Additions",
+		"fr_FR": "Multibakery Additions",
+		"zh_CN": "Multibakery Additions",
+		"zh_TW": "Multibakery Additions",
+		"ja_JP": "Multibakery Additions",
+		"ko_KR": "Multibakery Additions"
+	},
+	"description": {
+		"en_US": "Experimental additions to multibakery.",
+		"de_DE": "Experimental additions to multibakery.",
+		"fr_FR": "Experimental additions to multibakery.",
+		"zh_CN": "Experimental additions to multibakery.",
+		"zh_TW": "Experimental additions to multibakery.",
+		"ja_JP": "Experimental additions to multibakery.",
+		"ko_KR": "Experimental additions to multibakery."
+	},
+	"icons": {
+		"24": "icon.png"
+	},
+	"repository": "https://github.com/XenonA7/cc-multibakery-additions",
+	"tags": [],
+	"authors": ["XenonA7"],
+	"dependencies": {
+		"cc-multibakery": ">=0.5.6",
+		"cc-alybox": ">=1.1.0"
+	}
+}
