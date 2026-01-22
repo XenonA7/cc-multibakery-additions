@@ -1,3 +1,7 @@
+## 0.2.1 (01/21/2025)
+* Enabled outer barriers in pvp map when map.barrierConfig == 2 (due to switch)
+* Changed pvpBrake and pvpEnd from PARALLEL to CUTSCENE in pvp map
+
 ## 0.2.0 (01/21/2025)
 * Created github repo: https://github.com/XenonA7/cc-multibakery-additions
 * Support for cc-multibakery 0.7.3
