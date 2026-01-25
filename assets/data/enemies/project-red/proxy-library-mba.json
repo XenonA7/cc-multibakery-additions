@@ -1,0 +1,140 @@
+{
+  "level": 38,
+  "params": {
+    "hp": 1000000000,
+    "attack": 175
+  },
+  "credit": 0,
+  "exp": 0,
+  "maxSp": 8,
+  "enduranceScale": 1,
+  "healDropRate": 0,
+  "boss": false,
+  "bossOrder": 0,
+  "padding": {
+    "x": 2,
+    "y": 2
+  },
+  "material": "METAL",
+  "aiGroup": "",
+  "aiLearnType": "IMMEDIATELY",
+  "itemDrops": [],
+  "targetDetect": {},
+  "hpBreaks": [],
+  "size": {
+    "x": 16,
+    "y": 16,
+    "z": 24
+  },
+  "anims": "enemies.invisible",
+  "defaultState": "IDLE",
+  "walkConfigs": {
+    "normal": {
+      "idle": "hidden"
+    }
+  },
+  "_wm": null,
+  "walkAnims": "normal",
+  "weight": 100,
+  "maxVel": 180,
+  "zGravityFactor": 0,
+  "jumpingEnabled": true,
+  "collType": "NONE",
+  "shadow": 0,
+  "aggression": "PEACEFUL",
+  "annotate": {
+    "active": "NONE",
+    "passive": "IMMUNE",
+    "weapon": "ANY",
+    "element": "ANY",
+    "extra": []
+  },
+  "DOCTYPE": "ENEMY",
+  "trackers": {
+    "weakRegen": {
+      "target": 3,
+      "initRandom": 0,
+      "resetRandom": 0,
+      "noStateReset": false,
+      "noAssist": false,
+      "type": "TIME"
+    }
+  },
+  "states": {
+    "IDLE": {
+      "appearAction": "Appear",
+      "choices": []
+    }
+  },
+  "proxies": {
+    "fallMarker": {
+      "copyOwnerAnims": false,
+      "breakType": "NEVER",
+      "action": [
+        {
+          "offsetX": 0,
+          "offsetY": 0,
+          "speed": "NORMAL",
+          "transition": "EASE_IN_OUT",
+          "wait": false,
+          "waitSkip": 0,
+          "zoom": 1,
+          "focusType": "SELF",
+          "type": "FOCUS_CAMERA"
+        },
+        {
+          "time": 0.15,
+          "type": "WAIT"
+        },
+        {
+          "speed": "FAST",
+          "transition": "EASE_IN_OUT",
+          "wait": true,
+          "waitSkip": 0,
+          "type": "RESET_CAMERA"
+        },
+        {
+          "time": 0.1,
+          "type": "WAIT"
+        }
+      ],
+      "invisible": false,
+      "hp": 0,
+      "stickToSource": "NONE",
+      "stickFaceAlign": false,
+      "group": "",
+      "size": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "collType": "NONE",
+        "zGravityFactor": 0
+      },
+      "type": "GENERIC"
+    }
+  },
+  "actions": {
+    "Appear": [
+      {
+        "type": "WAIT",
+        "time": 0.1
+      }
+    ]
+  },
+  "reactions": {},
+  "meta": {
+    "species": {
+      "en_US": "????",
+      "de_DE": "????<<C<<Geprüft: Minsu",
+      "zh_CN": "????<<A<<[CHANGED 2021/01/12]",
+      "zh_TW": "哺乳類<<A<<[CHANGED 2021/01/12]",
+      "ja_JP": "？？？？<<A<<[CHANGED 2021/01/12]",
+      "ko_KR": "????<<A<<[CHANGED 2021/01/12]",
+      "langUid": 4
+    },
+    "category": "ABSTRACT",
+    "descriptions": []
+  }
+}

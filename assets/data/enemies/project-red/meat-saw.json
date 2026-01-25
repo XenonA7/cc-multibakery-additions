@@ -1,0 +1,3423 @@
+{
+  "level": 60,
+  "params": {
+    "hp": 1000000000,
+    "attack": 380,
+    "defense": 380,
+    "focus": 380
+  },
+  "credit": 0,
+  "exp": 0,
+  "maxSp": 8,
+  "enduranceScale": 1,
+  "healDropRate": 0,
+  "boss": false,
+  "bossOrder": 0,
+  "padding": {
+    "x": 4,
+    "y": 4
+  },
+  "material": "METAL",
+  "aiGroup": "",
+  "aiLearnType": "REGULAR",
+  "itemDrops": null,
+  "targetDetect": {
+    "onDistance": true,
+    "detectDistance": 1024
+  },
+  "hpBreaks": [],
+  "size": {
+    "x": 16,
+    "y": 16,
+    "z": 24
+  },
+  "anims": "enemies.invisible",
+  "defaultState": "INIT",
+  "walkConfigs": {
+    "normal": {
+      "idle": "hidden"
+    }
+  },
+  "_wm": {
+    "attributes": {
+      "behavior": {
+        "_type": "String",
+        "_info": "Main behavior",
+        "_select": [
+          "STATIONARY_SMALL",
+          "STATIONARY_MED",
+          "STATIONARY_LARGE",
+          "FIXED_SMALL",
+          "FIXED_MED",
+          "FIXED_MED_GUI",
+          "FIXED_LARGE",
+          "PACER_SMALL_SHORT",
+          "PACER_SMALL_MED",
+          "CLOCK_VAR1",
+          "CLOCK_VAR2",
+          "CLOCK_VAR3",
+          "CLOCK_VAR4",
+          "CLOCK_VAR5",
+          "SHOOTER_VAR1A",
+          "SHOOTER_VAR1B"
+        ]
+      }
+    }
+  },
+  "walkAnims": "normal",
+  "accelSpeed": 0.5,
+  "groundConnect": "FIXED",
+  "airFriction": 0.8,
+  "weight": -1,
+  "maxVel": 120,
+  "collType": "NONE",
+  "zGravityFactor": 0,
+  "shadow": 0,
+  "hitStable": "BREAK",
+  "hitIgnore": true,
+  "aggression": "PEACEFUL",
+  "annotate": {
+    "active": "NONE",
+    "passive": "NONE",
+    "weapon": "ANY",
+    "element": "ANY",
+    "extra": []
+  },
+  "DOCTYPE": "ENEMY",
+  "trackers": {
+    "regen": {
+      "target": 3,
+      "initRandom": 0,
+      "resetRandom": 0,
+      "noStateReset": false,
+      "noAssist": false,
+      "type": "TIME"
+    }
+  },
+  "states": {
+    "INIT": {
+      "faceToTarget": false,
+      "choices": [
+        {
+          "req": [
+            {
+              "type": "!VAR_CONDITION",
+              "condition": {
+                "actorAttrib": "init-done"
+              }
+            }
+          ],
+          "action": "InitAction",
+          "postSwitchState": "IDLE"
+        }
+      ]
+    },
+    "IDLE": {
+      "choices": [
+        {
+          "action": "Idle"
+        }
+      ]
+    }
+  },
+  "proxies": {
+    "deathMarker": {
+      "copyOwnerAnims": false,
+      "breakType": "NEVER",
+      "action": [
+        {
+          "changeType": "set",
+          "type": "CHANGE_VAR_BOOL",
+          "varName": "tmp.playerDeath",
+          "value": true
+        },
+        {
+          "selectType": "TARGET",
+          "align": "CENTER",
+          "hitCount": 1,
+          "hitDelay": 0,
+          "type": "DIRECT_HIT",
+          "attack": {
+            "type": "NONE",
+            "element": "NEUTRAL",
+            "visualType": "MASSIVE",
+            "damageFactor": 0.1,
+            "reverse": false,
+            "stunSteps": [
+              {
+                "type": "START_LOCK"
+              }
+            ],
+            "guardable": "NEVER",
+            "skillBonus": "MELEE_DMG",
+            "limiter": ""
+          }
+        },
+        {
+          "offsetX": 0,
+          "offsetY": 0,
+          "speed": "NORMAL",
+          "transition": "EASE_IN_OUT",
+          "wait": false,
+          "waitSkip": 0,
+          "zoom": 1,
+          "focusType": "SELF",
+          "type": "FOCUS_CAMERA"
+        },
+        {
+          "time": 0.3,
+          "type": "WAIT"
+        },
+        {
+          "duration": 0,
+          "align": "CENTER",
+          "target": "TARGET",
+          "rotateFace": 0,
+          "flipLeftFace": false,
+          "wait": false,
+          "waitSkip": 0,
+          "actionDetached": true,
+          "fixPos": false,
+          "type": "SHOW_EFFECT",
+          "effect": {
+            "sheet": "prd.super-meat",
+            "name": "deathExplode"
+          },
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "time": 0.25,
+          "type": "WAIT"
+        },
+        {
+          "speed": "FAST",
+          "transition": "EASE_IN_OUT",
+          "wait": true,
+          "waitSkip": 0,
+          "type": "RESET_CAMERA"
+        },
+        {
+          "time": 0.1,
+          "type": "WAIT"
+        }
+      ],
+      "invisible": false,
+      "hp": 0,
+      "stickToSource": "NONE",
+      "stickFaceAlign": false,
+      "group": "",
+      "size": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "config": {
+        "collType": "NONE",
+        "zGravityFactor": 0
+      },
+      "type": "GENERIC"
+    },
+    "sawStationarySmall": {
+      "animation": {
+        "name": "default",
+        "sheet": {
+          "src": "media/entity/effects/prd-blank32x32.png",
+          "offX": 0,
+          "offY": 0,
+          "width": 32,
+          "height": 32
+        },
+        "time": 0.05,
+        "repeat": false,
+        "frames": [
+          0
+        ]
+      },
+      "copyOwnerAnims": false,
+      "breakType": "NEVER",
+      "action": [
+        {
+          "posType": "TARGET",
+          "align": "CENTER",
+          "type": "SET_HIT_PROXY",
+          "proxy": "deathMarker",
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "value": 12,
+          "type": "SET_FLOAT_HEIGHT"
+        },
+        {
+          "duration": -1,
+          "align": "BOTTOM",
+          "rotateFace": 8,
+          "flipLeftFace": true,
+          "wait": false,
+          "waitSkip": 0,
+          "actionDetached": false,
+          "fixPos": false,
+          "type": "SHOW_EFFECT",
+          "effect": {
+            "sheet": "prd.super-meat",
+            "name": "neutralSawSmall"
+          }
+        },
+        {
+          "align": "BOTTOM",
+          "radius": 20,
+          "yScale": 0,
+          "zHeight": 16,
+          "centralAngle": 0,
+          "duration": 0.8,
+          "expandRadius": 0,
+          "alwaysFull": true,
+          "clockwise": false,
+          "flipLeftFace": 0,
+          "rectangular": false,
+          "repeat": true,
+          "uniformHitDir": true,
+          "fixPos": false,
+          "checkCollision": true,
+          "type": "CIRCLE_ATTACK",
+          "attack": {
+            "type": "BREAK",
+            "element": "NEUTRAL",
+            "damageFactor": 1,
+            "reverse": false,
+            "spFactor": 0,
+            "stunSteps": [],
+            "hints": [
+              "NO_PUZZLE"
+            ],
+            "guardable": "NEVER",
+            "skillBonus": "MELEE_DMG",
+            "limiter": "NO_DAMAGE"
+          },
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "time": 0.8,
+          "type": "WAIT"
+        },
+        {
+          "time": -1,
+          "type": "WAIT"
+        }
+      ],
+      "invisible": false,
+      "hp": 0,
+      "stickToSource": "NONE",
+      "stickFaceAlign": false,
+      "group": "",
+      "size": {
+        "x": 8,
+        "y": 8,
+        "z": 0
+      },
+      "config": {
+        "collType": "NONE",
+        "zGravityFactor": 0,
+        "shadow": 48
+      },
+      "type": "GENERIC"
+    },
+    "sawStationaryMed": {
+      "animation": {
+        "name": "default",
+        "sheet": {
+          "src": "media/entity/effects/prd-blank32x32.png",
+          "offX": 0,
+          "offY": 0,
+          "width": 32,
+          "height": 32
+        },
+        "time": 0.05,
+        "repeat": false,
+        "frames": [
+          0
+        ]
+      },
+      "copyOwnerAnims": false,
+      "breakType": "NEVER",
+      "action": [
+        {
+          "posType": "TARGET",
+          "align": "CENTER",
+          "type": "SET_HIT_PROXY",
+          "proxy": "deathMarker",
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "value": 12,
+          "type": "SET_FLOAT_HEIGHT"
+        },
+        {
+          "duration": -1,
+          "align": "BOTTOM",
+          "rotateFace": 8,
+          "flipLeftFace": true,
+          "wait": false,
+          "waitSkip": 0,
+          "actionDetached": false,
+          "fixPos": false,
+          "type": "SHOW_EFFECT",
+          "effect": {
+            "sheet": "prd.super-meat",
+            "name": "neutralSawMed"
+          }
+        },
+        {
+          "align": "BOTTOM",
+          "radius": 40,
+          "yScale": 0,
+          "zHeight": 16,
+          "centralAngle": 0,
+          "duration": 0.8,
+          "expandRadius": 0,
+          "alwaysFull": true,
+          "clockwise": false,
+          "flipLeftFace": 0,
+          "rectangular": false,
+          "repeat": true,
+          "uniformHitDir": true,
+          "fixPos": false,
+          "checkCollision": true,
+          "type": "CIRCLE_ATTACK",
+          "attack": {
+            "type": "BREAK",
+            "element": "NEUTRAL",
+            "damageFactor": 1,
+            "reverse": false,
+            "spFactor": 0,
+            "stunSteps": [],
+            "hints": [
+              "NO_PUZZLE"
+            ],
+            "guardable": "NEVER",
+            "skillBonus": "MELEE_DMG",
+            "limiter": "NO_DAMAGE"
+          },
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "time": 0.8,
+          "type": "WAIT"
+        },
+        {
+          "time": -1,
+          "type": "WAIT"
+        }
+      ],
+      "invisible": false,
+      "hp": 0,
+      "stickToSource": "NONE",
+      "stickFaceAlign": false,
+      "group": "",
+      "size": {
+        "x": 8,
+        "y": 8,
+        "z": 0
+      },
+      "config": {
+        "collType": "NONE",
+        "zGravityFactor": 0,
+        "shadow": 96
+      },
+      "type": "GENERIC"
+    },
+    "sawStationaryLarge": {
+      "animation": {
+        "name": "default",
+        "sheet": {
+          "src": "media/entity/effects/prd-blank32x32.png",
+          "offX": 0,
+          "offY": 0,
+          "width": 32,
+          "height": 32
+        },
+        "time": 0.05,
+        "repeat": false,
+        "frames": [
+          0
+        ]
+      },
+      "copyOwnerAnims": false,
+      "breakType": "NEVER",
+      "action": [
+        {
+          "posType": "TARGET",
+          "align": "CENTER",
+          "type": "SET_HIT_PROXY",
+          "proxy": "deathMarker",
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "value": 12,
+          "type": "SET_FLOAT_HEIGHT"
+        },
+        {
+          "duration": -1,
+          "align": "BOTTOM",
+          "rotateFace": 8,
+          "flipLeftFace": true,
+          "wait": false,
+          "waitSkip": 0,
+          "actionDetached": false,
+          "fixPos": false,
+          "type": "SHOW_EFFECT",
+          "effect": {
+            "sheet": "prd.super-meat",
+            "name": "neutralSawLarge"
+          }
+        },
+        {
+          "align": "BOTTOM",
+          "radius": 60,
+          "yScale": 0,
+          "zHeight": 16,
+          "centralAngle": 0,
+          "duration": 0.8,
+          "expandRadius": 0,
+          "alwaysFull": true,
+          "clockwise": false,
+          "flipLeftFace": 0,
+          "rectangular": false,
+          "repeat": true,
+          "uniformHitDir": true,
+          "fixPos": false,
+          "checkCollision": true,
+          "type": "CIRCLE_ATTACK",
+          "attack": {
+            "type": "BREAK",
+            "element": "NEUTRAL",
+            "damageFactor": 1,
+            "reverse": false,
+            "spFactor": 0,
+            "stunSteps": [],
+            "hints": [
+              "NO_PUZZLE"
+            ],
+            "guardable": "NEVER",
+            "skillBonus": "MELEE_DMG",
+            "limiter": "NO_DAMAGE"
+          },
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "time": 0.8,
+          "type": "WAIT"
+        },
+        {
+          "time": -1,
+          "type": "WAIT"
+        }
+      ],
+      "invisible": false,
+      "hp": 0,
+      "stickToSource": "NONE",
+      "stickFaceAlign": false,
+      "group": "",
+      "size": {
+        "x": 8,
+        "y": 8,
+        "z": 0
+      },
+      "config": {
+        "collType": "NONE",
+        "zGravityFactor": 0,
+        "shadow": 144
+      },
+      "type": "GENERIC"
+    },
+    "sawFixedSmall": {
+      "animation": {
+        "name": "default",
+        "sheet": {
+          "src": "media/entity/effects/prd-blank32x32.png",
+          "offX": 0,
+          "offY": 0,
+          "width": 32,
+          "height": 32
+        },
+        "time": 0.05,
+        "repeat": false,
+        "frames": [
+          0
+        ]
+      },
+      "copyOwnerAnims": false,
+      "breakType": "NEVER",
+      "action": [
+        {
+          "posType": "TARGET",
+          "align": "CENTER",
+          "type": "SET_HIT_PROXY",
+          "proxy": "deathMarker",
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "duration": -1,
+          "align": "BOTTOM",
+          "rotateFace": 8,
+          "flipLeftFace": true,
+          "wait": false,
+          "waitSkip": 0,
+          "actionDetached": false,
+          "fixPos": false,
+          "type": "SHOW_EFFECT",
+          "effect": {
+            "sheet": "prd.super-meat",
+            "name": "neutralSawSmall"
+          }
+        },
+        {
+          "align": "BOTTOM",
+          "radius": 20,
+          "yScale": 0,
+          "zHeight": 16,
+          "centralAngle": 0,
+          "duration": 0.8,
+          "expandRadius": 0,
+          "alwaysFull": true,
+          "clockwise": false,
+          "flipLeftFace": 0,
+          "rectangular": false,
+          "repeat": true,
+          "uniformHitDir": true,
+          "fixPos": false,
+          "checkCollision": true,
+          "type": "CIRCLE_ATTACK",
+          "attack": {
+            "type": "BREAK",
+            "element": "NEUTRAL",
+            "damageFactor": 1,
+            "reverse": false,
+            "spFactor": 0,
+            "stunSteps": [],
+            "hints": [
+              "NO_PUZZLE"
+            ],
+            "guardable": "NEVER",
+            "skillBonus": "MELEE_DMG",
+            "limiter": "NO_DAMAGE"
+          },
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "time": 0.8,
+          "type": "WAIT"
+        },
+        {
+          "time": -1,
+          "type": "WAIT"
+        }
+      ],
+      "invisible": false,
+      "hp": 0,
+      "stickToSource": "NONE",
+      "stickFaceAlign": false,
+      "group": "",
+      "size": {
+        "x": 8,
+        "y": 8,
+        "z": 0
+      },
+      "config": {
+        "collType": "NONE",
+        "zGravityFactor": 0,
+        "shadow": 48
+      },
+      "type": "GENERIC"
+    },
+    "sawFixedMed": {
+      "animation": {
+        "name": "default",
+        "sheet": {
+          "src": "media/entity/effects/prd-blank32x32.png",
+          "offX": 0,
+          "offY": 0,
+          "width": 32,
+          "height": 32
+        },
+        "time": 0.05,
+        "repeat": false,
+        "frames": [
+          0
+        ]
+      },
+      "copyOwnerAnims": false,
+      "breakType": "NEVER",
+      "action": [
+        {
+          "posType": "TARGET",
+          "align": "CENTER",
+          "type": "SET_HIT_PROXY",
+          "proxy": "deathMarker",
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "duration": -1,
+          "align": "BOTTOM",
+          "rotateFace": 8,
+          "flipLeftFace": true,
+          "wait": false,
+          "waitSkip": 0,
+          "actionDetached": false,
+          "fixPos": false,
+          "type": "SHOW_EFFECT",
+          "effect": {
+            "sheet": "prd.super-meat",
+            "name": "neutralSawMed"
+          }
+        },
+        {
+          "align": "BOTTOM",
+          "radius": 40,
+          "yScale": 0,
+          "zHeight": 16,
+          "centralAngle": 0,
+          "duration": 0.8,
+          "expandRadius": 0,
+          "alwaysFull": true,
+          "clockwise": false,
+          "flipLeftFace": 0,
+          "rectangular": false,
+          "repeat": true,
+          "uniformHitDir": true,
+          "fixPos": false,
+          "checkCollision": true,
+          "type": "CIRCLE_ATTACK",
+          "attack": {
+            "type": "BREAK",
+            "element": "NEUTRAL",
+            "damageFactor": 1,
+            "reverse": false,
+            "spFactor": 0,
+            "stunSteps": [],
+            "hints": [
+              "NO_PUZZLE"
+            ],
+            "guardable": "NEVER",
+            "skillBonus": "MELEE_DMG",
+            "limiter": "NO_DAMAGE"
+          },
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "time": 0.8,
+          "type": "WAIT"
+        },
+        {
+          "time": -1,
+          "type": "WAIT"
+        }
+      ],
+      "invisible": false,
+      "hp": 0,
+      "stickToSource": "NONE",
+      "stickFaceAlign": false,
+      "group": "",
+      "size": {
+        "x": 8,
+        "y": 8,
+        "z": 0
+      },
+      "config": {
+        "collType": "NONE",
+        "zGravityFactor": 0,
+        "shadow": 96
+      },
+      "type": "GENERIC"
+    },
+    "sawFixedMedGUI": {
+      "animation": {
+        "name": "default",
+        "sheet": {
+          "src": "media/entity/effects/prd-blank32x32.png",
+          "offX": 0,
+          "offY": 0,
+          "width": 32,
+          "height": 32
+        },
+        "time": 0.05,
+        "repeat": false,
+        "frames": [
+          0
+        ]
+      },
+      "copyOwnerAnims": false,
+      "breakType": "NEVER",
+      "action": [
+        {
+          "posType": "TARGET",
+          "align": "CENTER",
+          "type": "SET_HIT_PROXY",
+          "proxy": "deathMarker",
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "duration": -1,
+          "align": "BOTTOM",
+          "rotateFace": 8,
+          "flipLeftFace": true,
+          "wait": false,
+          "waitSkip": 0,
+          "actionDetached": false,
+          "fixPos": false,
+          "type": "SHOW_EFFECT",
+          "effect": {
+            "sheet": "prd.super-meat",
+            "name": "neutralSawMedGUI"
+          }
+        },
+        {
+          "align": "BOTTOM",
+          "radius": 40,
+          "yScale": 0,
+          "zHeight": 16,
+          "centralAngle": 0,
+          "duration": 0.8,
+          "expandRadius": 0,
+          "alwaysFull": true,
+          "clockwise": false,
+          "flipLeftFace": 0,
+          "rectangular": false,
+          "repeat": true,
+          "uniformHitDir": true,
+          "fixPos": false,
+          "checkCollision": true,
+          "type": "CIRCLE_ATTACK",
+          "attack": {
+            "type": "BREAK",
+            "element": "NEUTRAL",
+            "damageFactor": 1,
+            "reverse": false,
+            "spFactor": 0,
+            "stunSteps": [],
+            "hints": [
+              "NO_PUZZLE"
+            ],
+            "guardable": "NEVER",
+            "skillBonus": "MELEE_DMG",
+            "limiter": "NO_DAMAGE"
+          },
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "time": 0.8,
+          "type": "WAIT"
+        },
+        {
+          "time": -1,
+          "type": "WAIT"
+        }
+      ],
+      "invisible": false,
+      "hp": 0,
+      "stickToSource": "NONE",
+      "stickFaceAlign": false,
+      "group": "",
+      "size": {
+        "x": 8,
+        "y": 8,
+        "z": 0
+      },
+      "config": {
+        "collType": "NONE",
+        "zGravityFactor": 0,
+        "shadow": 96
+      },
+      "type": "GENERIC"
+    },
+    "sawFixedLarge": {
+      "animation": {
+        "name": "default",
+        "sheet": {
+          "src": "media/entity/effects/prd-blank32x32.png",
+          "offX": 0,
+          "offY": 0,
+          "width": 32,
+          "height": 32
+        },
+        "time": 0.05,
+        "repeat": false,
+        "frames": [
+          0
+        ]
+      },
+      "copyOwnerAnims": false,
+      "breakType": "NEVER",
+      "action": [
+        {
+          "posType": "TARGET",
+          "align": "CENTER",
+          "type": "SET_HIT_PROXY",
+          "proxy": "deathMarker",
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "duration": -1,
+          "align": "BOTTOM",
+          "rotateFace": 8,
+          "flipLeftFace": true,
+          "wait": false,
+          "waitSkip": 0,
+          "actionDetached": false,
+          "fixPos": false,
+          "type": "SHOW_EFFECT",
+          "effect": {
+            "sheet": "prd.super-meat",
+            "name": "neutralSawLarge"
+          }
+        },
+        {
+          "align": "BOTTOM",
+          "radius": 60,
+          "yScale": 0,
+          "zHeight": 16,
+          "centralAngle": 0,
+          "duration": 0.8,
+          "expandRadius": 0,
+          "alwaysFull": true,
+          "clockwise": false,
+          "flipLeftFace": 0,
+          "rectangular": false,
+          "repeat": true,
+          "uniformHitDir": true,
+          "fixPos": false,
+          "checkCollision": true,
+          "type": "CIRCLE_ATTACK",
+          "attack": {
+            "type": "BREAK",
+            "element": "NEUTRAL",
+            "damageFactor": 1,
+            "reverse": false,
+            "spFactor": 0,
+            "stunSteps": [],
+            "hints": [
+              "NO_PUZZLE"
+            ],
+            "guardable": "NEVER",
+            "skillBonus": "MELEE_DMG",
+            "limiter": "NO_DAMAGE"
+          },
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "time": 0.8,
+          "type": "WAIT"
+        },
+        {
+          "time": -1,
+          "type": "WAIT"
+        }
+      ],
+      "invisible": false,
+      "hp": 0,
+      "stickToSource": "NONE",
+      "stickFaceAlign": false,
+      "group": "",
+      "size": {
+        "x": 8,
+        "y": 8,
+        "z": 0
+      },
+      "config": {
+        "collType": "NONE",
+        "zGravityFactor": 0,
+        "shadow": 144
+      },
+      "type": "GENERIC"
+    },
+    "sawPacerSmallShort": {
+      "animation": {
+        "name": "default",
+        "sheet": {
+          "src": "media/entity/effects/prd-blank32x32.png",
+          "offX": 0,
+          "offY": 0,
+          "width": 32,
+          "height": 32
+        },
+        "time": 0.05,
+        "repeat": false,
+        "frames": [
+          0
+        ]
+      },
+      "copyOwnerAnims": false,
+      "breakType": "NEVER",
+      "action": [
+        {
+          "posType": "TARGET",
+          "align": "CENTER",
+          "type": "SET_HIT_PROXY",
+          "proxy": "deathMarker",
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "duration": -1,
+          "align": "BOTTOM",
+          "rotateFace": 8,
+          "flipLeftFace": true,
+          "wait": false,
+          "waitSkip": 0,
+          "actionDetached": false,
+          "fixPos": false,
+          "type": "SHOW_EFFECT",
+          "effect": {
+            "sheet": "prd.super-meat",
+            "name": "neutralSawSmall"
+          }
+        },
+        {
+          "align": "BOTTOM",
+          "radius": 20,
+          "yScale": 0,
+          "zHeight": 16,
+          "centralAngle": 0,
+          "duration": 0.8,
+          "expandRadius": 0,
+          "alwaysFull": true,
+          "clockwise": false,
+          "flipLeftFace": 0,
+          "rectangular": false,
+          "repeat": true,
+          "uniformHitDir": true,
+          "fixPos": false,
+          "checkCollision": true,
+          "type": "CIRCLE_ATTACK",
+          "attack": {
+            "type": "BREAK",
+            "element": "NEUTRAL",
+            "damageFactor": 1,
+            "reverse": false,
+            "spFactor": 0,
+            "stunSteps": [],
+            "hints": [
+              "NO_PUZZLE"
+            ],
+            "guardable": "NEVER",
+            "skillBonus": "MELEE_DMG",
+            "limiter": "NO_DAMAGE"
+          },
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "name": "origin",
+          "target": "SELF",
+          "align": "CENTER",
+          "faceDistance": 0,
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "type": "SET_ATTRIB_POS"
+        },
+        {
+          "value": 65,
+          "type": "SET_SPEED"
+        },
+        {
+          "name": "loop",
+          "type": "LABEL"
+        },
+        {
+          "time": 0.5,
+          "type": "WAIT"
+        },
+        {
+          "time": 2,
+          "stopBeforeEdge": false,
+          "type": "MOVE_FORWARD"
+        },
+        {
+          "time": 0.5,
+          "type": "WAIT"
+        },
+        {
+          "time": 2,
+          "stopBeforeEdge": false,
+          "type": "MOVE_BACKWARD"
+        },
+        {
+          "attrib": "origin",
+          "type": "TELEPORT_TO_ATTRIB_POS"
+        },
+        {
+          "name": "loop",
+          "type": "GOTO_LABEL"
+        }
+      ],
+      "invisible": false,
+      "hp": 0,
+      "stickToSource": "NONE",
+      "stickFaceAlign": false,
+      "group": "",
+      "size": {
+        "x": 8,
+        "y": 8,
+        "z": 0
+      },
+      "config": {
+        "collType": "NONE",
+        "zGravityFactor": 0,
+        "shadow": 48
+      },
+      "type": "GENERIC"
+    },
+    "sawPacerSmallMed": {
+      "animation": {
+        "name": "default",
+        "sheet": {
+          "src": "media/entity/effects/prd-blank32x32.png",
+          "offX": 0,
+          "offY": 0,
+          "width": 32,
+          "height": 32
+        },
+        "time": 0.05,
+        "repeat": false,
+        "frames": [
+          0
+        ]
+      },
+      "copyOwnerAnims": false,
+      "breakType": "NEVER",
+      "action": [
+        {
+          "posType": "TARGET",
+          "align": "CENTER",
+          "type": "SET_HIT_PROXY",
+          "proxy": "deathMarker",
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "duration": -1,
+          "align": "BOTTOM",
+          "rotateFace": 8,
+          "flipLeftFace": true,
+          "wait": false,
+          "waitSkip": 0,
+          "actionDetached": false,
+          "fixPos": false,
+          "type": "SHOW_EFFECT",
+          "effect": {
+            "sheet": "prd.super-meat",
+            "name": "neutralSawSmall"
+          }
+        },
+        {
+          "align": "BOTTOM",
+          "radius": 20,
+          "yScale": 0,
+          "zHeight": 16,
+          "centralAngle": 0,
+          "duration": 0.8,
+          "expandRadius": 0,
+          "alwaysFull": true,
+          "clockwise": false,
+          "flipLeftFace": 0,
+          "rectangular": false,
+          "repeat": true,
+          "uniformHitDir": true,
+          "fixPos": false,
+          "checkCollision": true,
+          "type": "CIRCLE_ATTACK",
+          "attack": {
+            "type": "BREAK",
+            "element": "NEUTRAL",
+            "damageFactor": 1,
+            "reverse": false,
+            "spFactor": 0,
+            "stunSteps": [],
+            "hints": [
+              "NO_PUZZLE"
+            ],
+            "guardable": "NEVER",
+            "skillBonus": "MELEE_DMG",
+            "limiter": "NO_DAMAGE"
+          },
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "name": "origin",
+          "target": "SELF",
+          "align": "CENTER",
+          "faceDistance": 0,
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "type": "SET_ATTRIB_POS"
+        },
+        {
+          "value": 55,
+          "type": "SET_SPEED"
+        },
+        {
+          "name": "loop",
+          "type": "LABEL"
+        },
+        {
+          "time": 0.5,
+          "type": "WAIT"
+        },
+        {
+          "time": 3.5,
+          "stopBeforeEdge": false,
+          "type": "MOVE_FORWARD"
+        },
+        {
+          "time": 0.5,
+          "type": "WAIT"
+        },
+        {
+          "time": 3.5,
+          "stopBeforeEdge": false,
+          "type": "MOVE_BACKWARD"
+        },
+        {
+          "attrib": "origin",
+          "type": "TELEPORT_TO_ATTRIB_POS"
+        },
+        {
+          "name": "loop",
+          "type": "GOTO_LABEL"
+        }
+      ],
+      "invisible": false,
+      "hp": 0,
+      "stickToSource": "NONE",
+      "stickFaceAlign": false,
+      "group": "",
+      "size": {
+        "x": 8,
+        "y": 8,
+        "z": 0
+      },
+      "config": {
+        "collType": "NONE",
+        "zGravityFactor": 0,
+        "shadow": 48
+      },
+      "type": "GENERIC"
+    },
+    "clockController1": {
+      "animation": {
+        "name": "default",
+        "sheet": {
+          "src": "media/entity/effects/prd-blank32x32.png",
+          "offX": 0,
+          "offY": 0,
+          "width": 32,
+          "height": 32
+        },
+        "time": 0.05,
+        "repeat": false,
+        "frames": [
+          0
+        ]
+      },
+      "copyOwnerAnims": false,
+      "breakType": "NEVER",
+      "action": [
+        {
+          "posType": "TARGET",
+          "align": "CENTER",
+          "type": "SET_HIT_PROXY",
+          "proxy": "deathMarker",
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "duration": -1,
+          "align": "BOTTOM",
+          "rotateFace": 8,
+          "flipLeftFace": true,
+          "wait": false,
+          "waitSkip": 0,
+          "actionDetached": false,
+          "fixPos": false,
+          "type": "SHOW_EFFECT",
+          "effect": {
+            "sheet": "prd.super-meat",
+            "name": "neutralSawSmallGUI"
+          }
+        },
+        {
+          "align": "BOTTOM",
+          "radius": 20,
+          "yScale": 0,
+          "zHeight": 16,
+          "centralAngle": 0,
+          "duration": 0.8,
+          "expandRadius": 0,
+          "alwaysFull": true,
+          "clockwise": false,
+          "flipLeftFace": 0,
+          "rectangular": false,
+          "repeat": true,
+          "uniformHitDir": true,
+          "fixPos": false,
+          "checkCollision": true,
+          "type": "CIRCLE_ATTACK",
+          "attack": {
+            "type": "BREAK",
+            "element": "NEUTRAL",
+            "damageFactor": 1,
+            "reverse": false,
+            "spFactor": 0,
+            "stunSteps": [],
+            "hints": [
+              "NO_PUZZLE"
+            ],
+            "guardable": "NEVER",
+            "skillBonus": "MELEE_DMG",
+            "limiter": "NO_DAMAGE"
+          },
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "align": "CENTER",
+          "centralAngle": 0,
+          "angleVary": 0,
+          "startDist": 56,
+          "startDistCollide": "NONE",
+          "random": false,
+          "duration": 0,
+          "clockwise": false,
+          "flipLeftFace": 0,
+          "circularArea": false,
+          "uniformDir": 0,
+          "delay": 0,
+          "repeat": false,
+          "count": 1,
+          "type": "SHOOT_PROXY_RANGE",
+          "proxy": "clockOrbiterSmallClose",
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "align": "CENTER",
+          "centralAngle": 0,
+          "startAngle": 0.2,
+          "angleVary": 0,
+          "startDist": 128,
+          "startDistCollide": "NONE",
+          "random": false,
+          "duration": 0,
+          "clockwise": false,
+          "flipLeftFace": 0,
+          "circularArea": false,
+          "uniformDir": 0,
+          "delay": 0,
+          "repeat": false,
+          "count": 1,
+          "type": "SHOOT_PROXY_RANGE",
+          "proxy": "clockOrbiterMedMed",
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "time": 0.8,
+          "type": "WAIT"
+        },
+        {
+          "time": -1,
+          "type": "WAIT"
+        }
+      ],
+      "invisible": false,
+      "hp": 0,
+      "stickToSource": "NONE",
+      "stickFaceAlign": false,
+      "group": "",
+      "size": {
+        "x": 8,
+        "y": 8,
+        "z": 0
+      },
+      "config": {
+        "collType": "NONE",
+        "zGravityFactor": 0,
+        "shadow": 48
+      },
+      "type": "GENERIC"
+    },
+    "clockOrbiterSmallClose": {
+      "animation": {
+        "name": "default",
+        "sheet": {
+          "src": "media/entity/effects/prd-blank32x32.png",
+          "offX": 0,
+          "offY": 0,
+          "width": 32,
+          "height": 32
+        },
+        "time": 0.05,
+        "repeat": false,
+        "frames": [
+          0
+        ]
+      },
+      "copyOwnerAnims": false,
+      "breakType": "NEVER",
+      "action": [
+        {
+          "posType": "TARGET",
+          "align": "CENTER",
+          "type": "SET_HIT_PROXY",
+          "proxy": "deathMarker",
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "duration": -1,
+          "align": "BOTTOM",
+          "rotateFace": 8,
+          "flipLeftFace": true,
+          "wait": false,
+          "waitSkip": 0,
+          "actionDetached": false,
+          "fixPos": false,
+          "type": "SHOW_EFFECT",
+          "effect": {
+            "sheet": "prd.super-meat",
+            "name": "neutralSawSmall"
+          }
+        },
+        {
+          "align": "BOTTOM",
+          "radius": 20,
+          "yScale": 0,
+          "zHeight": 16,
+          "centralAngle": 0,
+          "duration": 0.8,
+          "expandRadius": 0,
+          "alwaysFull": true,
+          "clockwise": false,
+          "flipLeftFace": 0,
+          "rectangular": false,
+          "repeat": true,
+          "uniformHitDir": true,
+          "fixPos": false,
+          "checkCollision": true,
+          "type": "CIRCLE_ATTACK",
+          "attack": {
+            "type": "BREAK",
+            "element": "NEUTRAL",
+            "damageFactor": 1,
+            "reverse": false,
+            "spFactor": 0,
+            "stunSteps": [],
+            "hints": [
+              "NO_PUZZLE"
+            ],
+            "guardable": "NEVER",
+            "skillBonus": "MELEE_DMG",
+            "limiter": "NO_DAMAGE"
+          },
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "duration": -1,
+          "align": "CENTER",
+          "rotateFace": 0,
+          "flipLeftFace": false,
+          "wait": false,
+          "waitSkip": 0,
+          "actionDetached": false,
+          "target2": "PROXY_SRC",
+          "target2Align": "CENTER",
+          "target2Key": "",
+          "target2Offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "fixPos": false,
+          "type": "SHOW_EFFECT",
+          "effect": {
+            "sheet": "prd.super-meat",
+            "name": "clockTether"
+          },
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "name": "loop",
+          "type": "LABEL"
+        },
+        {
+          "target": "PROXY_SRC",
+          "distance": 56,
+          "duration": 5,
+          "ccw": true,
+          "rotateTime": 4.5,
+          "distAdjustSpeed": 64,
+          "zDistance": 0,
+          "waitTargetAlign": false,
+          "collision": false,
+          "type": "STICKY_CIRCLE_AROUND"
+        },
+        {
+          "name": "loop",
+          "type": "GOTO_LABEL"
+        }
+      ],
+      "invisible": false,
+      "hp": 0,
+      "stickToSource": "NONE",
+      "stickFaceAlign": false,
+      "group": "",
+      "size": {
+        "x": 8,
+        "y": 8,
+        "z": 0
+      },
+      "config": {
+        "collType": "NONE",
+        "zGravityFactor": 0,
+        "shadow": 48
+      },
+      "type": "GENERIC"
+    },
+    "clockOrbiterMedMed": {
+      "animation": {
+        "name": "default",
+        "sheet": {
+          "src": "media/entity/effects/prd-blank32x32.png",
+          "offX": 0,
+          "offY": 0,
+          "width": 32,
+          "height": 32
+        },
+        "time": 0.05,
+        "repeat": false,
+        "frames": [
+          0
+        ]
+      },
+      "copyOwnerAnims": false,
+      "breakType": "NEVER",
+      "action": [
+        {
+          "posType": "TARGET",
+          "align": "CENTER",
+          "type": "SET_HIT_PROXY",
+          "proxy": "deathMarker",
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "duration": -1,
+          "align": "BOTTOM",
+          "rotateFace": 8,
+          "flipLeftFace": true,
+          "wait": false,
+          "waitSkip": 0,
+          "actionDetached": false,
+          "fixPos": false,
+          "type": "SHOW_EFFECT",
+          "effect": {
+            "sheet": "prd.super-meat",
+            "name": "neutralSawMed"
+          }
+        },
+        {
+          "align": "BOTTOM",
+          "radius": 40,
+          "yScale": 0,
+          "zHeight": 16,
+          "centralAngle": 0,
+          "duration": 0.8,
+          "expandRadius": 0,
+          "alwaysFull": true,
+          "clockwise": false,
+          "flipLeftFace": 0,
+          "rectangular": false,
+          "repeat": true,
+          "uniformHitDir": true,
+          "fixPos": false,
+          "checkCollision": true,
+          "type": "CIRCLE_ATTACK",
+          "attack": {
+            "type": "BREAK",
+            "element": "NEUTRAL",
+            "damageFactor": 1,
+            "reverse": false,
+            "spFactor": 0,
+            "stunSteps": [],
+            "hints": [
+              "NO_PUZZLE"
+            ],
+            "guardable": "NEVER",
+            "skillBonus": "MELEE_DMG",
+            "limiter": "NO_DAMAGE"
+          },
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "duration": -1,
+          "align": "CENTER",
+          "rotateFace": 0,
+          "flipLeftFace": false,
+          "wait": false,
+          "waitSkip": 0,
+          "actionDetached": false,
+          "target2": "PROXY_SRC",
+          "target2Align": "CENTER",
+          "target2Key": "",
+          "target2Offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "fixPos": false,
+          "type": "SHOW_EFFECT",
+          "effect": {
+            "sheet": "prd.super-meat",
+            "name": "clockTether"
+          },
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "name": "loop",
+          "type": "LABEL"
+        },
+        {
+          "target": "PROXY_SRC",
+          "distance": 128,
+          "duration": 5,
+          "ccw": false,
+          "rotateTime": 3.5,
+          "distAdjustSpeed": 64,
+          "zDistance": 0,
+          "waitTargetAlign": false,
+          "collision": false,
+          "type": "STICKY_CIRCLE_AROUND"
+        },
+        {
+          "name": "loop",
+          "type": "GOTO_LABEL"
+        }
+      ],
+      "invisible": false,
+      "hp": 0,
+      "stickToSource": "NONE",
+      "stickFaceAlign": false,
+      "group": "",
+      "size": {
+        "x": 8,
+        "y": 8,
+        "z": 0
+      },
+      "config": {
+        "collType": "NONE",
+        "zGravityFactor": 0,
+        "shadow": 96
+      },
+      "type": "GENERIC"
+    },
+    "clockController2": {
+      "animation": {
+        "name": "default",
+        "sheet": {
+          "src": "media/entity/effects/prd-blank32x32.png",
+          "offX": 0,
+          "offY": 0,
+          "width": 32,
+          "height": 32
+        },
+        "time": 0.05,
+        "repeat": false,
+        "frames": [
+          0
+        ]
+      },
+      "copyOwnerAnims": false,
+      "breakType": "NEVER",
+      "action": [
+        {
+          "posType": "TARGET",
+          "align": "CENTER",
+          "type": "SET_HIT_PROXY",
+          "proxy": "deathMarker",
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "duration": -1,
+          "align": "BOTTOM",
+          "rotateFace": 8,
+          "flipLeftFace": true,
+          "wait": false,
+          "waitSkip": 0,
+          "actionDetached": false,
+          "fixPos": false,
+          "type": "SHOW_EFFECT",
+          "effect": {
+            "sheet": "prd.super-meat",
+            "name": "neutralSawSmallGUI"
+          }
+        },
+        {
+          "align": "BOTTOM",
+          "radius": 20,
+          "yScale": 0,
+          "zHeight": 16,
+          "centralAngle": 0,
+          "duration": 0.8,
+          "expandRadius": 0,
+          "alwaysFull": true,
+          "clockwise": false,
+          "flipLeftFace": 0,
+          "rectangular": false,
+          "repeat": true,
+          "uniformHitDir": true,
+          "fixPos": false,
+          "checkCollision": true,
+          "type": "CIRCLE_ATTACK",
+          "attack": {
+            "type": "BREAK",
+            "element": "NEUTRAL",
+            "damageFactor": 1,
+            "reverse": false,
+            "spFactor": 0,
+            "stunSteps": [],
+            "hints": [
+              "NO_PUZZLE"
+            ],
+            "guardable": "NEVER",
+            "skillBonus": "MELEE_DMG",
+            "limiter": "NO_DAMAGE"
+          },
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "align": "CENTER",
+          "centralAngle": 1,
+          "startAngle": 0,
+          "angleVary": 0,
+          "startDist": 56,
+          "startDistCollide": "NONE",
+          "random": false,
+          "duration": 0,
+          "clockwise": false,
+          "flipLeftFace": 0,
+          "circularArea": false,
+          "uniformDir": 0,
+          "delay": 0,
+          "repeat": false,
+          "count": 2,
+          "type": "SHOOT_PROXY_RANGE",
+          "proxy": "clockOrbiterSmallClose",
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "align": "CENTER",
+          "centralAngle": 1,
+          "startAngle": 0,
+          "angleVary": 0,
+          "startDist": 112,
+          "startDistCollide": "NONE",
+          "random": false,
+          "duration": 0,
+          "clockwise": false,
+          "flipLeftFace": 0,
+          "circularArea": false,
+          "uniformDir": 0,
+          "delay": 0,
+          "repeat": false,
+          "count": 2,
+          "type": "SHOOT_PROXY_RANGE",
+          "proxy": "clockOrbiterSmallMed",
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "time": 0.8,
+          "type": "WAIT"
+        },
+        {
+          "time": -1,
+          "type": "WAIT"
+        }
+      ],
+      "invisible": false,
+      "hp": 0,
+      "stickToSource": "NONE",
+      "stickFaceAlign": false,
+      "group": "",
+      "size": {
+        "x": 8,
+        "y": 8,
+        "z": 0
+      },
+      "config": {
+        "collType": "NONE",
+        "zGravityFactor": 0,
+        "shadow": 48
+      },
+      "type": "GENERIC"
+    },
+    "clockOrbiterSmallMed": {
+      "animation": {
+        "name": "default",
+        "sheet": {
+          "src": "media/entity/effects/prd-blank32x32.png",
+          "offX": 0,
+          "offY": 0,
+          "width": 32,
+          "height": 32
+        },
+        "time": 0.05,
+        "repeat": false,
+        "frames": [
+          0
+        ]
+      },
+      "copyOwnerAnims": false,
+      "breakType": "NEVER",
+      "action": [
+        {
+          "posType": "TARGET",
+          "align": "CENTER",
+          "type": "SET_HIT_PROXY",
+          "proxy": "deathMarker",
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "duration": -1,
+          "align": "BOTTOM",
+          "rotateFace": 8,
+          "flipLeftFace": true,
+          "wait": false,
+          "waitSkip": 0,
+          "actionDetached": false,
+          "fixPos": false,
+          "type": "SHOW_EFFECT",
+          "effect": {
+            "sheet": "prd.super-meat",
+            "name": "neutralSawSmall"
+          }
+        },
+        {
+          "align": "BOTTOM",
+          "radius": 20,
+          "yScale": 0,
+          "zHeight": 16,
+          "centralAngle": 0,
+          "duration": 0.8,
+          "expandRadius": 0,
+          "alwaysFull": true,
+          "clockwise": false,
+          "flipLeftFace": 0,
+          "rectangular": false,
+          "repeat": true,
+          "uniformHitDir": true,
+          "fixPos": false,
+          "checkCollision": true,
+          "type": "CIRCLE_ATTACK",
+          "attack": {
+            "type": "BREAK",
+            "element": "NEUTRAL",
+            "damageFactor": 1,
+            "reverse": false,
+            "spFactor": 0,
+            "stunSteps": [],
+            "hints": [
+              "NO_PUZZLE"
+            ],
+            "guardable": "NEVER",
+            "skillBonus": "MELEE_DMG",
+            "limiter": "NO_DAMAGE"
+          },
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "duration": -1,
+          "align": "CENTER",
+          "rotateFace": 0,
+          "flipLeftFace": false,
+          "wait": false,
+          "waitSkip": 0,
+          "actionDetached": false,
+          "target2": "PROXY_SRC",
+          "target2Align": "CENTER",
+          "target2Key": "",
+          "target2Offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "fixPos": false,
+          "type": "SHOW_EFFECT",
+          "effect": {
+            "sheet": "prd.super-meat",
+            "name": "clockTether"
+          },
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "name": "loop",
+          "type": "LABEL"
+        },
+        {
+          "target": "PROXY_SRC",
+          "distance": 112,
+          "duration": 5,
+          "ccw": true,
+          "rotateTime": 4.5,
+          "distAdjustSpeed": 64,
+          "zDistance": 0,
+          "waitTargetAlign": false,
+          "collision": false,
+          "type": "STICKY_CIRCLE_AROUND"
+        },
+        {
+          "name": "loop",
+          "type": "GOTO_LABEL"
+        }
+      ],
+      "invisible": false,
+      "hp": 0,
+      "stickToSource": "NONE",
+      "stickFaceAlign": false,
+      "group": "",
+      "size": {
+        "x": 8,
+        "y": 8,
+        "z": 0
+      },
+      "config": {
+        "collType": "NONE",
+        "zGravityFactor": 0,
+        "shadow": 48
+      },
+      "type": "GENERIC"
+    },
+    "clockController3": {
+      "animation": {
+        "name": "default",
+        "sheet": {
+          "src": "media/entity/effects/prd-blank32x32.png",
+          "offX": 0,
+          "offY": 0,
+          "width": 32,
+          "height": 32
+        },
+        "time": 0.05,
+        "repeat": false,
+        "frames": [
+          0
+        ]
+      },
+      "copyOwnerAnims": false,
+      "breakType": "NEVER",
+      "action": [
+        {
+          "posType": "TARGET",
+          "align": "CENTER",
+          "type": "SET_HIT_PROXY",
+          "proxy": "deathMarker",
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "duration": -1,
+          "align": "BOTTOM",
+          "rotateFace": 8,
+          "flipLeftFace": true,
+          "wait": false,
+          "waitSkip": 0,
+          "actionDetached": false,
+          "fixPos": false,
+          "type": "SHOW_EFFECT",
+          "effect": {
+            "sheet": "prd.super-meat",
+            "name": "neutralSawSmallGUI"
+          }
+        },
+        {
+          "align": "BOTTOM",
+          "radius": 20,
+          "yScale": 0,
+          "zHeight": 16,
+          "centralAngle": 0,
+          "duration": 0.8,
+          "expandRadius": 0,
+          "alwaysFull": true,
+          "clockwise": false,
+          "flipLeftFace": 0,
+          "rectangular": false,
+          "repeat": true,
+          "uniformHitDir": true,
+          "fixPos": false,
+          "checkCollision": true,
+          "type": "CIRCLE_ATTACK",
+          "attack": {
+            "type": "BREAK",
+            "element": "NEUTRAL",
+            "damageFactor": 1,
+            "reverse": false,
+            "spFactor": 0,
+            "stunSteps": [],
+            "hints": [
+              "NO_PUZZLE"
+            ],
+            "guardable": "NEVER",
+            "skillBonus": "MELEE_DMG",
+            "limiter": "NO_DAMAGE"
+          },
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "align": "CENTER",
+          "centralAngle": 0,
+          "angleVary": 0,
+          "startDist": 56,
+          "startDistCollide": "NONE",
+          "random": false,
+          "duration": 0,
+          "clockwise": false,
+          "flipLeftFace": 0,
+          "circularArea": false,
+          "uniformDir": 0,
+          "delay": 0,
+          "repeat": false,
+          "count": 1,
+          "type": "SHOOT_PROXY_RANGE",
+          "proxy": "clockOrbiterSmallClose",
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "align": "CENTER",
+          "centralAngle": 0,
+          "startAngle": 0.2,
+          "angleVary": 0,
+          "startDist": 112,
+          "startDistCollide": "NONE",
+          "random": false,
+          "duration": 0,
+          "clockwise": false,
+          "flipLeftFace": 0,
+          "circularArea": false,
+          "uniformDir": 0,
+          "delay": 0,
+          "repeat": false,
+          "count": 1,
+          "type": "SHOOT_PROXY_RANGE",
+          "proxy": "clockOrbiterSmallMedRev",
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "time": 0.8,
+          "type": "WAIT"
+        },
+        {
+          "time": -1,
+          "type": "WAIT"
+        }
+      ],
+      "invisible": false,
+      "hp": 0,
+      "stickToSource": "NONE",
+      "stickFaceAlign": false,
+      "group": "",
+      "size": {
+        "x": 8,
+        "y": 8,
+        "z": 0
+      },
+      "config": {
+        "collType": "NONE",
+        "zGravityFactor": 0,
+        "shadow": 48
+      },
+      "type": "GENERIC"
+    },
+    "clockOrbiterSmallMedRev": {
+      "animation": {
+        "name": "default",
+        "sheet": {
+          "src": "media/entity/effects/prd-blank32x32.png",
+          "offX": 0,
+          "offY": 0,
+          "width": 32,
+          "height": 32
+        },
+        "time": 0.05,
+        "repeat": false,
+        "frames": [
+          0
+        ]
+      },
+      "copyOwnerAnims": false,
+      "breakType": "NEVER",
+      "action": [
+        {
+          "posType": "TARGET",
+          "align": "CENTER",
+          "type": "SET_HIT_PROXY",
+          "proxy": "deathMarker",
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "duration": -1,
+          "align": "BOTTOM",
+          "rotateFace": 8,
+          "flipLeftFace": true,
+          "wait": false,
+          "waitSkip": 0,
+          "actionDetached": false,
+          "fixPos": false,
+          "type": "SHOW_EFFECT",
+          "effect": {
+            "sheet": "prd.super-meat",
+            "name": "neutralSawSmall"
+          }
+        },
+        {
+          "align": "BOTTOM",
+          "radius": 20,
+          "yScale": 0,
+          "zHeight": 16,
+          "centralAngle": 0,
+          "duration": 0.8,
+          "expandRadius": 0,
+          "alwaysFull": true,
+          "clockwise": false,
+          "flipLeftFace": 0,
+          "rectangular": false,
+          "repeat": true,
+          "uniformHitDir": true,
+          "fixPos": false,
+          "checkCollision": true,
+          "type": "CIRCLE_ATTACK",
+          "attack": {
+            "type": "BREAK",
+            "element": "NEUTRAL",
+            "damageFactor": 1,
+            "reverse": false,
+            "spFactor": 0,
+            "stunSteps": [],
+            "hints": [
+              "NO_PUZZLE"
+            ],
+            "guardable": "NEVER",
+            "skillBonus": "MELEE_DMG",
+            "limiter": "NO_DAMAGE"
+          },
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "duration": -1,
+          "align": "CENTER",
+          "rotateFace": 0,
+          "flipLeftFace": false,
+          "wait": false,
+          "waitSkip": 0,
+          "actionDetached": false,
+          "target2": "PROXY_SRC",
+          "target2Align": "CENTER",
+          "target2Key": "",
+          "target2Offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "fixPos": false,
+          "type": "SHOW_EFFECT",
+          "effect": {
+            "sheet": "prd.super-meat",
+            "name": "clockTether"
+          },
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "name": "loop",
+          "type": "LABEL"
+        },
+        {
+          "target": "PROXY_SRC",
+          "distance": 112,
+          "duration": 5,
+          "ccw": false,
+          "rotateTime": 4.0,
+          "distAdjustSpeed": 64,
+          "zDistance": 0,
+          "waitTargetAlign": false,
+          "collision": false,
+          "type": "STICKY_CIRCLE_AROUND"
+        },
+        {
+          "name": "loop",
+          "type": "GOTO_LABEL"
+        }
+      ],
+      "invisible": false,
+      "hp": 0,
+      "stickToSource": "NONE",
+      "stickFaceAlign": false,
+      "group": "",
+      "size": {
+        "x": 8,
+        "y": 8,
+        "z": 0
+      },
+      "config": {
+        "collType": "NONE",
+        "zGravityFactor": 0,
+        "shadow": 96
+      },
+      "type": "GENERIC"
+    },
+    "clockController4": {
+      "animation": {
+        "name": "default",
+        "sheet": {
+          "src": "media/entity/effects/prd-blank32x32.png",
+          "offX": 0,
+          "offY": 0,
+          "width": 32,
+          "height": 32
+        },
+        "time": 0.05,
+        "repeat": false,
+        "frames": [
+          0
+        ]
+      },
+      "copyOwnerAnims": false,
+      "breakType": "NEVER",
+      "action": [
+        {
+          "posType": "TARGET",
+          "align": "CENTER",
+          "type": "SET_HIT_PROXY",
+          "proxy": "deathMarker",
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "duration": -1,
+          "align": "BOTTOM",
+          "rotateFace": 8,
+          "flipLeftFace": true,
+          "wait": false,
+          "waitSkip": 0,
+          "actionDetached": false,
+          "fixPos": false,
+          "type": "SHOW_EFFECT",
+          "effect": {
+            "sheet": "prd.super-meat",
+            "name": "neutralSawSmallGUI"
+          }
+        },
+        {
+          "align": "BOTTOM",
+          "radius": 20,
+          "yScale": 0,
+          "zHeight": 16,
+          "centralAngle": 0,
+          "duration": 0.8,
+          "expandRadius": 0,
+          "alwaysFull": true,
+          "clockwise": false,
+          "flipLeftFace": 0,
+          "rectangular": false,
+          "repeat": true,
+          "uniformHitDir": true,
+          "fixPos": false,
+          "checkCollision": true,
+          "type": "CIRCLE_ATTACK",
+          "attack": {
+            "type": "BREAK",
+            "element": "NEUTRAL",
+            "damageFactor": 1,
+            "reverse": false,
+            "spFactor": 0,
+            "stunSteps": [],
+            "hints": [
+              "NO_PUZZLE"
+            ],
+            "guardable": "NEVER",
+            "skillBonus": "MELEE_DMG",
+            "limiter": "NO_DAMAGE"
+          },
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "align": "CENTER",
+          "centralAngle": 1,
+          "startAngle": 0,
+          "angleVary": 0,
+          "startDist": 56,
+          "startDistCollide": "NONE",
+          "random": false,
+          "duration": 0,
+          "clockwise": false,
+          "flipLeftFace": 0,
+          "circularArea": false,
+          "uniformDir": 0,
+          "delay": 0,
+          "repeat": false,
+          "count": 2,
+          "type": "SHOOT_PROXY_RANGE",
+          "proxy": "clockOrbiterSmallCloseRev",
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "time": 0.8,
+          "type": "WAIT"
+        },
+        {
+          "time": -1,
+          "type": "WAIT"
+        }
+      ],
+      "invisible": false,
+      "hp": 0,
+      "stickToSource": "NONE",
+      "stickFaceAlign": false,
+      "group": "",
+      "size": {
+        "x": 8,
+        "y": 8,
+        "z": 0
+      },
+      "config": {
+        "collType": "NONE",
+        "zGravityFactor": 0,
+        "shadow": 48
+      },
+      "type": "GENERIC"
+    },
+    "clockOrbiterSmallCloseRev": {
+      "animation": {
+        "name": "default",
+        "sheet": {
+          "src": "media/entity/effects/prd-blank32x32.png",
+          "offX": 0,
+          "offY": 0,
+          "width": 32,
+          "height": 32
+        },
+        "time": 0.05,
+        "repeat": false,
+        "frames": [
+          0
+        ]
+      },
+      "copyOwnerAnims": false,
+      "breakType": "NEVER",
+      "action": [
+        {
+          "posType": "TARGET",
+          "align": "CENTER",
+          "type": "SET_HIT_PROXY",
+          "proxy": "deathMarker",
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "duration": -1,
+          "align": "BOTTOM",
+          "rotateFace": 8,
+          "flipLeftFace": true,
+          "wait": false,
+          "waitSkip": 0,
+          "actionDetached": false,
+          "fixPos": false,
+          "type": "SHOW_EFFECT",
+          "effect": {
+            "sheet": "prd.super-meat",
+            "name": "neutralSawSmallGUI"
+          }
+        },
+        {
+          "align": "BOTTOM",
+          "radius": 20,
+          "yScale": 0,
+          "zHeight": 16,
+          "centralAngle": 0,
+          "duration": 0.8,
+          "expandRadius": 0,
+          "alwaysFull": true,
+          "clockwise": false,
+          "flipLeftFace": 0,
+          "rectangular": false,
+          "repeat": true,
+          "uniformHitDir": true,
+          "fixPos": false,
+          "checkCollision": true,
+          "type": "CIRCLE_ATTACK",
+          "attack": {
+            "type": "BREAK",
+            "element": "NEUTRAL",
+            "damageFactor": 1,
+            "reverse": false,
+            "spFactor": 0,
+            "stunSteps": [],
+            "hints": [
+              "NO_PUZZLE"
+            ],
+            "guardable": "NEVER",
+            "skillBonus": "MELEE_DMG",
+            "limiter": "NO_DAMAGE"
+          },
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "duration": -1,
+          "align": "CENTER",
+          "rotateFace": 0,
+          "flipLeftFace": false,
+          "wait": false,
+          "waitSkip": 0,
+          "actionDetached": false,
+          "target2": "PROXY_SRC",
+          "target2Align": "CENTER",
+          "target2Key": "",
+          "target2Offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "fixPos": false,
+          "type": "SHOW_EFFECT",
+          "effect": {
+            "sheet": "prd.super-meat",
+            "name": "clockTetherGUI"
+          },
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "name": "loop",
+          "type": "LABEL"
+        },
+        {
+          "target": "PROXY_SRC",
+          "distance": 56,
+          "duration": 5,
+          "ccw": false,
+          "rotateTime": 3,
+          "distAdjustSpeed": 64,
+          "zDistance": 0,
+          "waitTargetAlign": false,
+          "collision": false,
+          "type": "STICKY_CIRCLE_AROUND"
+        },
+        {
+          "name": "loop",
+          "type": "GOTO_LABEL"
+        }
+      ],
+      "invisible": false,
+      "hp": 0,
+      "stickToSource": "NONE",
+      "stickFaceAlign": false,
+      "group": "",
+      "size": {
+        "x": 8,
+        "y": 8,
+        "z": 0
+      },
+      "config": {
+        "collType": "NONE",
+        "zGravityFactor": 0,
+        "shadow": 48
+      },
+      "type": "GENERIC"
+    },
+    "clockController5": {
+      "animation": {
+        "name": "default",
+        "sheet": {
+          "src": "media/entity/effects/prd-blank32x32.png",
+          "offX": 0,
+          "offY": 0,
+          "width": 32,
+          "height": 32
+        },
+        "time": 0.05,
+        "repeat": false,
+        "frames": [
+          0
+        ]
+      },
+      "copyOwnerAnims": false,
+      "breakType": "NEVER",
+      "action": [
+        {
+          "posType": "TARGET",
+          "align": "CENTER",
+          "type": "SET_HIT_PROXY",
+          "proxy": "deathMarker",
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "duration": -1,
+          "align": "BOTTOM",
+          "rotateFace": 8,
+          "flipLeftFace": true,
+          "wait": false,
+          "waitSkip": 0,
+          "actionDetached": false,
+          "fixPos": false,
+          "type": "SHOW_EFFECT",
+          "effect": {
+            "sheet": "prd.super-meat",
+            "name": "neutralSawSmallGUI"
+          }
+        },
+        {
+          "align": "BOTTOM",
+          "radius": 20,
+          "yScale": 0,
+          "zHeight": 16,
+          "centralAngle": 0,
+          "duration": 0.8,
+          "expandRadius": 0,
+          "alwaysFull": true,
+          "clockwise": false,
+          "flipLeftFace": 0,
+          "rectangular": false,
+          "repeat": true,
+          "uniformHitDir": true,
+          "fixPos": false,
+          "checkCollision": true,
+          "type": "CIRCLE_ATTACK",
+          "attack": {
+            "type": "BREAK",
+            "element": "NEUTRAL",
+            "damageFactor": 1,
+            "reverse": false,
+            "spFactor": 0,
+            "stunSteps": [],
+            "hints": [
+              "NO_PUZZLE"
+            ],
+            "guardable": "NEVER",
+            "skillBonus": "MELEE_DMG",
+            "limiter": "NO_DAMAGE"
+          },
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "align": "CENTER",
+          "centralAngle": 1,
+          "startAngle": 0,
+          "angleVary": 0,
+          "startDist": 112,
+          "startDistCollide": "NONE",
+          "random": false,
+          "duration": 0,
+          "clockwise": false,
+          "flipLeftFace": 0,
+          "circularArea": false,
+          "uniformDir": 0,
+          "delay": 0,
+          "repeat": false,
+          "count": 3,
+          "type": "SHOOT_PROXY_RANGE",
+          "proxy": "clockOrbiterSmallMedRevGUI",
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "time": 0.8,
+          "type": "WAIT"
+        },
+        {
+          "time": -1,
+          "type": "WAIT"
+        }
+      ],
+      "invisible": false,
+      "hp": 0,
+      "stickToSource": "NONE",
+      "stickFaceAlign": false,
+      "group": "",
+      "size": {
+        "x": 8,
+        "y": 8,
+        "z": 0
+      },
+      "config": {
+        "collType": "NONE",
+        "zGravityFactor": 0,
+        "shadow": 48
+      },
+      "type": "GENERIC"
+    },
+    "clockOrbiterSmallMedRevGUI": {
+      "animation": {
+        "name": "default",
+        "sheet": {
+          "src": "media/entity/effects/prd-blank32x32.png",
+          "offX": 0,
+          "offY": 0,
+          "width": 32,
+          "height": 32
+        },
+        "time": 0.05,
+        "repeat": false,
+        "frames": [
+          0
+        ]
+      },
+      "copyOwnerAnims": false,
+      "breakType": "NEVER",
+      "action": [
+        {
+          "posType": "TARGET",
+          "align": "CENTER",
+          "type": "SET_HIT_PROXY",
+          "proxy": "deathMarker",
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "duration": -1,
+          "align": "BOTTOM",
+          "rotateFace": 8,
+          "flipLeftFace": true,
+          "wait": false,
+          "waitSkip": 0,
+          "actionDetached": false,
+          "fixPos": false,
+          "type": "SHOW_EFFECT",
+          "effect": {
+            "sheet": "prd.super-meat",
+            "name": "neutralSawSmallGUI"
+          }
+        },
+        {
+          "align": "BOTTOM",
+          "radius": 20,
+          "yScale": 0,
+          "zHeight": 16,
+          "centralAngle": 0,
+          "duration": 0.8,
+          "expandRadius": 0,
+          "alwaysFull": true,
+          "clockwise": false,
+          "flipLeftFace": 0,
+          "rectangular": false,
+          "repeat": true,
+          "uniformHitDir": true,
+          "fixPos": false,
+          "checkCollision": true,
+          "type": "CIRCLE_ATTACK",
+          "attack": {
+            "type": "BREAK",
+            "element": "NEUTRAL",
+            "damageFactor": 1,
+            "reverse": false,
+            "spFactor": 0,
+            "stunSteps": [],
+            "hints": [
+              "NO_PUZZLE"
+            ],
+            "guardable": "NEVER",
+            "skillBonus": "MELEE_DMG",
+            "limiter": "NO_DAMAGE"
+          },
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "duration": -1,
+          "align": "CENTER",
+          "rotateFace": 0,
+          "flipLeftFace": false,
+          "wait": false,
+          "waitSkip": 0,
+          "actionDetached": false,
+          "target2": "PROXY_SRC",
+          "target2Align": "CENTER",
+          "target2Key": "",
+          "target2Offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "fixPos": false,
+          "type": "SHOW_EFFECT",
+          "effect": {
+            "sheet": "prd.super-meat",
+            "name": "clockTetherGUI"
+          },
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "name": "loop",
+          "type": "LABEL"
+        },
+        {
+          "target": "PROXY_SRC",
+          "distance": 112,
+          "duration": 5,
+          "ccw": false,
+          "rotateTime": 4,
+          "distAdjustSpeed": 64,
+          "zDistance": 0,
+          "waitTargetAlign": false,
+          "collision": false,
+          "type": "STICKY_CIRCLE_AROUND"
+        },
+        {
+          "name": "loop",
+          "type": "GOTO_LABEL"
+        }
+      ],
+      "invisible": false,
+      "hp": 0,
+      "stickToSource": "NONE",
+      "stickFaceAlign": false,
+      "group": "",
+      "size": {
+        "x": 8,
+        "y": 8,
+        "z": 0
+      },
+      "config": {
+        "collType": "NONE",
+        "zGravityFactor": 0,
+        "shadow": 48
+      },
+      "type": "GENERIC"
+    },
+    "shootController1": {
+      "animation": {
+        "name": "default",
+        "sheet": {
+          "src": "media/entity/effects/prd-blank32x32.png",
+          "offX": 0,
+          "offY": 0,
+          "width": 32,
+          "height": 32
+        },
+        "time": 0.05,
+        "repeat": false,
+        "frames": [
+          0
+        ]
+      },
+      "copyOwnerAnims": false,
+      "breakType": "NEVER",
+      "action": [
+      	{
+          "name": "loop",
+          "type": "LABEL"
+        },
+        {
+          "align": "CENTER",
+          "centralAngle": 0,
+          "angleVary": 0,
+          "startDist": 0,
+          "startDistCollide": "NONE",
+          "random": false,
+          "duration": 0,
+          "clockwise": false,
+          "flipLeftFace": 0,
+          "circularArea": false,
+          "uniformDir": 0,
+          "delay": 0,
+          "repeat": false,
+          "count": 1,
+          "type": "SHOOT_PROXY_RANGE",
+          "proxy": "sawBulletSmall",
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "time": 1.0,
+          "type": "WAIT"
+        },
+        {
+          "duration": 0,
+          "align": "CENTER",
+          "rotateFace": -1,
+          "flipLeftFace": false,
+          "wait": false,
+          "waitSkip": 0,
+          "actionDetached": false,
+          "fixPos": false,
+          "type": "SHOW_EFFECT",
+          "effect": {
+            "sheet": "prd.super-meat",
+            "name": "sawBulletCharge"
+          },
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "time": 0.5,
+          "type": "WAIT"
+        },
+        {
+          "name": "loop",
+          "type": "GOTO_LABEL"
+        }
+      ],
+      "invisible": false,
+      "hp": 0,
+      "stickToSource": "NONE",
+      "stickFaceAlign": false,
+      "group": "",
+      "size": {
+        "x": 8,
+        "y": 8,
+        "z": 0
+      },
+      "config": {
+        "collType": "NONE",
+        "zGravityFactor": 0,
+        "shadow": 0
+      },
+      "type": "GENERIC"
+    },
+    "sawBulletSmall": {
+      "animation": {
+        "name": "default",
+        "sheet": {
+          "src": "media/entity/effects/prd-blank32x32.png",
+          "offX": 0,
+          "offY": 0,
+          "width": 32,
+          "height": 32
+        },
+        "time": 0.05,
+        "repeat": false,
+        "frames": [
+          0
+        ]
+      },
+      "killEffect": {
+        "sheet": "prd.super-meat",
+        "name": "neutralSawDeathSmall"
+      },
+      "copyOwnerAnims": false,
+      "breakType": "NEVER",
+      "action": [
+        {
+          "posType": "TARGET",
+          "align": "CENTER",
+          "type": "SET_HIT_PROXY",
+          "proxy": "deathMarker",
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "duration": -1,
+          "align": "BOTTOM",
+          "rotateFace": 8,
+          "flipLeftFace": true,
+          "wait": false,
+          "waitSkip": 0,
+          "actionDetached": false,
+          "fixPos": false,
+          "type": "SHOW_EFFECT",
+          "effect": {
+            "sheet": "prd.super-meat",
+            "name": "neutralSawSmallGUI"
+          }
+        },
+        {
+          "align": "BOTTOM",
+          "radius": 20,
+          "yScale": 0,
+          "zHeight": 16,
+          "centralAngle": 0,
+          "duration": 0.8,
+          "expandRadius": 0,
+          "alwaysFull": true,
+          "clockwise": false,
+          "flipLeftFace": 0,
+          "rectangular": false,
+          "repeat": true,
+          "uniformHitDir": true,
+          "fixPos": false,
+          "checkCollision": true,
+          "type": "CIRCLE_ATTACK",
+          "attack": {
+            "type": "BREAK",
+            "element": "NEUTRAL",
+            "damageFactor": 1,
+            "reverse": false,
+            "spFactor": 0,
+            "stunSteps": [],
+            "hints": [
+              "NO_PUZZLE"
+            ],
+            "guardable": "NEVER",
+            "skillBonus": "MELEE_DMG",
+            "limiter": "NO_DAMAGE"
+          },
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          }
+        },
+        {
+          "value": 200,
+          "type": "SET_SPEED"
+        },
+        {
+          "time": 10,
+          "stopBeforeEdge": false,
+          "collideCancel": 1,
+          "type": "MOVE_FORWARD"
+        }
+      ],
+      "invisible": false,
+      "hp": 0,
+      "stickToSource": "NONE",
+      "stickFaceAlign": false,
+      "group": "",
+      "size": {
+        "x": 20,
+        "y": 20,
+        "z": 0
+      },
+      "config": {
+        "collType": "PROJECTILE",
+        "zGravityFactor": 0,
+        "shadow": 48
+      },
+      "type": "GENERIC"
+    }
+  },
+  "actions": {
+    "Idle": [
+      {
+        "time": 10,
+        "type": "WAIT"
+      }
+    ],
+    "InitAction": [
+      {
+        "withElse": false,
+        "type": "IF",
+        "condition": "entity.attrib.behavior == \"STATIONARY_SMALL\"",
+        "thenStep": [
+          {
+            "align": "BOTTOM",
+            "type": "SHOOT_PROXY",
+            "proxy": "sawStationarySmall",
+            "offset": {
+              "x": 0,
+              "y": 0,
+              "z": 12
+            }
+          }
+        ]
+      },
+      {
+        "withElse": false,
+        "type": "IF",
+        "condition": "entity.attrib.behavior == \"STATIONARY_MED\"",
+        "thenStep": [
+          {
+            "align": "BOTTOM",
+            "type": "SHOOT_PROXY",
+            "proxy": "sawStationaryMed",
+            "offset": {
+              "x": 0,
+              "y": 0,
+              "z": 12
+            }
+          }
+        ]
+      },
+      {
+        "withElse": false,
+        "type": "IF",
+        "condition": "entity.attrib.behavior == \"STATIONARY_LARGE\"",
+        "thenStep": [
+          {
+            "align": "BOTTOM",
+            "type": "SHOOT_PROXY",
+            "proxy": "sawStationaryLarge",
+            "offset": {
+              "x": 0,
+              "y": 0,
+              "z": 12
+            }
+          }
+        ]
+      },
+      {
+        "withElse": false,
+        "type": "IF",
+        "condition": "entity.attrib.behavior == \"FIXED_SMALL\"",
+        "thenStep": [
+          {
+            "align": "BOTTOM",
+            "type": "SHOOT_PROXY",
+            "proxy": "sawFixedSmall",
+            "offset": {
+              "x": 0,
+              "y": 0,
+              "z": 12
+            }
+          }
+        ]
+      },
+      {
+        "withElse": false,
+        "type": "IF",
+        "condition": "entity.attrib.behavior == \"FIXED_MED\"",
+        "thenStep": [
+          {
+            "align": "BOTTOM",
+            "type": "SHOOT_PROXY",
+            "proxy": "sawFixedMed",
+            "offset": {
+              "x": 0,
+              "y": 0,
+              "z": 12
+            }
+          }
+        ]
+      },
+      {
+        "withElse": false,
+        "type": "IF",
+        "condition": "entity.attrib.behavior == \"FIXED_MED_GUI\"",
+        "thenStep": [
+          {
+            "align": "BOTTOM",
+            "type": "SHOOT_PROXY",
+            "proxy": "sawFixedMedGUI",
+            "offset": {
+              "x": 0,
+              "y": 0,
+              "z": 12
+            }
+          }
+        ]
+      },
+      {
+        "withElse": false,
+        "type": "IF",
+        "condition": "entity.attrib.behavior == \"FIXED_LARGE\"",
+        "thenStep": [
+          {
+            "align": "BOTTOM",
+            "type": "SHOOT_PROXY",
+            "proxy": "sawFixedLarge",
+            "offset": {
+              "x": 0,
+              "y": 0,
+              "z": 12
+            }
+          }
+        ]
+      },
+      {
+        "withElse": false,
+        "type": "IF",
+        "condition": "entity.attrib.behavior == \"PACER_SMALL_SHORT\"",
+        "thenStep": [
+          {
+            "align": "BOTTOM",
+            "type": "SHOOT_PROXY",
+            "proxy": "sawPacerSmallShort",
+            "offset": {
+              "x": 0,
+              "y": 0,
+              "z": 12
+            }
+          }
+        ]
+      },
+      {
+        "withElse": false,
+        "type": "IF",
+        "condition": "entity.attrib.behavior == \"PACER_SMALL_MED\"",
+        "thenStep": [
+          {
+            "align": "BOTTOM",
+            "type": "SHOOT_PROXY",
+            "proxy": "sawPacerSmallMed",
+            "offset": {
+              "x": 0,
+              "y": 0,
+              "z": 12
+            }
+          }
+        ]
+      },
+      {
+        "withElse": false,
+        "type": "IF",
+        "condition": "entity.attrib.behavior == \"CLOCK_VAR1\"",
+        "thenStep": [
+          {
+            "align": "BOTTOM",
+            "type": "SHOOT_PROXY",
+            "proxy": "clockController1",
+            "offset": {
+              "x": 0,
+              "y": 0,
+              "z": 12
+            }
+          }
+        ]
+      },
+      {
+        "withElse": false,
+        "type": "IF",
+        "condition": "entity.attrib.behavior == \"CLOCK_VAR2\"",
+        "thenStep": [
+          {
+            "align": "BOTTOM",
+            "type": "SHOOT_PROXY",
+            "proxy": "clockController2",
+            "offset": {
+              "x": 0,
+              "y": 0,
+              "z": 12
+            }
+          }
+        ]
+      },
+      {
+        "withElse": false,
+        "type": "IF",
+        "condition": "entity.attrib.behavior == \"CLOCK_VAR3\"",
+        "thenStep": [
+          {
+            "align": "BOTTOM",
+            "type": "SHOOT_PROXY",
+            "proxy": "clockController3",
+            "offset": {
+              "x": 0,
+              "y": 0,
+              "z": 12
+            }
+          }
+        ]
+      },
+      {
+        "withElse": false,
+        "type": "IF",
+        "condition": "entity.attrib.behavior == \"CLOCK_VAR4\"",
+        "thenStep": [
+          {
+            "align": "BOTTOM",
+            "type": "SHOOT_PROXY",
+            "proxy": "clockController4",
+            "offset": {
+              "x": 0,
+              "y": 0,
+              "z": 12
+            }
+          }
+        ]
+      },
+      {
+        "withElse": false,
+        "type": "IF",
+        "condition": "entity.attrib.behavior == \"CLOCK_VAR5\"",
+        "thenStep": [
+          {
+            "align": "BOTTOM",
+            "type": "SHOOT_PROXY",
+            "proxy": "clockController5",
+            "offset": {
+              "x": 0,
+              "y": 0,
+              "z": 12
+            }
+          }
+        ]
+      },
+      {
+        "withElse": false,
+        "type": "IF",
+        "condition": "entity.attrib.behavior == \"SHOOTER_VAR1A\"",
+        "thenStep": [
+          {
+            "align": "BOTTOM",
+            "type": "SHOOT_PROXY",
+            "proxy": "shootController1",
+            "offset": {
+              "x": 0,
+              "y": 0,
+              "z": 12
+            }
+          }
+        ]
+      },
+      {
+        "withElse": false,
+        "type": "IF",
+        "condition": "entity.attrib.behavior == \"SHOOTER_VAR1B\"",
+        "thenStep": [
+          {
+	        "time": 0.75,
+	        "type": "WAIT"
+	      },
+          {
+            "align": "BOTTOM",
+            "type": "SHOOT_PROXY",
+            "proxy": "shootController1",
+            "offset": {
+              "x": 0,
+              "y": 0,
+              "z": 12
+            }
+          }
+        ]
+      },
+      {
+        "time": 0.8,
+        "type": "WAIT"
+      },
+      {
+        "type": "SET_ATTRIB_BOOL",
+        "name": "init-done",
+        "value": true
+      }
+    ]
+  },
+  "reactions": {},
+  "meta": {
+    "species": {
+      "en_US": "Saw"
+    },
+    "category": "MECHA",
+    "descriptions": [
+      {
+        "text": {
+          "en_US": "Sawblades from the \\c[3]Super Meat\\c[0] trial by XenonA7."
+        },
+        "condition": ""
+      }
+    ]
+  }
+}

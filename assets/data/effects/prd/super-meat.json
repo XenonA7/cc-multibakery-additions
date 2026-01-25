@@ -1,0 +1,1122 @@
+{
+  "DOCTYPE": "EFFECT",
+  "ANIMS": {
+    "SUB": [
+      {
+        "name": "SWEEP_NEUTRAL",
+        "sheet": {
+          "src": "media/entity/effects/sweep2.png",
+          "width": 32,
+          "height": 32
+        },
+        "guiSprites": false,
+        "time": 0.04,
+        "repeat": false,
+        "pivot": {
+          "x": 16,
+          "y": 16
+        },
+        "frames": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "name": "SWEEP_NEUTRAL_GUI",
+        "sheet": {
+          "src": "media/entity/effects/sweep2.png",
+          "width": 32,
+          "height": 32
+        },
+        "guiSprites": true,
+        "time": 0.04,
+        "repeat": false,
+        "pivot": {
+          "x": 16,
+          "y": 16
+        },
+        "frames": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "name": "SWEEP_NEUTRAL_STATIC",
+        "sheet": {
+          "src": "media/entity/effects/sweep2.png",
+          "width": 32,
+          "height": 32
+        },
+        "guiSprites": false,
+        "time": 0.04,
+        "repeat": false,
+        "pivot": {
+          "x": 16,
+          "y": 16
+        },
+        "frames": [
+          2
+        ]
+      },
+      {
+        "name": "CIRCLE_BIG",
+        "sheet": {
+          "src": "media/entity/effects/lighter-particle.png",
+          "offX": 0,
+          "offY": 0,
+          "width": 48,
+          "height": 48
+        },
+        "guiSprites": true,
+        "renderMode": "lighter",
+        "time": 0.4,
+        "frames": [
+          0
+        ]
+      },
+      {
+        "name": "RHOMBUS_BLINK_QUICK",
+        "sheet": {
+          "src": "media/entity/effects/particles1.png",
+          "width": 8,
+          "height": 8,
+          "offY": 24,
+          "offX": 16
+        },
+        "guiSprites": true,
+        "time": 0.03,
+        "repeat": false,
+        "frames": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "name": "EXPLOSION_SMALL",
+        "sheet": {
+          "src": "media/entity/effects/explosion-round.png",
+          "xCount": 6,
+          "offX": 96,
+          "offY": 48,
+          "width": 24,
+          "height": 24
+        },
+        "time": 0.04,
+        "repeat": false,
+        "frames": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "name": "INSTANT_DEBRIS",
+        "sheet": {
+          "src": "media/entity/effects/particles1.png",
+          "offX": 120,
+          "offY": 16,
+          "width": 8,
+          "height": 8
+        },
+        "centerPivot": false,
+        "time": 0.025,
+        "repeat": true,
+        "frames": [
+          0
+        ]
+      },
+      {
+        "name": "INSTANT_DEBRIS_FADE",
+        "sheet": {
+          "src": "media/entity/effects/particles1.png",
+          "offX": 120,
+          "offY": 16,
+          "width": 8,
+          "height": 8
+        },
+        "centerPivot": false,
+        "time": 0.05,
+        "repeat": false,
+        "frames": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "name": "NEUTRAL_BIG_CIRCLE",
+        "sheet": {
+          "src": "media/entity/effects/lighter-particle-big.png",
+          "offX": 0,
+          "offY": 0,
+          "width": 96,
+          "height": 96
+        },
+        "guiSprites": false,
+        "renderMode": "lighter",
+        "time": 0.4,
+        "frames": [
+          0
+        ]
+      },
+      {
+        "name": "NEUTRAL_BIG_CIRCLE_GUI",
+        "sheet": {
+          "src": "media/entity/effects/lighter-particle-big.png",
+          "offX": 0,
+          "offY": 0,
+          "width": 96,
+          "height": 96
+        },
+        "guiSprites": false,
+        "renderMode": "lighter",
+        "time": 0.4,
+        "frames": [
+          0
+        ]
+      }
+    ]
+  },
+  "EFFECTS": {
+    "neutralSawSmall": [
+      {
+        "volume": 0.7,
+        "global": false,
+        "loop": true,
+        "radius": 150,
+        "speed": 3.5,
+        "sound": "media/sound/battle/enemies/hedgehog/hedgehog-spin-loop.ogg",
+        "type": "PLAY_SOUND"
+      },
+      {
+        "size": "XL",
+        "fadeIn": 0,
+        "fadeOut": 0.1,
+        "duration": 0.5,
+        "glow": false,
+        "type": "LIGHT"
+      },
+      {
+        "type": "LOOP_START"
+      },
+      {
+        "numParticles": 12,
+        "duration": 0.17,
+        "clockwise": false,
+        "centralAngle": 1,
+        "startAngle": -0.25,
+        "startDist": 4,
+        "particleRotate": true,
+        "offset": {
+          "x": 0,
+          "y": 8,
+          "z": 8
+        },
+        "rotOffset": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "pScale": {
+          "init": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "moveDist": 0,
+        "keySpline": "EASE",
+        "collision": false,
+        "moveWithTarget": 1,
+        "cancelable": true,
+        "anim": "SWEEP_NEUTRAL",
+        "type": "OFFSET_PARTICLE_CIRCLE"
+      },
+      {
+        "time": 0.17,
+        "type": "WAIT"
+      },
+      {
+        "type": "LOOP_END"
+      },
+      {
+        "type": "STOP_SOUNDS"
+      }
+    ],
+    "neutralSawSmallGUI": [
+      {
+        "volume": 0.7,
+        "global": false,
+        "loop": true,
+        "radius": 150,
+        "speed": 3.5,
+        "sound": "media/sound/battle/enemies/hedgehog/hedgehog-spin-loop.ogg",
+        "type": "PLAY_SOUND"
+      },
+      {
+        "size": "XL",
+        "fadeIn": 0,
+        "fadeOut": 0.1,
+        "duration": 0.5,
+        "glow": false,
+        "type": "LIGHT"
+      },
+      {
+        "type": "LOOP_START"
+      },
+      {
+        "numParticles": 12,
+        "duration": 0.17,
+        "clockwise": false,
+        "centralAngle": 1,
+        "startAngle": -0.25,
+        "startDist": 4,
+        "particleRotate": true,
+        "offset": {
+          "x": 0,
+          "y": 8,
+          "z": 8
+        },
+        "rotOffset": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "pScale": {
+          "init": {
+            "x": 1,
+            "y": 1
+          }
+        },
+        "moveDist": 0,
+        "keySpline": "EASE",
+        "collision": false,
+        "moveWithTarget": 1,
+        "cancelable": true,
+        "anim": "SWEEP_NEUTRAL_GUI",
+        "type": "OFFSET_PARTICLE_CIRCLE"
+      },
+      {
+        "time": 0.17,
+        "type": "WAIT"
+      },
+      {
+        "type": "LOOP_END"
+      },
+      {
+        "type": "STOP_SOUNDS"
+      }
+    ],
+    "neutralSawMed": [
+      {
+        "volume": 0.7,
+        "global": false,
+        "loop": true,
+        "radius": 250,
+        "speed": 3.3,
+        "sound": "media/sound/battle/enemies/hedgehog/hedgehog-spin-loop.ogg",
+        "type": "PLAY_SOUND"
+      },
+      {
+        "size": "XL",
+        "fadeIn": 0,
+        "fadeOut": 0.1,
+        "duration": 0.5,
+        "glow": false,
+        "type": "LIGHT"
+      },
+      {
+        "type": "LOOP_START"
+      },
+      {
+        "numParticles": 12,
+        "duration": 0.17,
+        "clockwise": false,
+        "centralAngle": 1,
+        "startAngle": -0.25,
+        "startDist": 8,
+        "particleRotate": true,
+        "offset": {
+          "x": 0,
+          "y": 8,
+          "z": 8
+        },
+        "rotOffset": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "pScale": {
+          "init": {
+            "x": 2,
+            "y": 2
+          }
+        },
+        "moveDist": 0,
+        "keySpline": "EASE",
+        "collision": false,
+        "moveWithTarget": 1,
+        "cancelable": true,
+        "anim": "SWEEP_NEUTRAL",
+        "type": "OFFSET_PARTICLE_CIRCLE"
+      },
+      {
+        "time": 0.17,
+        "type": "WAIT"
+      },
+      {
+        "type": "LOOP_END"
+      },
+      {
+        "type": "STOP_SOUNDS"
+      }
+    ],
+    "neutralSawMedGUI": [
+      {
+        "volume": 0.7,
+        "global": false,
+        "loop": true,
+        "radius": 250,
+        "speed": 3.3,
+        "sound": "media/sound/battle/enemies/hedgehog/hedgehog-spin-loop.ogg",
+        "type": "PLAY_SOUND"
+      },
+      {
+        "size": "XL",
+        "fadeIn": 0,
+        "fadeOut": 0.1,
+        "duration": 0.5,
+        "glow": false,
+        "type": "LIGHT"
+      },
+      {
+        "type": "LOOP_START"
+      },
+      {
+        "numParticles": 12,
+        "duration": 0.17,
+        "clockwise": false,
+        "centralAngle": 1,
+        "startAngle": -0.25,
+        "startDist": 8,
+        "particleRotate": true,
+        "offset": {
+          "x": 0,
+          "y": 8,
+          "z": 8
+        },
+        "rotOffset": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "pScale": {
+          "init": {
+            "x": 2,
+            "y": 2
+          }
+        },
+        "moveDist": 0,
+        "keySpline": "EASE",
+        "collision": false,
+        "moveWithTarget": 1,
+        "cancelable": true,
+        "anim": "SWEEP_NEUTRAL_GUI",
+        "type": "OFFSET_PARTICLE_CIRCLE"
+      },
+      {
+        "time": 0.17,
+        "type": "WAIT"
+      },
+      {
+        "type": "LOOP_END"
+      },
+      {
+        "type": "STOP_SOUNDS"
+      }
+    ],
+    "neutralSawLarge": [
+      {
+        "volume": 0.7,
+        "global": false,
+        "loop": true,
+        "radius": 350,
+        "speed": 3.2,
+        "sound": "media/sound/battle/enemies/hedgehog/hedgehog-spin-loop.ogg",
+        "type": "PLAY_SOUND"
+      },
+      {
+        "size": "XXL",
+        "fadeIn": 0,
+        "fadeOut": 0.1,
+        "duration": 0.5,
+        "glow": false,
+        "type": "LIGHT"
+      },
+      {
+        "type": "LOOP_START"
+      },
+      {
+        "numParticles": 12,
+        "duration": 0.17,
+        "clockwise": false,
+        "centralAngle": 1,
+        "startAngle": -0.25,
+        "startDist": 12,
+        "particleRotate": true,
+        "offset": {
+          "x": 0,
+          "y": 8,
+          "z": 8
+        },
+        "rotOffset": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "pScale": {
+          "init": {
+            "x": 3,
+            "y": 3
+          }
+        },
+        "moveDist": 0,
+        "keySpline": "EASE",
+        "collision": false,
+        "moveWithTarget": 1,
+        "cancelable": true,
+        "anim": "SWEEP_NEUTRAL",
+        "type": "OFFSET_PARTICLE_CIRCLE"
+      },
+      {
+        "time": 0.17,
+        "type": "WAIT"
+      },
+      {
+        "type": "LOOP_END"
+      },
+      {
+        "type": "STOP_SOUNDS"
+      }
+    ],
+    "deathAura": [
+      {
+        "color": "#ff1100",
+        "maxAlpha": 0.5,
+        "minAlpha": 0.2,
+        "blinkDuration": 0.05,
+        "blinkCount": -1,
+        "noLighter": false,
+        "type": "BLINK_COLOR"
+      },
+      {
+        "color": "#260300",
+        "fadeIn": 0.2,
+        "fadeOut": 0.1,
+        "duration": -1,
+        "type": "SCREEN_FLASH"
+      },
+      {
+        "global": false,
+        "loop": false,
+        "speed": 1.25,
+        "sounds": [
+          {
+            "sound": "media/sound/battle/airon/close-combat-hit-hard1.ogg",
+            "volume": 1.1,
+            "variance": 0.1
+          },
+          {
+            "sound": "media/sound/battle/airon/close-combat-hit-hard2.ogg",
+            "volume": 1.1,
+            "variance": 0.1
+          },
+          {
+            "sound": "media/sound/battle/airon/close-combat-hit-hard3.ogg",
+            "volume": 1.1,
+            "variance": 0.1
+          },
+          {
+            "sound": "media/sound/battle/airon/close-combat-hit-hard4.ogg",
+            "volume": 1.1,
+            "variance": 0.1
+          }
+        ],
+        "type": "PLAY_RANDOM_SOUND"
+      },
+      {
+        "type": "LOOP_START"
+      },
+      {
+        "relative": false,
+        "duration": 0.05,
+        "keySpline": "EASE_OUT",
+        "start": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "end": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "type": "MOVE_OFFSET"
+      },
+      {
+        "time": 0.05,
+        "type": "WAIT"
+      },
+      {
+        "relative": false,
+        "duration": 0.05,
+        "keySpline": "EASE_OUT",
+        "start": {
+          "x": 1,
+          "y": 0,
+          "z": 0
+        },
+        "end": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "type": "MOVE_OFFSET"
+      },
+      {
+        "time": 0.05,
+        "type": "WAIT"
+      },
+      {
+        "type": "LOOP_END"
+      }
+    ],
+    "deathExplode": [
+      {
+        "volume": 0.7,
+        "global": false,
+        "loop": false,
+        "variance": 0.1,
+        "speed": 1.0,
+        "sound": "media/sound/environment/honeycomb-destroy.ogg",
+        "type": "PLAY_SOUND"
+      },
+      {
+        "volume": 0.9,
+        "global": false,
+        "loop": false,
+        "variance": 0.1,
+        "speed": 1.0,
+        "sound": "media/sound/environment/ore-destructible.ogg",
+        "type": "PLAY_SOUND"
+      },
+      {
+        "volume": 0.6,
+        "global": false,
+        "loop": false,
+        "variance": 0.1,
+        "speed": 1.2,
+        "sound": "media/sound/battle/explosion-3.ogg",
+        "type": "PLAY_SOUND"
+      },
+      {
+        "volume": 0.9,
+        "global": false,
+        "loop": false,
+        "variance": 0.1,
+        "speed": 1.1,
+        "sound": "media/sound/battle/explosion-4.ogg",
+        "type": "PLAY_SOUND"
+      },
+      {
+        "alpha": 0,
+        "duration": 0,
+        "type": "CHANGE_ALPHA"
+      },
+      {
+        "numParticles": 30,
+        "duration": 0.2,
+        "circular": false,
+        "offset": {
+          "x": 0,
+          "y": 0,
+          "z": 8
+        },
+        "xScale": 0.8,
+        "yScale": 0.8,
+        "anim": "EXPLOSION_SMALL",
+        "type": "PLAY_ANIMS_OVER_ENTITY"
+      },
+      {
+        "postAnim": "INSTANT_DEBRIS_FADE",
+        "numParticles": 3,
+        "circular": true,
+        "minSpeed": 40,
+        "maxSpeed": 60,
+        "minZSpeed": 100,
+        "maxZSpeed": 300,
+        "debrisSize": {
+          "x": 4,
+          "y": 4,
+          "z": 4
+        },
+        "zBounciness": 0.7,
+        "pAlpha": {
+          "init": 1,
+          "end": {
+            "value": 0,
+            "time": 0.1,
+            "spline": ""
+          }
+        },
+        "pRotate": {
+          "init": 0
+        },
+        "angleVary": 1,
+        "particleDuration": 3,
+        "particleDurVariance": 0.5,
+        "anim": "INSTANT_DEBRIS",
+        "type": "DEBRIS_OVER_ENTITY"
+      },
+      {
+        "time": 0.1,
+        "type": "WAIT"
+      }
+    ],
+    "fallExplode": [
+      {
+        "volume": 0.7,
+        "global": false,
+        "loop": false,
+        "variance": 0.1,
+        "speed": 1.0,
+        "sound": "media/sound/environment/honeycomb-destroy.ogg",
+        "type": "PLAY_SOUND"
+      },
+      {
+        "volume": 0.9,
+        "global": false,
+        "loop": false,
+        "variance": 0.1,
+        "speed": 1.0,
+        "sound": "media/sound/environment/ore-destructible.ogg",
+        "type": "PLAY_SOUND"
+      },
+      {
+        "volume": 0.6,
+        "global": false,
+        "loop": false,
+        "variance": 0.1,
+        "speed": 1.2,
+        "sound": "media/sound/battle/explosion-3.ogg",
+        "type": "PLAY_SOUND"
+      },
+      {
+        "volume": 0.9,
+        "global": false,
+        "loop": false,
+        "variance": 0.1,
+        "speed": 1.1,
+        "sound": "media/sound/battle/explosion-4.ogg",
+        "type": "PLAY_SOUND"
+      },
+      {
+        "alpha": 0,
+        "duration": 0,
+        "type": "CHANGE_ALPHA"
+      },
+      {
+        "numParticles": 40,
+        "duration": 0.1,
+        "circular": false,
+        "xScale": 0.8,
+        "yScale": 0.8,
+        "anim": "EXPLOSION_SMALL",
+        "type": "PLAY_ANIMS_OVER_ENTITY"
+      },
+      {
+        "postAnim": "INSTANT_DEBRIS_FADE",
+        "numParticles": 3,
+        "circular": true,
+        "minSpeed": 40,
+        "maxSpeed": 60,
+        "minZSpeed": 100,
+        "maxZSpeed": 300,
+        "debrisSize": {
+          "x": 4,
+          "y": 4,
+          "z": 4
+        },
+        "zBounciness": 0.7,
+        "pAlpha": {
+          "init": 1,
+          "end": {
+            "value": 0,
+            "time": 0.1,
+            "spline": ""
+          }
+        },
+        "pRotate": {
+          "init": 0
+        },
+        "angleVary": 1,
+        "particleDuration": 3,
+        "particleDurVariance": 0.5,
+        "anim": "INSTANT_DEBRIS",
+        "type": "DEBRIS_OVER_ENTITY"
+      },
+      {
+        "time": 0.1,
+        "type": "WAIT"
+      }
+    ],
+    "clockTether": [
+      {
+        "patternYCount": 1,
+        "frameTime": 0.5,
+        "shiftSpeed": 200,
+        "guiSprites": false,
+        "renderMode": "source-over",
+        "offset": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "pScale": {
+          "init": {
+            "x": 1.2,
+            "y": 1
+          }
+        },
+        "particleDuration": -1,
+        "pattern": {
+          "src": "media/entity/effects/super-meat.png",
+          "xCount": 1,
+          "offX": 80,
+          "offY": 0,
+          "width": 8,
+          "height": 16
+        },
+        "type": "LASER_SPRITE"
+      },
+      {
+        "type": "LOOP_START"
+      },
+      {
+        "time": 0.1,
+        "type": "WAIT"
+      },
+      {
+        "type": "LOOP_END"
+      }
+    ],
+    "clockTetherGUI": [
+      {
+        "patternYCount": 1,
+        "frameTime": 0.5,
+        "shiftSpeed": 200,
+        "guiSprites": true,
+        "renderMode": "source-over",
+        "offset": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "pScale": {
+          "init": {
+            "x": 1.2,
+            "y": 1
+          }
+        },
+        "particleDuration": -1,
+        "pattern": {
+          "src": "media/entity/effects/super-meat.png",
+          "xCount": 1,
+          "offX": 80,
+          "offY": 0,
+          "width": 8,
+          "height": 16
+        },
+        "type": "LASER_SPRITE"
+      },
+      {
+        "type": "LOOP_START"
+      },
+      {
+        "time": 0.1,
+        "type": "WAIT"
+      },
+      {
+        "type": "LOOP_END"
+      }
+    ],
+    "sawBulletCharge": [
+      {
+        "size": "XL",
+        "fadeIn": 0.5,
+        "fadeOut": 0.1,
+        "duration": 0.1,
+        "glow": false,
+        "type": "LIGHT"
+      },
+      {
+        "volume": 0.6,
+        "global": false,
+        "loop": false,
+        "radius": 250,
+        "speed": 1,
+        "sound": "media/sound/battle/enemies/hedgehog/hedgehog-spin-in.ogg",
+        "type": "PLAY_SOUND"
+      },
+      {
+        "useTargetAngle": false,
+        "keepAngleSync": false,
+        "offset": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "pAlpha": {
+          "init": 0,
+          "start": {
+            "value": 0.6,
+            "spline": ""
+          }
+        },
+        "pScale": {
+          "init": {
+            "x": 1.2,
+            "y": 1.2
+          },
+          "start": {
+            "value": {
+              "x": 0.2,
+              "y": 0.2
+            },
+            "spline": ""
+          }
+        },
+        "moveWithTarget": 1,
+        "particleDuration": 0.5,
+        "anim": "NEUTRAL_BIG_CIRCLE",
+        "type": "PLAY_ANIM"
+      },
+      {
+        "numParticles": 10,
+        "duration": 0,
+        "clockwise": false,
+        "centralAngle": 1,
+        "startAngle": -0.25,
+        "random": false,
+        "startDist": 4,
+        "moveDist": 32,
+        "moveVariance": 8,
+        "inverse": true,
+        "keySpline": "EASE_OUT",
+        "particleRotate": true,
+        "moveRotate": -0.6,
+        "offset": {
+          "x": 0,
+          "y": 8,
+          "z": 8
+        },
+        "rotOffset": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "pAlpha": {
+          "init": 0,
+          "start": {
+            "value": 0.75,
+            "spline": ""
+          }
+        },
+        "pScale": {
+          "init": {
+            "x": 0.2,
+            "y": 0.2
+          },
+          "start": {
+            "value": {
+              "x": 1.2,
+              "y": 1.2
+            }
+          }
+        },
+        "pRotate": {
+          "init": 0.1,
+          "start": {
+            "value": 0,
+            "spline": ""
+          }
+        },
+        "collision": false,
+        "moveWithTarget": 1,
+        "cancelable": true,
+        "particleDuration": 0.5,
+        "anim": "SWEEP_NEUTRAL_STATIC",
+        "type": "OFFSET_PARTICLE_CIRCLE"
+      },
+      {
+        "time": 0.5,
+        "type": "WAIT"
+      },
+      {
+        "volume": 0.6,
+        "global": false,
+        "loop": false,
+        "radius": 250,
+        "speed": 1.1,
+        "sound": "media/sound/puzzle/ferro-cold-break.ogg",
+        "type": "PLAY_SOUND"
+      },
+      {
+        "volume": 0.5,
+        "global": false,
+        "loop": false,
+        "radius": 250,
+        "speed": 1.1,
+        "variance": 0.05,
+        "sound": "media/sound/boss/turret/fast-shot.ogg",
+        "type": "PLAY_SOUND"
+      }
+    ],
+    "neutralSawDeathSmall": [
+      {
+        "size": "XL",
+        "fadeIn": 0,
+        "fadeOut": 0.1,
+        "duration": 0.2,
+        "glow": false,
+        "type": "LIGHT"
+      },
+      {
+        "useTargetAngle": false,
+        "keepAngleSync": false,
+        "offset": {
+          "x": 0,
+          "y": 12,
+          "z": 8
+        },
+        "rotOffset": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "pAlpha": {
+          "init": 1,
+          "start": {
+            "value": 0,
+            "spline": ""
+          }
+        },
+        "pScale": {
+          "init": {
+            "x": 0,
+            "y": 0
+          },
+          "start": {
+            "value": {
+              "x": 1.5,
+              "y": 1.5
+            },
+            "spline": "EASE_OUT"
+          }
+        },
+        "particleDuration": 0.2,
+        "anim": "CIRCLE_BIG",
+        "type": "PLAY_ANIM"
+      },
+      {
+        "numParticles": 8,
+        "duration": 0,
+        "clockwise": false,
+        "centralAngle": 1,
+        "startAngle": -0.25,
+        "random": false,
+        "startDist": 4,
+        "moveDist": 24,
+        "moveVariance": 0,
+        "inverse": false,
+        "keySpline": "EASE_OUT",
+        "particleRotate": true,
+        "moveRotate": -0.6,
+        "offset": {
+          "x": 0,
+          "y": 16,
+          "z": 20
+        },
+        "rotOffset": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "pAlpha": {
+          "init": 0.5,
+          "start": {
+            "value": 0,
+            "spline": ""
+          }
+        },
+        "pScale": {
+          "init": {
+            "x": 0.8,
+            "y": 0.8
+          },
+          "start": {
+            "value": {
+              "x": 0,
+              "y": 0
+            }
+          }
+        },
+        "pRotate": {
+          "init": 0,
+          "start": {
+            "value": -0.2,
+            "spline": ""
+          }
+        },
+        "collision": false,
+        "moveWithTarget": 1,
+        "cancelable": true,
+        "particleDuration": 0.65,
+        "anim": "SWEEP_NEUTRAL_STATIC",
+        "type": "OFFSET_PARTICLE_CIRCLE"
+      },
+      {
+        "volume": 0.6,
+        "global": false,
+        "loop": false,
+        "radius": 250,
+        "speed": 0.8,
+        "sound": "media/sound/puzzle/ferro-cold-break.ogg",
+        "type": "PLAY_SOUND"
+      },
+      {
+        "volume": 0.4,
+        "global": false,
+        "loop": false,
+        "radius": 250,
+        "variance": 0.1,
+        "speed": 1.3,
+        "sound": "media/sound/environment/ore-destructible.ogg",
+        "type": "PLAY_SOUND"
+      }
+    ]
+  }
+}

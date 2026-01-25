@@ -1,3 +1,10 @@
+## 0.2.2 (01/24/2025)
+* Added map multibakery/mba-testing.json
+* Added super-meat mechanics, assets, files from Project Red to MBA testing room
+* Added a prop to spawn bosses in MBA testing room
+* Added XPC character select sign (including Buggy) to mba-lobby with Alybox conditional patching
+* Fixed a typo in pvp map howToPlay text
+
 ## 0.2.1 (01/21/2025)
 * Enabled outer barriers in pvp map when map.barrierConfig == 2 (due to switch)
 * Changed pvpBrake and pvpEnd from PARALLEL to CUTSCENE in pvp map
