@@ -1,3 +1,26 @@
+## 0.3.2 (05/22/2026)
+### Issues
+- [0.3.2] Dev room unlock broken while server is running
+  * https://github.com/XenonA7/cc-multibakery-additions/issues/3
+- [0.3.2] SHOW_ANIMATION inconsistency in pvpBrake
+  * https://github.com/XenonA7/cc-multibakery-additions/issues/4
+- [0.3.2] Host player double BGM tracks after pvp
+  * https://github.com/XenonA7/cc-multibakery-additions/issues/5
+### General
+- Merged mba-pvp and mba-south edits from Krypek: https://github.com/XenonA7/cc-multibakery-additions/pull/2
+- Multibakery dependency version increased to 0.7.9
+### New Content
+- Added new dev room unlocked by renaming the building to "mbaDev" (currently empty)
+### Changes
+- mba-pvp:
+  * Moved tmp.xpcDisableHoming out of mapInitOnce and into the pvpStart and pvpEnd events, with FOR_EACH_PLAYER
+  * Players now show the "aim" animation during pvpBrake
+  * Added teleport show/hide effects to players when positions are reset between rounds
+  * Players now properly face towards the center of the arena between rounds
+  * Deleted the action teleporting players back to the center in pvpEnd
+  * Added an in-game SHOW_OBJECT_SLIDER_DIALOG to set tmp.pvpDamageFactor in the arena config sign
+  * Event mapInitOnce renamed to mapInit and changed to ONCE_PER_ENTRY instead of ONCE
+  * Added default tmp.pvpDamageFactor setting in mapInit as 0.2
 ## 0.3.1 (03/22/2026)
 ### Issues
 - [0.3.1] Assertion error on pvp start
