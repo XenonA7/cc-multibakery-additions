@@ -1,3 +1,12 @@
+## 0.3.3 (05/23/2026)
+### New Content
+- PVP winners now do a short victory animation after winning
+### Changes
+- Teleporter to dungeon template map moved from mba-outdoors to mba-dev
+- Teleporters between mba-lobby and mba-dev changed to wave visualType
+### Fixes
+- Updated SHOW_OBJECT_SLIDER_DIALOG steps in mba-pvp to use `declined` instead of `rejected`
+
 ## 0.3.2 (05/22/2026)
 ### Issues
 - [0.3.2] Dev room unlock broken while server is running
@@ -21,6 +30,7 @@
   * Added an in-game SHOW_OBJECT_SLIDER_DIALOG to set tmp.pvpDamageFactor in the arena config sign
   * Event mapInitOnce renamed to mapInit and changed to ONCE_PER_ENTRY instead of ONCE
   * Added default tmp.pvpDamageFactor setting in mapInit as 0.2
+
 ## 0.3.1 (03/22/2026)
 ### Issues
 - [0.3.1] Assertion error on pvp start
