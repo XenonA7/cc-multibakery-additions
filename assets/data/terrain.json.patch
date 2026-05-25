@@ -1,0 +1,81 @@
+[
+  {
+    "type": "ENTER",
+    "index": "media/map/final-dungeon-inner.png"
+  },
+  {
+    "type": "REMOVE_ARRAY_ELEMENT",
+    "index": 52
+  },
+  {
+    "type": "ADD_ARRAY_ELEMENT",
+    "index": 52,
+    "content": "6"
+  },
+  {
+    "type": "REMOVE_ARRAY_ELEMENT",
+    "index": 53
+  },
+  {
+    "type": "ADD_ARRAY_ELEMENT",
+    "index": 53,
+    "content": "6"
+  },
+  {
+    "type": "REMOVE_ARRAY_ELEMENT",
+    "index": 54
+  },
+  {
+    "type": "ADD_ARRAY_ELEMENT",
+    "index": 54,
+    "content": "6"
+  },
+  {
+    "type": "REMOVE_ARRAY_ELEMENT",
+    "index": 55
+  },
+  {
+    "type": "ADD_ARRAY_ELEMENT",
+    "index": 55,
+    "content": "6"
+  },
+  {
+    "type": "REMOVE_ARRAY_ELEMENT",
+    "index": 56
+  },
+  {
+    "type": "ADD_ARRAY_ELEMENT",
+    "index": 56,
+    "content": "6"
+  },
+  {
+    "type": "REMOVE_ARRAY_ELEMENT",
+    "index": 212
+  },
+  {
+    "type": "ADD_ARRAY_ELEMENT",
+    "index": 212,
+    "content": "6"
+  },
+  {
+    "type": "REMOVE_ARRAY_ELEMENT",
+    "index": 213
+  },
+  {
+    "type": "ADD_ARRAY_ELEMENT",
+    "index": 213,
+    "content": "6"
+  },
+  {
+    "type": "REMOVE_ARRAY_ELEMENT",
+    "index": 214
+  },
+  {
+    "type": "ADD_ARRAY_ELEMENT",
+    "index": 214,
+    "content": "6"
+  },
+  {
+    "type": "EXIT"
+  }
+]

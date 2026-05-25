@@ -1,3 +1,13 @@
+## 0.4.0 (05/25/2026)
+### New Content
+- Added map co-op-dng/intro-rooms/room-1
+- Added WaterBlock support to the final-dng-inner map style using unknown-interior style spritesheet
+- Added animation for water bubble tiles in final-dungeon-inner tileset via tile-infos.json patch
+- Added water terrain property to water tiles in final-dungeon-inner tileset via terrain.json patch
+### Changes
+- TEMPORARY: Renamed mba-pvp.json to mba-pvp - Copy.json, created a new placeholder mba-pvp.json that does not have the victory animation
+- Standardized " ' syntax in custom-map-styles.js
+
 ## 0.3.3 (05/23/2026)
 ### New Content
 - PVP winners now do a short victory animation after winning

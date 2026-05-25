@@ -1,0 +1,12 @@
+{
+  "media/map/final-dungeon-inner.png": {
+    "animations": [
+      [
+        55,
+        56,
+        57,
+        56
+      ]
+    ]
+  }
+}
