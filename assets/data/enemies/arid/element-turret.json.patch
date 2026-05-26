@@ -1,0 +1,135 @@
+[
+  {
+    "type": "ENTER",
+    "index": ["_wm", "attributes", "shoot", "_select"]
+  },
+  {
+    "type": "ADD_ARRAY_ELEMENT",
+    "index": 1,
+    "content": "LINE_SHADOW"
+  },
+  {
+    "type": "EXIT"
+  },
+  {
+    "type": "EXIT"
+  },
+  {
+    "type": "EXIT"
+  },
+  {
+    "type": "EXIT"
+  },
+  {
+    "type": "ENTER",
+    "index": ["actions", "Shot"]
+  },
+  {
+    "type": "ADD_ARRAY_ELEMENT",
+    "content": {
+      "withElse": false,
+      "type": "IF",
+      "condition": "entity.attrib.shoot == \"LINE_SHADOW\"",
+      "thenStep": [
+        {
+          "type": "SELECT_RANDOM",
+          "options": [
+            {
+              "0": " ",
+              "count": 1,
+              "weight": 1,
+              "activeCondition": "entity.attrib.element == \"HEAT\""
+            },
+            {
+              "0": " ",
+              "count": 1,
+              "weight": 1,
+              "activeCondition": "entity.attrib.element == \"COLD\""
+            },
+            {
+              "0": " ",
+              "count": 1,
+              "weight": 1,
+              "activeCondition": "entity.attrib.element == \"SHOCK\""
+            },
+            {
+              "0": " ",
+              "count": 1,
+              "weight": 1,
+              "activeCondition": "entity.attrib.element == \"WAVE\""
+            }
+          ],
+          "0_0": [
+            {
+              "align": "BOTTOM",
+              "type": "SHOOT_PROXY",
+              "proxy": "heatBallShadow",
+              "offset": {
+                "x": 0,
+                "y": 0,
+                "z": 12
+              }
+            }
+          ],
+          "1_0": [
+            {
+              "align": "BOTTOM",
+              "type": "SHOOT_PROXY",
+              "proxy": "coldBallShadow",
+              "offset": {
+                "x": 0,
+                "y": 0,
+                "z": 12
+              }
+            }
+          ],
+          "2_0": [
+            {
+              "align": "BOTTOM",
+              "type": "SHOOT_PROXY",
+              "proxy": "shockBallShadow",
+              "offset": {
+                "x": 0,
+                "y": 0,
+                "z": 12
+              }
+            }
+          ],
+          "3_0": [
+            {
+              "align": "BOTTOM",
+              "type": "SHOOT_PROXY",
+              "proxy": "waveBallShadow",
+              "offset": {
+                "x": 0,
+                "y": 0,
+                "z": 12
+              }
+            }
+          ]
+        },
+        {
+          "type": "WAIT",
+          "time": 0.0833
+        }
+      ]
+    }
+  },
+  {
+    "type": "EXIT"
+  },
+  {
+    "type": "EXIT"
+  },
+  {
+    "type": "ENTER",
+    "index": "proxies"
+  },
+  {
+    "type": "INCLUDE",
+    "src": "patches/data/enemies/arid/element-turret.json"
+  },
+  {
+    "type": "EXIT"
+  }
+]

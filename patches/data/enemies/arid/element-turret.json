@@ -1,0 +1,226 @@
+{
+  "heatBallShadow": {
+    "size": {
+      "x": 24,
+      "y": 24,
+      "z": 24
+    },
+    "effects": "enemies.last-dng",
+    "effectKeys": {
+      "trail": "ballTrailHeat"
+    },
+    "speed": 225,
+    "maxBounce": 0,
+    "timer": 3,
+    "trail": true,
+    "multiHit": true,
+    "light": "NONE",
+    "noLightGlow": true,
+    "hitSideways": true,
+    "type": "BALL",
+    "effect": "ar",
+    "maxBounds": 0,
+    "shadow": 24,
+    "animation": {
+      "name": "default",
+      "sheet": {
+        "src": "media/entity/effects/mba-blank32x32.png",
+        "offX": 0,
+        "offY": 0,
+        "width": 32,
+        "height": 32
+      },
+      "time": 0.05,
+      "repeat": false,
+      "frames": [
+        0
+      ]
+    },
+    "attack": {
+      "type": "MASSIVE",
+      "element": "HEAT",
+      "damageFactor": 1,
+      "fly": "HEAVY",
+      "reverse": false,
+      "status": 2,
+      "hints": [
+        "CHARGED"
+      ],
+      "guardable": "",
+      "skillBonus": "RANGED_DMG",
+      "hitInvincible": true,
+      "noIronStance": true,
+      "limiter": ""
+    },
+    "timeBoni": null,
+    "behaviors": []
+  },
+  "coldBallShadow": {
+    "size": {
+      "x": 24,
+      "y": 24,
+      "z": 24
+    },
+    "effects": "enemies.last-dng",
+    "effectKeys": {
+      "trail": "ballTrailCold"
+    },
+    "speed": 225,
+    "maxBounce": 0,
+    "timer": 3,
+    "trail": true,
+    "multiHit": true,
+    "light": "NONE",
+    "noLightGlow": true,
+    "hitSideways": true,
+    "type": "BALL",
+    "effect": "ar",
+    "maxBounds": 0,
+    "shadow": 24,
+    "animation": {
+      "name": "default",
+      "sheet": {
+        "src": "media/entity/effects/mba-blank32x32.png",
+        "offX": 0,
+        "offY": 0,
+        "width": 32,
+        "height": 32
+      },
+      "time": 0.05,
+      "repeat": false,
+      "frames": [
+        0
+      ]
+    },
+    "attack": {
+      "type": "MASSIVE",
+      "element": "COLD",
+      "damageFactor": 1,
+      "fly": "HEAVY",
+      "reverse": false,
+      "status": 2,
+      "hints": [
+        "CHARGED"
+      ],
+      "guardable": "",
+      "skillBonus": "RANGED_DMG",
+      "hitInvincible": true,
+      "noIronStance": true,
+      "limiter": ""
+    },
+    "timeBoni": null,
+    "behaviors": []
+  },
+  "shockBallShadow": {
+    "size": {
+      "x": 24,
+      "y": 24,
+      "z": 24
+    },
+    "effects": "enemies.last-dng",
+    "effectKeys": {
+      "trail": "ballTrailShock"
+    },
+    "speed": 225,
+    "maxBounce": 0,
+    "timer": 3,
+    "trail": true,
+    "multiHit": true,
+    "light": "NONE",
+    "noLightGlow": true,
+    "hitSideways": true,
+    "type": "BALL",
+    "effect": "ar",
+    "maxBounds": 0,
+    "shadow": 24,
+    "animation": {
+      "name": "default",
+      "sheet": {
+        "src": "media/entity/effects/mba-blank32x32.png",
+        "offX": 0,
+        "offY": 0,
+        "width": 32,
+        "height": 32
+      },
+      "time": 0.05,
+      "repeat": false,
+      "frames": [
+        0
+      ]
+    },
+    "attack": {
+      "type": "MASSIVE",
+      "element": "SHOCK",
+      "damageFactor": 1,
+      "fly": "HEAVY",
+      "reverse": false,
+      "status": 2,
+      "hints": [
+        "CHARGED"
+      ],
+      "guardable": "",
+      "skillBonus": "RANGED_DMG",
+      "hitInvincible": true,
+      "noIronStance": true,
+      "limiter": ""
+    },
+    "timeBoni": null,
+    "behaviors": []
+  },
+  "waveBallShadow": {
+    "size": {
+      "x": 24,
+      "y": 24,
+      "z": 24
+    },
+    "effects": "enemies.last-dng",
+    "effectKeys": {
+      "trail": "ballTrailWave"
+    },
+    "speed": 225,
+    "maxBounce": 0,
+    "timer": 3,
+    "trail": true,
+    "multiHit": true,
+    "light": "NONE",
+    "noLightGlow": true,
+    "hitSideways": true,
+    "type": "BALL",
+    "effect": "ar",
+    "maxBounds": 0,
+    "shadow": 24,
+    "animation": {
+      "name": "default",
+      "sheet": {
+        "src": "media/entity/effects/mba-blank32x32.png",
+        "offX": 0,
+        "offY": 0,
+        "width": 32,
+        "height": 32
+      },
+      "time": 0.05,
+      "repeat": false,
+      "frames": [
+        0
+      ]
+    },
+    "attack": {
+      "type": "MASSIVE",
+      "element": "WAVE",
+      "damageFactor": 1,
+      "fly": "HEAVY",
+      "reverse": false,
+      "status": 2,
+      "hints": [
+        "CHARGED"
+      ],
+      "guardable": "",
+      "skillBonus": "RANGED_DMG",
+      "hitInvincible": true,
+      "noIronStance": true,
+      "limiter": ""
+    },
+    "timeBoni": null,
+    "behaviors": []
+  }
+}

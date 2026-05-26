@@ -1,3 +1,14 @@
+## 0.5.0 (05/25/2026)
+### New Content
+- Added map co-op-dng/intro-rooms/room-2
+- Patched in the LINE_SHADOW option for element-turret enemies in which they shoot proxies containing shadows
+### Changes
+- Renamed prd-blank32x32.png to mba-blank32x32.png
+### Fixes
+- Various tile fixes for room-1
+- SHOW_CHOICE in dev room sign now uses 1 column
+- Fixed map path typo in dev room TELEPORT step
+
 ## 0.4.1 (05/25/2026)
 ### Fixes
 - Minor tile fixes to room-1

@@ -226,7 +226,7 @@
       "animation": {
         "name": "default",
         "sheet": {
-          "src": "media/entity/effects/prd-blank32x32.png",
+          "src": "media/entity/effects/mba-blank32x32.png",
           "offX": 0,
           "offY": 0,
           "width": 32,
@@ -339,7 +339,7 @@
       "animation": {
         "name": "default",
         "sheet": {
-          "src": "media/entity/effects/prd-blank32x32.png",
+          "src": "media/entity/effects/mba-blank32x32.png",
           "offX": 0,
           "offY": 0,
           "width": 32,
@@ -452,7 +452,7 @@
       "animation": {
         "name": "default",
         "sheet": {
-          "src": "media/entity/effects/prd-blank32x32.png",
+          "src": "media/entity/effects/mba-blank32x32.png",
           "offX": 0,
           "offY": 0,
           "width": 32,
@@ -565,7 +565,7 @@
       "animation": {
         "name": "default",
         "sheet": {
-          "src": "media/entity/effects/prd-blank32x32.png",
+          "src": "media/entity/effects/mba-blank32x32.png",
           "offX": 0,
           "offY": 0,
           "width": 32,
@@ -674,7 +674,7 @@
       "animation": {
         "name": "default",
         "sheet": {
-          "src": "media/entity/effects/prd-blank32x32.png",
+          "src": "media/entity/effects/mba-blank32x32.png",
           "offX": 0,
           "offY": 0,
           "width": 32,
@@ -783,7 +783,7 @@
       "animation": {
         "name": "default",
         "sheet": {
-          "src": "media/entity/effects/prd-blank32x32.png",
+          "src": "media/entity/effects/mba-blank32x32.png",
           "offX": 0,
           "offY": 0,
           "width": 32,
@@ -892,7 +892,7 @@
       "animation": {
         "name": "default",
         "sheet": {
-          "src": "media/entity/effects/prd-blank32x32.png",
+          "src": "media/entity/effects/mba-blank32x32.png",
           "offX": 0,
           "offY": 0,
           "width": 32,
@@ -1001,7 +1001,7 @@
       "animation": {
         "name": "default",
         "sheet": {
-          "src": "media/entity/effects/prd-blank32x32.png",
+          "src": "media/entity/effects/mba-blank32x32.png",
           "offX": 0,
           "offY": 0,
           "width": 32,
@@ -1148,7 +1148,7 @@
       "animation": {
         "name": "default",
         "sheet": {
-          "src": "media/entity/effects/prd-blank32x32.png",
+          "src": "media/entity/effects/mba-blank32x32.png",
           "offX": 0,
           "offY": 0,
           "width": 32,
@@ -1295,7 +1295,7 @@
       "animation": {
         "name": "default",
         "sheet": {
-          "src": "media/entity/effects/prd-blank32x32.png",
+          "src": "media/entity/effects/mba-blank32x32.png",
           "offX": 0,
           "offY": 0,
           "width": 32,
@@ -1451,7 +1451,7 @@
       "animation": {
         "name": "default",
         "sheet": {
-          "src": "media/entity/effects/prd-blank32x32.png",
+          "src": "media/entity/effects/mba-blank32x32.png",
           "offX": 0,
           "offY": 0,
           "width": 32,
@@ -1600,7 +1600,7 @@
       "animation": {
         "name": "default",
         "sheet": {
-          "src": "media/entity/effects/prd-blank32x32.png",
+          "src": "media/entity/effects/mba-blank32x32.png",
           "offX": 0,
           "offY": 0,
           "width": 32,
@@ -1749,7 +1749,7 @@
       "animation": {
         "name": "default",
         "sheet": {
-          "src": "media/entity/effects/prd-blank32x32.png",
+          "src": "media/entity/effects/mba-blank32x32.png",
           "offX": 0,
           "offY": 0,
           "width": 32,
@@ -1906,7 +1906,7 @@
       "animation": {
         "name": "default",
         "sheet": {
-          "src": "media/entity/effects/prd-blank32x32.png",
+          "src": "media/entity/effects/mba-blank32x32.png",
           "offX": 0,
           "offY": 0,
           "width": 32,
@@ -2055,7 +2055,7 @@
       "animation": {
         "name": "default",
         "sheet": {
-          "src": "media/entity/effects/prd-blank32x32.png",
+          "src": "media/entity/effects/mba-blank32x32.png",
           "offX": 0,
           "offY": 0,
           "width": 32,
@@ -2211,7 +2211,7 @@
       "animation": {
         "name": "default",
         "sheet": {
-          "src": "media/entity/effects/prd-blank32x32.png",
+          "src": "media/entity/effects/mba-blank32x32.png",
           "offX": 0,
           "offY": 0,
           "width": 32,
@@ -2360,7 +2360,7 @@
       "animation": {
         "name": "default",
         "sheet": {
-          "src": "media/entity/effects/prd-blank32x32.png",
+          "src": "media/entity/effects/mba-blank32x32.png",
           "offX": 0,
           "offY": 0,
           "width": 32,
@@ -2493,7 +2493,7 @@
       "animation": {
         "name": "default",
         "sheet": {
-          "src": "media/entity/effects/prd-blank32x32.png",
+          "src": "media/entity/effects/mba-blank32x32.png",
           "offX": 0,
           "offY": 0,
           "width": 32,
@@ -2642,7 +2642,7 @@
       "animation": {
         "name": "default",
         "sheet": {
-          "src": "media/entity/effects/prd-blank32x32.png",
+          "src": "media/entity/effects/mba-blank32x32.png",
           "offX": 0,
           "offY": 0,
           "width": 32,
@@ -2775,7 +2775,7 @@
       "animation": {
         "name": "default",
         "sheet": {
-          "src": "media/entity/effects/prd-blank32x32.png",
+          "src": "media/entity/effects/mba-blank32x32.png",
           "offX": 0,
           "offY": 0,
           "width": 32,
@@ -2924,7 +2924,7 @@
       "animation": {
         "name": "default",
         "sheet": {
-          "src": "media/entity/effects/prd-blank32x32.png",
+          "src": "media/entity/effects/mba-blank32x32.png",
           "offX": 0,
           "offY": 0,
           "width": 32,
@@ -3020,7 +3020,7 @@
       "animation": {
         "name": "default",
         "sheet": {
-          "src": "media/entity/effects/prd-blank32x32.png",
+          "src": "media/entity/effects/mba-blank32x32.png",
           "offX": 0,
           "offY": 0,
           "width": 32,
