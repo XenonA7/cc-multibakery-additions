@@ -225,14 +225,14 @@
             "type": "STOP_PVP_BATTLE"
           },
           {
+            "type": "CHANGE_VAR_BOOL",
+            "varName": "tmp.xpcDisableHoming",
+            "changeType": "set",
+            "value": false
+          },
+          {
             "type": "FOR_EACH_PLAYER",
             "steps": [
-              {
-                "type": "CHANGE_VAR_BOOL",
-                "varName": "tmp.xpcDisableHoming",
-                "changeType": "set",
-                "value": false
-              },
               {
                 "type": "RESUME_DEFAULT_BGM",
                 "mode": "SLOW"
@@ -484,15 +484,10 @@
                             "value": true
                           },
                           {
-                            "type": "FOR_EACH_PLAYER",
-                            "steps": [
-                              {
-                                "type": "CHANGE_VAR_BOOL",
-                                "varName": "tmp.xpcDisableHoming",
-                                "changeType": "set",
-                                "value": true
-                              }
-                            ]
+                            "type": "CHANGE_VAR_BOOL",
+                            "varName": "tmp.xpcDisableHoming",
+                            "changeType": "set",
+                            "value": true
                           },
                           {
                             "type": "START_MULTIPLAYER_PVP_BATTLE",
