@@ -381,6 +381,7 @@
                         "accepted": [
                           {
                             "type": "FOR_EACH_PLAYER",
+                            "players": { "varName": "pvp.players" },
                             "steps": [
                               {
                                 "type": "SHOW_EFFECT",
@@ -413,6 +414,7 @@
                           },
                           {
                             "type": "FOR_EACH_PLAYER",
+                            "players": { "varName": "pvp.players" },
                             "steps": [
                               {
                                 "entity": {
@@ -570,6 +572,7 @@
         "event": [
           {
             "type": "FOR_EACH_PLAYER",
+            "players": { "varName": "pvp.players" },
             "steps": [
               {
                 "type": "SHOW_EFFECT",
@@ -602,6 +605,7 @@
           },
           {
             "type": "FOR_EACH_PLAYER",
+            "players": { "varName": "pvp.players" },
             "steps": [
               {
                 "entity": {
