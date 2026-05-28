@@ -634,6 +634,10 @@
                     "align": "BOTTOM"
                   },
                   {
+                    "type": "WAIT",
+                    "time": 0.1
+                  },
+                  {
                     "type": "SHOW_ANIMATION",
                     "anim": "aim"
                   },
