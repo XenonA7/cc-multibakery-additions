@@ -1,3 +1,11 @@
+## 0.5.3 (06/04/2026)
+### Issues
+- [0.5.3] PVP victory animation crash
+  * https://github.com/XenonA7/cc-multibakery-additions/issues/7
+### Changes
+- Restored the pvp victory animation steps to mba-pvp (see issue)
+- Deleted placeholder file mba-pvp - Copy.json
+
 ## 0.5.2 (06/04/2026)
 ### Changes
 - Added Krypek to author list in ccmod.json

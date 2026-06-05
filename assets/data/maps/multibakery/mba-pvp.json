@@ -262,6 +262,87 @@
                 "text": {
                   "varName": "tmp.winPlayers[tmp.playerI].username"
                 }
+              },
+              {
+                "type": "FOR_EACH_PLAYER",
+                "steps": [
+                  {
+                    "type": "SHOW_AR_MSG",
+                    "entity": {
+                      "expr": {
+                        "varName": "tmp.winPlayers[tmp.playerI]"
+                      }
+                    },
+                    "text": {
+                      "en_US": "Winner!",
+                      "de_DE": "",
+                      "ja_JP": "",
+                      "ko_KR": "",
+                      "zh_CN": "",
+                      "zh_TW": ""
+                    },
+                    "time": 1.5,
+                    "mode": "NO_LINE",
+                    "color": "GREEN"
+                  }
+                ]
+              },
+              {
+                "type": "DO_ACTION",
+                "entity": {
+                  "expr": {
+                    "varName": "tmp.winPlayers[tmp.playerI]"
+                  }
+                },
+                "action": [
+                  {
+                    "duration": -1,
+                    "align": "BASE",
+                    "wait": false,
+                    "waitSkip": 0,
+                    "group": "victoryFX",
+                    "type": "SHOW_EFFECT",
+                    "effect": {
+                      "sheet": "arena",
+                      "name": "record"
+                    },
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    }
+                  },
+                  {
+                    "type": "SHOW_ANIMATION",
+                    "anim": "levelUpPreJump"
+                  },
+                  {
+                    "minTime": 0.3,
+                    "maxTime": 0.6,
+                    "type": "WAIT_RANDOM"
+                  },
+                  {
+                    "volume": 1,
+                    "global": false,
+                    "loop": false,
+                    "sound": "media/sound/arena/medal-get-bronze.ogg",
+                    "type": "PLAY_SOUND"
+                  },
+                  {
+                    "type": "SHOW_ANIMATION",
+                    "anim": "levelUpJump"
+                  },
+                  {
+                    "type": "JUMP",
+                    "jumpHeight": "L",
+                    "wait": true,
+                    "ignoreSounds": true
+                  },
+                  {
+                    "group": "victoryFX",
+                    "type": "CLEAR_EFFECTS"
+                  }
+                ]
               }
             ]
           }
