@@ -1,4 +1,14 @@
+## 0.5.2 (06/04/2026)
+### Changes
+- Added Krypek to author list in ccmod.json
+### Fixes
+- Merged PR from krypek: https://github.com/XenonA7/cc-multibakery-additions/pull/6
+  * Took CHANGE_VAR_BOOL steps out of FOR_EACH_PLAYER in mba-pvp
+  * Added delay to pvpBrake DO_ACTION steps to fix aim animation not playing due to damage stun
+  * Updated pvp logic FOR_EACH_PLAYER steps to only affect duel participants via "players": {"varName": "pvp.players"}
+
 ## 0.5.1 (06/04/2026)
+### Fixes
 - Minor tile improvements to room-2
 
 ## 0.5.0 (05/25/2026)
