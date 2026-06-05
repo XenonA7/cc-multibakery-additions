@@ -1789,6 +1789,7 @@
         "name": "lights",
         "eventType": "INTERRUPTABLE",
         "endCondition": "tmp.pvpBarriers",
+        "forceRunOnMap": true,
         "event": [
           {
             "type": "IF",
