@@ -225,14 +225,14 @@
             "type": "STOP_PVP_BATTLE"
           },
           {
+            "type": "CHANGE_VAR_BOOL",
+            "varName": "tmp.xpcDisableHoming",
+            "changeType": "set",
+            "value": false
+          },
+          {
             "type": "FOR_EACH_PLAYER",
             "steps": [
-              {
-                "type": "CHANGE_VAR_BOOL",
-                "varName": "tmp.xpcDisableHoming",
-                "changeType": "set",
-                "value": false
-              },
               {
                 "type": "RESUME_DEFAULT_BGM",
                 "mode": "SLOW"
@@ -381,6 +381,7 @@
                         "accepted": [
                           {
                             "type": "FOR_EACH_PLAYER",
+                            "players": { "varName": "pvp.players" },
                             "steps": [
                               {
                                 "type": "SHOW_EFFECT",
@@ -413,6 +414,7 @@
                           },
                           {
                             "type": "FOR_EACH_PLAYER",
+                            "players": { "varName": "pvp.players" },
                             "steps": [
                               {
                                 "entity": {
@@ -482,15 +484,10 @@
                             "value": true
                           },
                           {
-                            "type": "FOR_EACH_PLAYER",
-                            "steps": [
-                              {
-                                "type": "CHANGE_VAR_BOOL",
-                                "varName": "tmp.xpcDisableHoming",
-                                "changeType": "set",
-                                "value": true
-                              }
-                            ]
+                            "type": "CHANGE_VAR_BOOL",
+                            "varName": "tmp.xpcDisableHoming",
+                            "changeType": "set",
+                            "value": true
                           },
                           {
                             "type": "START_MULTIPLAYER_PVP_BATTLE",
@@ -570,6 +567,7 @@
         "event": [
           {
             "type": "FOR_EACH_PLAYER",
+            "players": { "varName": "pvp.players" },
             "steps": [
               {
                 "type": "SHOW_EFFECT",
@@ -602,6 +600,7 @@
           },
           {
             "type": "FOR_EACH_PLAYER",
+            "players": { "varName": "pvp.players" },
             "steps": [
               {
                 "entity": {
@@ -633,6 +632,10 @@
                       "z": 0
                     },
                     "align": "BOTTOM"
+                  },
+                  {
+                    "type": "WAIT",
+                    "time": 0.1
                   },
                   {
                     "type": "SHOW_ANIMATION",
