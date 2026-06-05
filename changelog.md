@@ -1,3 +1,6 @@
+## 0.5.1 (06/04/2026)
+- Minor tile improvements to room-2
+
 ## 0.5.0 (05/25/2026)
 ### New Content
 - Added map co-op-dng/intro-rooms/room-2
