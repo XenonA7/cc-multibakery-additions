@@ -1,3 +1,11 @@
+## 0.5.4 (06/06/2026)
+### General
+- Multibakery dependency version increased to 0.8.0
+### Fixes
+- Changed pvpBrake timings to the XPC standard (0.4s initial wait)
+- Added the "forceRunOnMap": true setting to "lights" EventTrigger in mba-pvp to fix dance floor post-duel (Krypek PR)
+- Fixed prop level in mba-lobby
+
 ## 0.5.3 (06/04/2026)
 ### Issues
 - [0.5.3] PVP victory animation crash

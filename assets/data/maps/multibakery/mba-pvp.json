@@ -651,6 +651,11 @@
             "players": { "varName": "pvp.players" },
             "steps": [
               {
+                "type": "WAIT",
+                "ignoreSlowDown": false,
+                "time": 0.4
+              },
+              {
                 "type": "SHOW_EFFECT",
                 "effect": {
                   "sheet": "teleport",
@@ -713,10 +718,6 @@
                       "z": 0
                     },
                     "align": "BOTTOM"
-                  },
-                  {
-                    "type": "WAIT",
-                    "time": 0.1
                   },
                   {
                     "type": "SHOW_ANIMATION",
@@ -1789,6 +1790,7 @@
         "name": "lights",
         "eventType": "INTERRUPTABLE",
         "endCondition": "tmp.pvpBarriers",
+        "forceRunOnMap": true,
         "event": [
           {
             "type": "IF",
