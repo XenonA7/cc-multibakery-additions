@@ -368,7 +368,7 @@
         "event": [
           {
             "changeType": "set",
-            "type": "CHANGE_VAR_NUMBER",
+            "type": "CHANGE_VAR_BOOL",
             "varName": "tmp.startPvp",
             "value": false
           },
@@ -676,7 +676,7 @@
               {
                 "type": "WAIT",
                 "ignoreSlowDown": false,
-                "time": 0.4
+                "time": 0.8
               }
             ]
           },

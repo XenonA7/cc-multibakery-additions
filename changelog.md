@@ -1,3 +1,23 @@
+## 0.6.0 (07/02/2026)
+### New Content
+- Added map co-op-dng/intro-rooms/room-3 (WIP)
+- Added effect file \assets\data\effects\mba-custom.json
+### Changes
+- Added fire props to all co-op dungeon OLPlatforms when extended
+- In mba-pvp, increased pvpBrake wait duration from 0.4 to 0.8 after hide effects
+- Added multibakery GODMODE option to mba-lobby cheat menu
+- mba-south:
+  * Added a menu option to set the minigame duration
+  * Added a menu option to set the enemy level
+  * Renamed tmp.radfish.duration to tmp.minigameDuration
+  * Added "forceRunOnMap": true to events Fishing Game and Fishing Done
+  * Moved minigame initialization steps out of menu event and into Fishing Game event
+  * Added "targetOnSpawn": true to the spawner enemy
+### Fixes
+- Made OLPs 1 tile taller (extended below) in room-1 and room-2 to fix the 1-pixel gap at the bottom when extended
+- Details tile fix in room-2
+- Fixed a CHANGE_VAR_NUMBER that should have been a CHANGE_VAR_BOOL in mba-pvp event pvpStart
+
 ## 0.5.4 (06/06/2026)
 ### General
 - Multibakery dependency version increased to 0.8.0
