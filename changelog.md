@@ -1,3 +1,9 @@
+## 0.7.0 (07/03/2026)
+### New Content
+- Added map co-op-dng/intro-rooms/room-4 (WIP, untested)
+### Changes
+- Turned off cameraInBounds for room-1, room-2, room-3
+
 ## 0.6.1 (07/02/2026)
 ### Changes
 - Updated the XPC character selection sign in mba-lobby to support hexacast-lea
