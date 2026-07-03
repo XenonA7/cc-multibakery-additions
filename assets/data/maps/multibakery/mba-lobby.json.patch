@@ -854,6 +854,73 @@
                   },
                   {
                     "type": "SWITCH_PLAYER_CONFIG",
+                    "name": "hexacast-lea"
+                  },
+                  {
+                    "type": "SHOW_EFFECT",
+                    "entity": {
+                      "player": true
+                    },
+                    "effect": {
+                      "sheet": "scene.hacking",
+                      "name": "hackingShowSlow"
+                    },
+                    "duration": 2,
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "align": "CENTER"
+                  },
+                  {
+                    "type": "SHOW_BOARD_MSG",
+                    "text": {
+                      "en_US": "Special properties of \\c[3]Hexacast Lea\\c[0]:\n* Hexacast bonus custom skill support\n* Straight charged shots",
+                      "de_DE": "",
+                      "ja_JP": "",
+                      "ko_KR": "",
+                      "zh_CN": "",
+                      "zh_TW": ""
+                    }
+                  },
+                  {
+                    "name": "END",
+                    "type": "GOTO_LABEL"
+                  }
+                ],
+                "1": [
+                  {
+                    "type": "CLEAR_MSG",
+                    "side": "ALL"
+                  },
+                  {
+                    "type": "REMOVE_PROXIES"
+                  },
+                  {
+                    "type": "SHOW_EFFECT",
+                    "entity": {
+                      "player": true
+                    },
+                    "effect": {
+                      "sheet": "area.arid",
+                      "name": "switchActivateNoOffset"
+                    },
+                    "duration": 0,
+                    "offset": {
+                      "x": 0,
+                      "y": 0,
+                      "z": 0
+                    },
+                    "align": "CENTER",
+                    "group": "0"
+                  },
+                  {
+                    "type": "WAIT",
+                    "time": 1
+                  },
+                  {
+                    "type": "SWITCH_PLAYER_CONFIG",
                     "name": "Hexacast1"
                   },
                   {
@@ -889,7 +956,7 @@
                     "type": "GOTO_LABEL"
                   }
                 ],
-                "1": [
+                "2": [
                   {
                     "type": "CLEAR_MSG",
                     "side": "ALL"
@@ -956,13 +1023,13 @@
                     "type": "GOTO_LABEL"
                   }
                 ],
-                "2": [
+                "3": [
                   {
                     "name": "MENU_SPHERO",
                     "type": "GOTO_LABEL"
                   }
                 ],
-                "3": [
+                "4": [
                   {
                     "name": "END",
                     "type": "GOTO_LABEL"
@@ -974,6 +1041,11 @@
                   "expression": "BLANK"
                 },
                 "options": [
+                  {
+                    "label": {
+                      "en_US": "\\i[class-hexa] Lea"
+                    }
+                  },
                   {
                     "label": {
                       "en_US": "\\i[class-hexa] Hexacast1"

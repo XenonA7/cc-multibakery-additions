@@ -1,3 +1,7 @@
+## 0.6.1 (07/02/2026)
+### Changes
+- Updated the XPC character selection sign in mba-lobby to support hexacast-lea
+
 ## 0.6.0 (07/02/2026)
 ### New Content
 - Added map co-op-dng/intro-rooms/room-3 (WIP)
