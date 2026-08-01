@@ -1366,6 +1366,24 @@
             ],
             "6": [
               {
+                "type": "SHOW_EFFECT",
+                "entity": {
+                  "player": true
+                },
+                "effect": {
+                  "sheet": "scene.hacking",
+                  "name": "evoHackActivate"
+                },
+                "duration": 0,
+                "offset": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "align": "CENTER",
+                "group": "0"
+              },
+              {
                 "type": "RESET_SP",
                 "target": {
                   "player": true

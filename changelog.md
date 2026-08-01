@@ -1,3 +1,14 @@
+## 0.7.1 (07/31/2026)
+### Changes
+- Overhauled the boss/enemy spawn dialogue menu in mba-testing
+- Added options to spawn heat golem and slimes to mba-testing
+- Added Z=-96 elevation level to mba-dev
+- Moved the super-meat test setup from mba-testing to mba-dev
+- Added hack effect when selecting "Fill SP bar" in mba-lobby and mba-testing
+### Fixes
+- Fixed Coll(2) in mba-testing
+- Fixed a tile layering issue in mba-outdoors
+
 ## 0.7.0 (07/03/2026)
 ### New Content
 - Added map co-op-dng/intro-rooms/room-4 (WIP, untested)
