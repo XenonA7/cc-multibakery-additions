@@ -226,7 +226,7 @@
           },
           {
             "type": "CHANGE_VAR_BOOL",
-            "varName": "tmp.xpcDisableHoming",
+            "varName": "tmp.xpcMultiplayerAdjustment",
             "changeType": "set",
             "value": false
           },
@@ -566,7 +566,7 @@
                           },
                           {
                             "type": "CHANGE_VAR_BOOL",
-                            "varName": "tmp.xpcDisableHoming",
+                            "varName": "tmp.xpcMultiplayerAdjustment",
                             "changeType": "set",
                             "value": true
                           },

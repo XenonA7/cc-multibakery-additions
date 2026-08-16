@@ -1,3 +1,7 @@
+## 0.7.2 (08/16/2026)
+### Changes
+- Replaced tmp.xpcDisableHoming instances in mba-pvp with new name tmp.xpcMultiplayerAdjustment
+
 ## 0.7.1 (07/31/2026)
 ### Changes
 - Overhauled the boss/enemy spawn dialogue menu in mba-testing
