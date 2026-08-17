@@ -1,3 +1,27 @@
+## 0.7.3 (08/16/2026)
+### Changes
+- Updated mod description and tag list
+- room-1
+  * Moved up platform1's fire prop by 2
+- room-2
+  * Moved up platform1's fire prop by 2
+  * Added a NPBLOCK HiddenBlock to fill the turret alcove
+  * Added a camera focus event when standing on the NW switch
+- room-3
+  * Moved up OLP fire props by 2
+- room-4
+  * Completed decorations and puzzle
+  * Deleted dev reset TeleportGround
+  * Replaced the switch3 OLPlatforms with JumpPanelFar for visual clarity
+  * Added NPFENCE HiddenBlock on the south WaterBubblePanel to prevent jumping on that pillar
+  * Added NPBLOCK WallHorizontal on Upper(2) below the SW ElementPole to prevent jumping down
+  * Added fence above SE ElementPole to prevent using it to hit south WaterBubblePanel
+  * Moved up the RESET_SPEED BallChanger and corresponding wall to make the timing more generous
+  * Shrunk the ice area by 1 tile off the top
+  * Added final OLPlatform at the end of the puzzle
+  * Added border fences on west and north upper raised areas
+  * Added FOR_EACH_PLAYER camera cutscene when bounce puzzle is complete
+
 ## 0.7.2 (08/16/2026)
 ### Changes
 - Replaced tmp.xpcDisableHoming instances in mba-pvp with new name tmp.xpcMultiplayerAdjustment
