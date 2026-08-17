@@ -1,3 +1,7 @@
+## 0.7.4 (08/16/2026)
+### Changes
+- Updated room-4 parallax distance to be 1.05 instead of 0.95
+
 ## 0.7.3 (08/16/2026)
 ### Changes
 - Updated mod description and tag list
