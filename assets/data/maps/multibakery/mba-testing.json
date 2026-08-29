@@ -255,6 +255,13 @@
           {
             "0": [
               {
+                  "type": "CLEAR_AR_MSG",
+                  "entity": {
+                      "global": true,
+                      "name": "boss-spawn"
+                  }
+              },
+              {
                 "type": "IF",
                 "withElse": true,
                 "condition": "tmp.expDisable",
@@ -266,13 +273,6 @@
                         "core": "EXP",
                         "value": true,
                         "type": "SET_PLAYER_CORE"
-                      },
-                      {
-                        "type": "CLEAR_AR_MSG",
-                        "entity": {
-                          "global": true,
-                          "name": "boss-spawn"
-                        }
                       },
                       {
                         "type": "SHOW_AR_MSG",
@@ -309,13 +309,6 @@
                         "core": "EXP",
                         "value": false,
                         "type": "SET_PLAYER_CORE"
-                      },
-                      {
-                        "type": "CLEAR_AR_MSG",
-                        "entity": {
-                          "global": true,
-                          "name": "boss-spawn"
-                        }
                       },
                       {
                         "type": "SHOW_AR_MSG",
@@ -394,15 +387,15 @@
                 "step": 1,
                 "accepted": [
                   {
-                    "type": "FOR_EACH_PLAYER",
-                    "steps": [
-                      {
-                        "type": "CLEAR_AR_MSG",
-                        "entity": {
+                      "type": "CLEAR_AR_MSG",
+                      "entity": {
                           "global": true,
                           "name": "boss-spawn"
-                        }
-                      },
+                      }
+                  },
+                  {
+                    "type": "FOR_EACH_PLAYER",
+                    "steps": [
                       {
                         "type": "SHOW_AR_MSG",
                         "entity": {
