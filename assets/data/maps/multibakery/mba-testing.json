@@ -263,16 +263,21 @@
                     "type": "FOR_EACH_PLAYER",
                     "steps": [
                       {
-                        "core": "EXP",
-                        "value": true,
-                        "type": "SET_PLAYER_CORE"
-                      },
-                      {
                         "type": "CLEAR_AR_MSG",
                         "entity": {
                           "global": true,
                           "name": "boss-spawn"
                         }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "FOR_EACH_PLAYER",
+                    "steps": [
+                      {
+                        "core": "EXP",
+                        "value": true,
+                        "type": "SET_PLAYER_CORE"
                       },
                       {
                         "type": "SHOW_AR_MSG",
@@ -306,16 +311,21 @@
                     "type": "FOR_EACH_PLAYER",
                     "steps": [
                       {
-                        "core": "EXP",
-                        "value": false,
-                        "type": "SET_PLAYER_CORE"
-                      },
-                      {
                         "type": "CLEAR_AR_MSG",
                         "entity": {
                           "global": true,
                           "name": "boss-spawn"
                         }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "FOR_EACH_PLAYER",
+                    "steps": [
+                      {
+                        "core": "EXP",
+                        "value": false,
+                        "type": "SET_PLAYER_CORE"
                       },
                       {
                         "type": "SHOW_AR_MSG",
@@ -402,7 +412,12 @@
                           "global": true,
                           "name": "boss-spawn"
                         }
-                      },
+                      }
+                    ]
+                  },
+                  {
+                    "type": "FOR_EACH_PLAYER",
+                    "steps": [
                       {
                         "type": "SHOW_AR_MSG",
                         "entity": {

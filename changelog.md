@@ -1,3 +1,28 @@
+## 0.8.0 (09/01/2026)
+### General
+- Added dependency for New Home DLC
+- Bumped multibakery minimum dependency version to 0.8.5
+### New Content
+- Added 10 new PVP maps accessible from mba-pvp
+  * multibakery/pvp/vt-f99
+  * multibakery/pvp/space
+  * multibakery/pvp/beach-ape
+  * multibakery/pvp/beach-temple
+  * multibakery/pvp/gynthar
+  * multibakery/pvp/tree-midboss
+  * multibakery/pvp/hideout-hexa
+  * multibakery/pvp/tri-league
+  * multibakery/pvp/tri-ice
+  * multibakery/pvp/ultimate-pvp
+### Changes
+- Added notes on BarrierConfig settings in mba-pvp map file
+- Temporary WavePushPullBlock added to template map
+### Fixes
+- Fixed d2 destination marker in mba-lobby
+- Fixed PVP damage factor update AR_MSG not showing for all players in pvp maps
+- Fixed pvp centerpoint position in mba-pvp
+- Manually merged Krypek fix for CLEAR_AR_MSG issue in mba-testing (https://github.com/XenonA7/cc-multibakery-additions/pull/9)
+
 ## 0.7.4 (08/16/2026)
 ### Changes
 - Updated room-4 parallax distance to be 1.05 instead of 0.95
