@@ -1,3 +1,16 @@
+## 0.8.1 (10/20/2026)
+### Changes
+- room-3
+  * Completed fight functionality, the map is now complete
+  * Implemented a safety check for all players being in the arena before the fight can start
+  * Added a camera focus event when standing on raised OLP1
+  * Changed tmp.fightLevel to map.fightLevel (it now sets this permanently upon first room entry)
+  * The "Absent players!" SHOW_AR_MSG is now inside FOR_EACH_PLAYER
+  * Added a vanilla-style EnemySpawner to re-populate the arena with enemies after the scripted fight is over
+### Fixes
+- Fixed Collision(5) layer for west exit in autumn/path-7-1
+- Fixed a shadow tiling issue in mba-testing
+
 ## 0.8.0 (09/01/2026)
 ### General
 - Added dependency for New Home DLC
