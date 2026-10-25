@@ -148,41 +148,37 @@
         "event": [
           {
             "type": "FOR_EACH_PLAYER",
+            "runType": "CUTSCENE",
             "steps": [
               {
                 "type": "PAUSE_BGM",
                 "mode": "MEDIUM"
-              }
-            ]
-          },
-          {
-            "type": "SHOW_EFFECT",
-            "entity": {
-              "global": true,
-              "name": "counter"
-            },
-            "effect": {
-              "sheet": "mba-custom",
-              "name": "room3CounterActivate"
-            },
-            "duration": 1,
-            "offset": {
-              "x": 0,
-              "y": 0,
-              "z": 0
-            },
-            "align": "BOTTOM",
-            "group": ""
-          },
-          {
-            "type": "CHANGE_VAR_BOOL",
-            "varName": "map.unShuffle",
-            "changeType": "set",
-            "value": true
-          },
-          {
-            "type": "FOR_EACH_PLAYER",
-            "steps": [
+              },
+              {
+                "type": "SHOW_EFFECT",
+                "entity": {
+                  "global": true,
+                  "name": "counter"
+                },
+                "effect": {
+                  "sheet": "mba-custom",
+                  "name": "room3CounterActivate"
+                },
+                "duration": 1,
+                "offset": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "align": "BOTTOM",
+                "group": ""
+              },
+              {
+                "type": "CHANGE_VAR_BOOL",
+                "varName": "map.unShuffle",
+                "changeType": "set",
+                "value": true
+              },
               {
                 "entity": {
                   "player": true
@@ -237,143 +233,138 @@
                 "wait": false,
                 "speed": "FAST",
                 "transition": "EASE_IN_OUT"
-              }
-            ]
-          },
-          {
-            "type": "WAIT",
-            "time": 0.1
-          },
-          {
-            "type": "CHANGE_VAR_NUMBER",
-            "varName": "tmp.defeated",
-            "changeType": "set",
-            "value": 0
-          },
-          {
-            "type": "CHANGE_VAR_NUMBER",
-            "varName": "tmp.w1ID",
-            "changeType": "set",
-            "value": 1
-          },
-          {
-            "type": "CHANGE_VAR_NUMBER",
-            "varName": "tmp.w2ID",
-            "changeType": "set",
-            "value": 0
-          },
-          {
-            "type": "FOR_EACH_PLAYER",
-            "steps": [
-              {
-                "type": "PLAY_BGM",
-                "bgm": "challenge",
-                "mode": "IMMEDIATELY",
-                "volume": 1
-              }
-            ]
-          },
-          {
-            "entity": {
-              "global": true,
-              "name": "w1e1"
-            },
-            "action": [
-              {
-                "type": "SHOW_EFFECT",
-                "rotOffset": {
-                  "x": 0,
-                  "y": 0
-                },
-                "spriteFilter": [],
-                "effect": {
-                  "sheet": "scene.water",
-                  "name": "circularSmallSplash"
-                },
-                "duration": 0,
-                "align": "BASE",
-                "fixPos": true,
-                "actionDetached": true,
-                "group": ""
-              },
-              {
-                "type": "SET_SLIP_THROUGH",
-                "value": true
-              },
-              {
-                "type": "SHOW_EFFECT",
-                "rotOffset": {
-                  "x": 0,
-                  "y": 0
-                },
-                "spriteFilter": [],
-                "effect": {
-                  "sheet": "specials.neutral",
-                  "name": "lilyAuraTrail"
-                },
-                "duration": -1,
-                "align": "BASE",
-                "fixPos": false,
-                "actionDetached": false,
-                "group": "trailFX"
-              },
-              {
-                "type": "JUMP_TO_POINT",
-                "target": {
-                  "x": 336,
-                  "y": 352,
-                  "lvl": "2"
-                }
-              },
-              {
-                "type": "WAIT_UNTIL_ON_GROUND",
-                "maxTime": 2
-              },
-              {
-                "type": "CLEAR_EFFECTS",
-                "group": "trailFX",
-                "entity": "SELF"
-              },
-              {
-                "type": "SHOW_EFFECT",
-                "rotOffset": {
-                  "x": 0,
-                  "y": 0
-                },
-                "spriteFilter": [],
-                "effect": {
-                  "sheet": "dust",
-                  "name": "large"
-                },
-                "duration": 0,
-                "align": "BASE",
-                "fixPos": true,
-                "actionDetached": true,
-                "group": ""
-              },
-              {
-                "type": "SET_SLIP_THROUGH",
-                "value": false
               },
               {
                 "type": "WAIT",
-                "time": 0.2
-              }
-            ],
-            "type": "DO_ACTION",
-            "keepState": true
-          },
-          {
-            "type": "WAIT",
-            "time": 0.4
-          },
-          {
-            "type": "SET_COMBAT_SPEED",
-            "speed": 1.2
-          },
-          {
-            "type": "FOR_EACH_PLAYER",
-            "steps": [
+                "time": 0.1
+              },
+              {
+                "type": "CHANGE_VAR_NUMBER",
+                "varName": "tmp.defeated",
+                "changeType": "set",
+                "value": 0
+              },
+              {
+                "type": "CHANGE_VAR_NUMBER",
+                "varName": "tmp.w1ID",
+                "changeType": "set",
+                "value": 1
+              },
+              {
+                "type": "CHANGE_VAR_NUMBER",
+                "varName": "tmp.w2ID",
+                "changeType": "set",
+                "value": 0
+              },
+              {
+                "type": "FOR_EACH_PLAYER",
+                "steps": [
+                  {
+                    "type": "PLAY_BGM",
+                    "bgm": "challenge",
+                    "mode": "IMMEDIATELY",
+                    "volume": 1
+                  }
+                ]
+              },
+              {
+                "entity": {
+                  "global": true,
+                  "name": "w1e1"
+                },
+                "action": [
+                  {
+                    "type": "SHOW_EFFECT",
+                    "rotOffset": {
+                      "x": 0,
+                      "y": 0
+                    },
+                    "spriteFilter": [],
+                    "effect": {
+                      "sheet": "scene.water",
+                      "name": "circularSmallSplash"
+                    },
+                    "duration": 0,
+                    "align": "BASE",
+                    "fixPos": true,
+                    "actionDetached": true,
+                    "group": ""
+                  },
+                  {
+                    "type": "SET_SLIP_THROUGH",
+                    "value": true
+                  },
+                  {
+                    "type": "SHOW_EFFECT",
+                    "rotOffset": {
+                      "x": 0,
+                      "y": 0
+                    },
+                    "spriteFilter": [],
+                    "effect": {
+                      "sheet": "specials.neutral",
+                      "name": "lilyAuraTrail"
+                    },
+                    "duration": -1,
+                    "align": "BASE",
+                    "fixPos": false,
+                    "actionDetached": false,
+                    "group": "trailFX"
+                  },
+                  {
+                    "type": "JUMP_TO_POINT",
+                    "target": {
+                      "x": 336,
+                      "y": 352,
+                      "lvl": "2"
+                    }
+                  },
+                  {
+                    "type": "WAIT_UNTIL_ON_GROUND",
+                    "maxTime": 2
+                  },
+                  {
+                    "type": "CLEAR_EFFECTS",
+                    "group": "trailFX",
+                    "entity": "SELF"
+                  },
+                  {
+                    "type": "SHOW_EFFECT",
+                    "rotOffset": {
+                      "x": 0,
+                      "y": 0
+                    },
+                    "spriteFilter": [],
+                    "effect": {
+                      "sheet": "dust",
+                      "name": "large"
+                    },
+                    "duration": 0,
+                    "align": "BASE",
+                    "fixPos": true,
+                    "actionDetached": true,
+                    "group": ""
+                  },
+                  {
+                    "type": "SET_SLIP_THROUGH",
+                    "value": false
+                  },
+                  {
+                    "type": "WAIT",
+                    "time": 0.2
+                  }
+                ],
+                "type": "DO_ACTION",
+                "keepState": true
+              },
+              {
+                "type": "WAIT",
+                "time": 0.4
+              },
+              {
+                "type": "SET_COMBAT_SPEED",
+                "speed": 1.2
+              },
               {
                 "type": "SET_FORCE_COMBAT",
                 "value": true
@@ -387,20 +378,20 @@
                 "type": "RESET_CAMERA",
                 "speed": "NORMAL",
                 "transition": "EASE_IN_OUT"
+              },
+              {
+                "type": "CHANGE_VAR_BOOL",
+                "varName": "tmp.barriers",
+                "changeType": "set",
+                "value": true
+              },
+              {
+                "type": "CHANGE_VAR_BOOL",
+                "varName": "tmp.wave1",
+                "changeType": "set",
+                "value": true
               }
             ]
-          },
-          {
-            "type": "CHANGE_VAR_BOOL",
-            "varName": "tmp.barriers",
-            "changeType": "set",
-            "value": true
-          },
-          {
-            "type": "CHANGE_VAR_BOOL",
-            "varName": "tmp.wave1",
-            "changeType": "set",
-            "value": true
           }
         ],
         "triggerType": "ONCE",
@@ -5370,7 +5361,7 @@
       "y": 334,
       "level": 2,
       "settings": {
-        "spawnCondition": "!map.ovenSwitch && true",
+        "spawnCondition": "!map.ovenSwitch && false",
         "size": {
           "x": 24,
           "y": 24,
@@ -5670,21 +5661,6 @@
       }
     },
     {
-      "type": "Note",
-      "x": 976,
-      "y": 560,
-      "level": 1,
-      "settings": {
-        "zHeight": 0,
-        "mapId": 513,
-        "size": {
-          "x": 162,
-          "y": 16
-        },
-        "name": "Add enemySpawner on subsequent room entry"
-      }
-    },
-    {
       "type": "TouchTrigger",
       "x": 264,
       "y": 296,
@@ -5800,6 +5776,279 @@
           }
         ],
         "spawnCondition": "map.counterPost"
+      }
+    },
+    {
+      "type": "EventTrigger",
+      "x": 16,
+      "y": 544,
+      "level": 1,
+      "settings": {
+        "eventType": "CUTSCENE",
+        "startCondition": "map.ovenSwitch && tmp.allPlayersPresent && false",
+        "endCondition": "false",
+        "event": [
+          {
+            "type": "FOR_EACH_PLAYER",
+            "steps": [
+              {
+                "type": "PAUSE_BGM",
+                "mode": "MEDIUM"
+              }
+            ]
+          },
+          {
+            "type": "SHOW_EFFECT",
+            "entity": {
+              "global": true,
+              "name": "counter"
+            },
+            "effect": {
+              "sheet": "mba-custom",
+              "name": "room3CounterActivate"
+            },
+            "duration": 1,
+            "offset": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "align": "BOTTOM",
+            "group": ""
+          },
+          {
+            "type": "CHANGE_VAR_BOOL",
+            "varName": "map.unShuffle",
+            "changeType": "set",
+            "value": true
+          },
+          {
+            "type": "FOR_EACH_PLAYER",
+            "steps": [
+              {
+                "entity": {
+                  "player": true
+                },
+                "action": [
+                  {
+                    "type": "WAIT_RANDOM",
+                    "minTime": 0,
+                    "maxTime": 0.4
+                  },
+                  {
+                    "type": "SET_FACE_TO_ENTITY",
+                    "entity": {
+                      "global": true,
+                      "name": "counter"
+                    },
+                    "rotate": true,
+                    "rotateSpeed": 3
+                  }
+                ],
+                "type": "DO_ACTION"
+              },
+              {
+                "offsetX": 0,
+                "offsetY": 0,
+                "speed": "NORMAL",
+                "transition": "EASE_IN_OUT",
+                "waitSkip": 0,
+                "zoom": 1,
+                "type": "SET_CAMERA_TARGET",
+                "entity": {
+                  "global": true,
+                  "name": "counter"
+                },
+                "wait": true
+              },
+              {
+                "type": "WAIT",
+                "time": 0.2
+              },
+              {
+                "entity1": {
+                  "global": true,
+                  "name": "counter"
+                },
+                "entity2": {
+                  "global": true,
+                  "name": "w1e1"
+                },
+                "zoom": 1,
+                "type": "SET_CAMERA_BETWEEN",
+                "wait": false,
+                "speed": "FAST",
+                "transition": "EASE_IN_OUT"
+              }
+            ]
+          },
+          {
+            "type": "WAIT",
+            "time": 0.1
+          },
+          {
+            "type": "CHANGE_VAR_NUMBER",
+            "varName": "tmp.defeated",
+            "changeType": "set",
+            "value": 0
+          },
+          {
+            "type": "CHANGE_VAR_NUMBER",
+            "varName": "tmp.w1ID",
+            "changeType": "set",
+            "value": 1
+          },
+          {
+            "type": "CHANGE_VAR_NUMBER",
+            "varName": "tmp.w2ID",
+            "changeType": "set",
+            "value": 0
+          },
+          {
+            "type": "FOR_EACH_PLAYER",
+            "steps": [
+              {
+                "type": "PLAY_BGM",
+                "bgm": "challenge",
+                "mode": "IMMEDIATELY",
+                "volume": 1
+              }
+            ]
+          },
+          {
+            "entity": {
+              "global": true,
+              "name": "w1e1"
+            },
+            "action": [
+              {
+                "type": "SHOW_EFFECT",
+                "rotOffset": {
+                  "x": 0,
+                  "y": 0
+                },
+                "spriteFilter": [],
+                "effect": {
+                  "sheet": "scene.water",
+                  "name": "circularSmallSplash"
+                },
+                "duration": 0,
+                "align": "BASE",
+                "fixPos": true,
+                "actionDetached": true,
+                "group": ""
+              },
+              {
+                "type": "SET_SLIP_THROUGH",
+                "value": true
+              },
+              {
+                "type": "SHOW_EFFECT",
+                "rotOffset": {
+                  "x": 0,
+                  "y": 0
+                },
+                "spriteFilter": [],
+                "effect": {
+                  "sheet": "specials.neutral",
+                  "name": "lilyAuraTrail"
+                },
+                "duration": -1,
+                "align": "BASE",
+                "fixPos": false,
+                "actionDetached": false,
+                "group": "trailFX"
+              },
+              {
+                "type": "JUMP_TO_POINT",
+                "target": {
+                  "x": 336,
+                  "y": 352,
+                  "lvl": "2"
+                }
+              },
+              {
+                "type": "WAIT_UNTIL_ON_GROUND",
+                "maxTime": 2
+              },
+              {
+                "type": "CLEAR_EFFECTS",
+                "group": "trailFX",
+                "entity": "SELF"
+              },
+              {
+                "type": "SHOW_EFFECT",
+                "rotOffset": {
+                  "x": 0,
+                  "y": 0
+                },
+                "spriteFilter": [],
+                "effect": {
+                  "sheet": "dust",
+                  "name": "large"
+                },
+                "duration": 0,
+                "align": "BASE",
+                "fixPos": true,
+                "actionDetached": true,
+                "group": ""
+              },
+              {
+                "type": "SET_SLIP_THROUGH",
+                "value": false
+              },
+              {
+                "type": "WAIT",
+                "time": 0.2
+              }
+            ],
+            "type": "DO_ACTION",
+            "keepState": true
+          },
+          {
+            "type": "WAIT",
+            "time": 0.4
+          },
+          {
+            "type": "SET_COMBAT_SPEED",
+            "speed": 1.2
+          },
+          {
+            "type": "FOR_EACH_PLAYER",
+            "steps": [
+              {
+                "type": "SET_FORCE_COMBAT",
+                "value": true
+              },
+              {
+                "core": "EXP",
+                "value": false,
+                "type": "SET_PLAYER_CORE"
+              },
+              {
+                "type": "RESET_CAMERA",
+                "speed": "NORMAL",
+                "transition": "EASE_IN_OUT"
+              }
+            ]
+          },
+          {
+            "type": "CHANGE_VAR_BOOL",
+            "varName": "tmp.barriers",
+            "changeType": "set",
+            "value": true
+          },
+          {
+            "type": "CHANGE_VAR_BOOL",
+            "varName": "tmp.wave1",
+            "changeType": "set",
+            "value": true
+          }
+        ],
+        "triggerType": "ONCE",
+        "mapId": 517,
+        "name": "FightStartOLD",
+        "forceRunOnMap": false
       }
     }
   ],

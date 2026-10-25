@@ -1,3 +1,16 @@
+## 0.9.0 (10/24/2026)
+### General
+- Bumped multibakery minimum dependency version to 0.8.10
+### New Content
+- Added map: co-op-dng/nw/g/room-nw1
+- Added map: co-op-dng/nw/g/room-nw2
+### Changes
+- Experimental: Added "runType": "CUTSCENE" to FOR_EACH_PLAYER in room-3 event FightStart
+- Removed teleporter to Multibakery dev room from Rookie Harbor, moved to MBA dev room
+- Disabled the debug WatterBubblePanel in room-3
+- Set cameraInBounds true for room-4
+- Added a COLD symbol to one of the ground positions in room-4
+
 ## 0.8.1 (10/20/2026)
 ### Changes
 - room-3
