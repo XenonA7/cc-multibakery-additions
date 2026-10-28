@@ -1,3 +1,16 @@
+## 0.10.0 (10/27/2026)
+### New Content
+- Added map: co-op-dng/nw/g/room-nw3
+### Changes
+- New ice layout for g.room-nw2
+- Added reset switch to g.room-nw2
+- Reverted room-3 event FightStart to not use "runType" argument
+- Tweaked enemy spawn pacing in room-3
+### Fixes
+- Fixed incorrect X size for AutumnBack layers in map room-nw2
+- Deleted unused WaterShadow layer in map room-nw2
+- Fixed room-3 event FightCantStart able to trigger when map.counterPost is true
+
 ## 0.9.0 (10/24/2026)
 ### General
 - Bumped multibakery minimum dependency version to 0.8.10
