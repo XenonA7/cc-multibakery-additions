@@ -2,5 +2,4 @@
 Adds maps and some playable content designed to be played in multibakery.
 
 ### How to access in-game:
-1. There is a new teleporter south of Rookie Harbor's central fountain to get into Multibakery's dev room.
-2. In here, there is another teleporter to get into the maps from cc-multibakery-additions including the pvp map.
+The maps from cc-multibakery-additions can be accessed by taking the new west exit from **Pathway 6** in Autumn's Rise.

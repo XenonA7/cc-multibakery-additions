@@ -1,3 +1,13 @@
+## 0.10.1 (11/02/2026)
+### New Content
+- Added map: co-op-dng/nw/g/room-nw4 (unfinished)
+### Changes
+- Updated README.md section on how to access maps in-game
+- Added "red wall" scalableprops to co-op-dng.template
+- Deleted map "template - Copy.json"
+- Reduced octopus enemy count from 3 to 2 in final wave of g.room-nw3
+- Minor decoration adjustment in g.room-nw1
+
 ## 0.10.0 (10/27/2026)
 ### New Content
 - Added map: co-op-dng/nw/g/room-nw3
