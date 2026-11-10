@@ -1,3 +1,16 @@
+## 0.10.2 (11/10/2026)
+### General
+- Bumped multibakery minimum dependency version to 0.8.11
+### New Content
+- Added an interaction to sit on the couch in mba-lobby (thanks to QuieType for the initial concept)
+- Implemented platform collapse feature (each one has 1 in 5 chance each pvpBrake) for map multibakery.pvp.vt-f99
+### Changes
+- Finalized map g.room-nw4
+- Updated fence layout in g.room-nw2
+- Removed debug switches in map multibakery.pvp.vt-f99
+### Fixes
+- Fixed OLP1 fire prop alignment in g.room-nw4
+
 ## 0.10.1 (11/02/2026)
 ### New Content
 - Added map: co-op-dng/nw/g/room-nw4 (unfinished)
