@@ -1,3 +1,12 @@
+## 0.11.0 (11/11/2026)
+### New Content
+- Added map: co-op-dng/nw/g/room-nw11
+### Changes
+- Increased falling platform window from 15 seconds to 30 seconds in map multibakery.pvp.vt-f99
+- Improved fire prop alignment in map intro-rooms.room-1
+### Fixes
+- Fixed glow layering issue on map g.room-nw4
+
 ## 0.10.2 (11/10/2026)
 ### General
 - Bumped multibakery minimum dependency version to 0.8.11
