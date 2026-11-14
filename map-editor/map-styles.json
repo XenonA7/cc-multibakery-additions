@@ -1,0 +1,112 @@
+{
+  "co-op-outer": {
+    "map": {
+      "sheet": "media/entity/style/co-op-map.png",
+      "hasDoorMat": true,
+      "teleportField": {
+        "x": 0,
+        "y": 160,
+        "xCount": 3,
+        "zHeight": 0
+      },
+      "doorGlow": {
+        "x": 144,
+        "y": 0,
+        "xCount": 1,
+        "sideX": 160,
+        "sideY": 96
+      }
+    },
+    "puzzle": {
+      "sheet": "media/entity/style/co-op-puzzle.png"
+    },
+    "puzzle2": {
+      "sheet": "media/entity/style/co-op-puzzle-2.png"
+    },
+    "destruct": {
+      "sheet": "media/entity/style/co-op-destruct.png"
+    },
+    "effect": {
+      "sheet": "area.cold-dng"
+    },
+    "pipes": {
+      "sheet": "media/entity/style/co-op-misc.png",
+      "x": 176,
+      "y": 368
+    },
+    "pipeSwitch": {
+      "sheet": "media/entity/style/co-op-misc.png",
+      "x": 48,
+      "y": 0
+    },
+    "propeller": {
+      "sheet": "media/entity/style/co-op-misc.png",
+      "x": 0,
+      "y": 48
+    },
+    "magnet": {
+      "sheet": "media/entity/style/co-op-misc.png",
+      "x": 0,
+      "y": 80
+    },
+    "tesla": {
+      "sheet": "media/entity/style/co-op-misc.png",
+      "x": 0,
+      "y": 112
+    },
+    "teslaSwitch": {
+      "sheet": "media/entity/style/co-op-misc.png",
+      "x": 48,
+      "y": 112
+    },
+    "anticompressor": {
+      "sheet": "media/entity/style/co-op-misc.png",
+      "x": 0,
+      "y": 160
+    },
+    "dynPlatformSmall": {
+      "sheet": "media/entity/style/co-op-misc.png",
+      "x": 144,
+      "y": 48
+    },
+    "dynPlatformLarge": {
+      "sheet": "media/entity/style/co-op-misc.png",
+      "x": 128,
+      "y": 80
+    },
+    "rotateBlocker": {
+      "sheet": "media/entity/style/co-op-misc.png",
+      "x": 48,
+      "y": 144
+    },
+    "waveSwitch": {
+      "sheet": "media/entity/style/co-op-misc.png",
+      "x": 48,
+      "y": 208
+    },
+    "waveblock": {
+      "sheet": "media/entity/style/co-op-misc.png",
+      "x": 144,
+      "y": 128
+    },
+    "waterblock": {
+      "sheet": "media/entity/style/co-op-misc.png",
+      "x": 0,
+      "y": 256,
+      "puddleX": 0,
+      "puddleY": 224
+    },
+    "bouncer": {
+      "sheet": "media/entity/style/co-op-misc.png",
+      "x": 128,
+      "y": 256
+    },
+    "lorry": {
+      "sheet": "media/entity/style/co-op-misc.png",
+      "railX": 128,
+      "railY": 352,
+      "lorryX": 192,
+      "lorryY": 256
+    }
+  }
+}

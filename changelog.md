@@ -1,3 +1,17 @@
+## 0.12.0 (11/14/2026)
+### New Content
+- Added pvp map: multibakery.pvp.co-op-room-3
+- Added map: co-op-dng/nw/g/room-nw5
+- Added map editor support for co-op-outer style: \map-editor\map-styles.json
+- Added co-op-outer files for fence props and fence scale-props
+### Changes
+- Added moving shadows under the northeast platforms in map g.room-nw11
+- Adjusted door sprites in co-op-outer style to match the back wall color of the co-op-fungeon-outer tileset
+- Unified south-facing doorframe sprite color to use dark variant for co-op-outer style
+### Fixes
+- Added tile gap in wall behind door d2 in map g.room-nw11
+- Changed wallY from 0 to 1 for short stone walls in map mba-outdoors (fixes layering issue when player intersects while pulling block)
+
 ## 0.11.0 (11/11/2026)
 ### New Content
 - Added map: co-op-dng/nw/g/room-nw11
