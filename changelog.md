@@ -1,10 +1,12 @@
-## 0.13.0 (##/##/2026)
+## 0.13.0 (11/18/2026)
+### General
+- Bumped multibakery minimum dependency version to 0.8.12
+- Updated mod description in ccmod.json
 ### New Content
 - Added map: co-op-dng/nw/g/room-nw6
 - Added effects mba-custom.earthquakeNW6 and mba-custom.hillkatBurrow
 - Patched enemies/rhombus/meerkat-car to add a new state and behaviors in which it acts like a proper enemy
 ### Changes
-- Updated mod description in ccmod.json
 - Additional decoration for map g.room-nw5
   * Added extra cliff details
   * Added extra ball plants
