@@ -27,7 +27,7 @@
 	"authors": ["XenonA7", "krypek"],
 	"prestart": "prestart.js",
 	"dependencies": {
-		"cc-multibakery": ">=0.8.11",
+		"cc-multibakery": ">=0.8.12",
 		"cc-alybox": ">=1.1.0",
 		"post-game": ">=1.4.0"
 	}
