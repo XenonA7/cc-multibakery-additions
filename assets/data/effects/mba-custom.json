@@ -487,6 +487,334 @@
         "anim": "RHOMBUS_BIG",
         "type": "PLAY_ANIM"
       }
+    ],
+    "earthquakeNW6": [
+      {
+        "rumbleType": "RANDOM",
+        "power": "WEAKEST",
+        "speed": "NORMAL",
+        "duration": -1,
+        "fade": true,
+        "type": "RUMBLE"
+      },
+      {
+        "volume": 0.5,
+        "global": false,
+        "loop": false,
+        "speed": 1,
+        "sound": "media/sound/battle/enemies/hillkat/hillkat-laugh-2.ogg",
+        "type": "PLAY_SOUND"
+      },
+      {
+        "volume": 1,
+        "global": false,
+        "loop": true,
+        "speed": 1.1,
+        "fadeDuration": 1,
+        "sound": "media/sound/battle/rock-debris-loop.ogg",
+        "type": "PLAY_SOUND"
+      },
+      {
+        "type": "LOOP_START"
+      },
+      {
+        "numParticles": 3,
+        "duration": 0.4,
+        "centralAngle": 1,
+        "startDist": 120,
+        "uniformRandom": 0.6,
+        "particleRotate": true,
+        "offset": {
+          "x": -60,
+          "y": 0,
+          "z": 0
+        },
+        "minSpeed": 15,
+        "maxSpeed": 60,
+        "minZSpeed": 100,
+        "maxZSpeed": 220,
+        "zBounciness": 0.6,
+        "minZVel": 16,
+        "collision": false,
+        "pAlpha": {
+          "init": 0.8,
+          "end": {
+            "value": 0,
+            "time": 0.2,
+            "spline": ""
+          }
+        },
+        "pScale": {
+          "init": {
+            "x": 1.0,
+            "y": 1.0
+          },
+          "end": {
+            "value": {
+              "x": 0,
+              "y": 0
+            },
+            "time": 0.2,
+            "spline": ""
+          }
+        },
+        "pRotate": {
+          "init": 0.5,
+          "start": {
+            "value": 0,
+            "time": -0.5,
+            "spline": ""
+          }
+        },
+        "particleDuration": 0.7,
+        "particleDurVariance": 0.2,
+        "randFlip": true,
+        "anim": "DIRT_SMALL2",
+        "type": "DEBRIS_CIRCLE"
+      },
+      {
+        "numParticles": 4,
+        "duration": 0.4,
+        "centralAngle": 1,
+        "startDist": 120,
+        "uniformRandom": 0.6,
+        "particleRotate": true,
+        "offset": {
+          "x": -60,
+          "y": 0,
+          "z": 0
+        },
+        "minSpeed": 15,
+        "maxSpeed": 60,
+        "minZSpeed": 100,
+        "maxZSpeed": 220,
+        "zBounciness": 0.6,
+        "minZVel": 16,
+        "collision": false,
+        "pAlpha": {
+          "init": 0.8,
+          "end": {
+            "value": 0,
+            "time": 0.2,
+            "spline": ""
+          }
+        },
+        "pScale": {
+          "init": {
+            "x": 1.2,
+            "y": 1.2
+          },
+          "end": {
+            "value": {
+              "x": 0,
+              "y": 0
+            },
+            "time": 0.2,
+            "spline": ""
+          }
+        },
+        "pRotate": {
+          "init": -0.5,
+          "start": {
+            "value": 0,
+            "time": 0.5,
+            "spline": ""
+          }
+        },
+        "particleDuration": 0.7,
+        "particleDurVariance": 0.2,
+        "randFlip": true,
+        "anim": "DIRT_SMALL1",
+        "type": "DEBRIS_CIRCLE"
+      },
+      {
+        "numParticles": 3,
+        "duration": 0.4,
+        "centralAngle": 1,
+        "startDist": 120,
+        "uniformRandom": 0.6,
+        "particleRotate": true,
+        "offset": {
+          "x": 60,
+          "y": 0,
+          "z": 0
+        },
+        "minSpeed": 15,
+        "maxSpeed": 60,
+        "minZSpeed": 100,
+        "maxZSpeed": 220,
+        "zBounciness": 0.6,
+        "minZVel": 16,
+        "collision": false,
+        "pAlpha": {
+          "init": 0.8,
+          "end": {
+            "value": 0,
+            "time": 0.2,
+            "spline": ""
+          }
+        },
+        "pScale": {
+          "init": {
+            "x": 1.0,
+            "y": 1.0
+          },
+          "end": {
+            "value": {
+              "x": 0,
+              "y": 0
+            },
+            "time": 0.2,
+            "spline": ""
+          }
+        },
+        "pRotate": {
+          "init": 0.5,
+          "start": {
+            "value": 0,
+            "time": -0.5,
+            "spline": ""
+          }
+        },
+        "particleDuration": 0.7,
+        "particleDurVariance": 0.2,
+        "randFlip": true,
+        "anim": "DIRT_SMALL2",
+        "type": "DEBRIS_CIRCLE"
+      },
+      {
+        "numParticles": 4,
+        "duration": 0.4,
+        "centralAngle": 1,
+        "startDist": 120,
+        "uniformRandom": 0.6,
+        "particleRotate": true,
+        "offset": {
+          "x": 60,
+          "y": 0,
+          "z": 0
+        },
+        "minSpeed": 15,
+        "maxSpeed": 60,
+        "minZSpeed": 100,
+        "maxZSpeed": 220,
+        "zBounciness": 0.6,
+        "minZVel": 16,
+        "collision": false,
+        "pAlpha": {
+          "init": 0.8,
+          "end": {
+            "value": 0,
+            "time": 0.2,
+            "spline": ""
+          }
+        },
+        "pScale": {
+          "init": {
+            "x": 1.2,
+            "y": 1.2
+          },
+          "end": {
+            "value": {
+              "x": 0,
+              "y": 0
+            },
+            "time": 0.2,
+            "spline": ""
+          }
+        },
+        "pRotate": {
+          "init": -0.5,
+          "start": {
+            "value": 0,
+            "time": 0.5,
+            "spline": ""
+          }
+        },
+        "particleDuration": 0.7,
+        "particleDurVariance": 0.2,
+        "randFlip": true,
+        "anim": "DIRT_SMALL1",
+        "type": "DEBRIS_CIRCLE"
+      },
+      {
+        "time": 0.4,
+        "type": "WAIT"
+      },
+      {
+        "type": "LOOP_END"
+      },
+      {
+        "type": "STOP_SOUNDS"
+      }
+    ],
+    "hillkatBurrow": [
+      {
+        "type": "LOOP_START"
+      },
+      {
+        "numParticles": 5,
+        "duration": 0.4,
+        "centralAngle": 1,
+        "startDist": 8,
+        "uniformRandom": 0.6,
+        "particleRotate": true,
+        "offset": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "minSpeed": 20,
+        "maxSpeed": 50,
+        "minZSpeed": 175,
+        "maxZSpeed": 300,
+        "zBounciness": 0.6,
+        "zGravityFactor": 1.5,
+        "minZVel": 16,
+        "collision": false,
+        "pAlpha": {
+          "init": 0.8,
+          "end": {
+            "value": 0,
+            "time": 0.2,
+            "spline": ""
+          }
+        },
+        "pScale": {
+          "init": {
+            "x": 0.8,
+            "y": 0.8
+          },
+          "end": {
+            "value": {
+              "x": 0,
+              "y": 0
+            },
+            "time": 0.2,
+            "spline": ""
+          }
+        },
+        "pRotate": {
+          "init": 0.5,
+          "start": {
+            "value": 0,
+            "time": -0.5,
+            "spline": ""
+          }
+        },
+        "particleDuration": 0.7,
+        "particleDurVariance": 0.2,
+        "randFlip": true,
+        "anim": "DIRT_SMALL2",
+        "type": "DEBRIS_CIRCLE"
+      },
+      {
+        "time": 0.4,
+        "type": "WAIT"
+      },
+      {
+        "type": "LOOP_END"
+      }
     ]
   }
 }

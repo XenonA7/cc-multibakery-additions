@@ -1,0 +1,101 @@
+[
+  {
+    "type": "INCLUDE",
+    "src": "mod:patches/data/enemies/rhombus/meerkat-car.json"
+  },
+  {
+    "type": "ENTER",
+    "index": ["states", "STUN", "choices"]
+  },
+  {
+    "type": "REMOVE_ARRAY_ELEMENT",
+    "index": 0
+  },
+  {
+    "type": "ADD_ARRAY_ELEMENT",
+    "index": 0,
+    "content": {
+      "req": [
+        {
+          "type": "ATTRIB_IS_TRUE",
+          "name": "mba"
+        },
+        {
+          "negated": false,
+          "type": "TRACKER_READY",
+          "name": "stunRegen"
+        }
+      ],
+      "action": "StunWait",
+      "postSwitchState": "MBA_DEFAULT",
+      "ignoreStun": true
+    }
+  },
+  {
+    "type": "ADD_ARRAY_ELEMENT",
+    "index": 1,
+    "content": {
+      "req": [
+        {
+          "type": "!ATTRIB_IS_TRUE",
+          "name": "mba"
+        },
+        {
+          "negated": false,
+          "type": "TRACKER_READY",
+          "name": "stunRegen"
+        }
+      ],
+      "action": "StunWait",
+      "postSwitchState": "DEFAULT",
+      "ignoreStun": true
+    }
+  },
+  {
+    "type": "EXIT"
+  },
+  {
+    "type": "EXIT"
+  },
+  {
+    "type": "EXIT"
+  },
+  {
+    "type": "ENTER",
+    "index": ["states", "DEFAULT", "choices"]
+  },
+  {
+    "type": "ADD_ARRAY_ELEMENT",
+    "index": 0,
+    "content": {
+      "req": [
+        {
+          "type": "!HAS_TARGET"
+        }
+      ],
+      "postSwitchState": "IDLE"
+    }
+  },
+  {
+    "type": "ADD_ARRAY_ELEMENT",
+    "index": 1,
+    "content": {
+      "req": [
+        {
+          "type": "ATTRIB_IS_TRUE",
+          "name": "mba"
+        }
+      ],
+      "postSwitchState": "MBA_DEFAULT"
+    }
+  },
+  {
+    "type": "EXIT"
+  },
+  {
+    "type": "EXIT"
+  },
+  {
+    "type": "EXIT"
+  }
+]

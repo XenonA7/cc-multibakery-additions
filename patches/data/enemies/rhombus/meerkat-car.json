@@ -1,0 +1,301 @@
+{
+  "_wm": {
+    "attributes": {
+      "mba": {
+        "_type": "Boolean",
+        "_info": "If true, return to MBA_DEFAULT state after stun.",
+        "_optional": true
+      }
+    }
+  },
+  "states": {
+    "IDLE": {
+      "enabledReactions": [
+        "HIT_ESCAPE"
+      ],
+      "choices": [
+        {
+          "req": [
+            {
+              "type": "HAS_TARGET"
+            }
+          ],
+          "postSwitchState": "DEFAULT"
+        },
+        {
+          "action": "Idle"
+        }
+      ]
+    },
+    "MBA_DEFAULT": {
+      "appearAction": "Appear",
+      "faceToTarget": true,
+      "enabledReactions": [
+        "HIT_ESCAPE",
+        "TOO_CLOSE_ESCAPE"
+      ],
+      "choices": [
+        {
+          "req": [
+            {
+              "type": "!HAS_TARGET"
+            }
+          ],
+          "postSwitchState": "IDLE"
+        },
+        {
+          "action": "MolotovAttackMBA",
+          "frequency": "RARE"
+        },
+        {
+          "action": "SpecialAttack",
+          "frequency": "SOMETIMES"
+        },
+        {
+          "action": "Attack",
+          "frequency": "NORMAL"
+        },
+        {
+          "req": [
+            {
+              "negated": false,
+              "type": "TRACKER_READY",
+              "name": "move"
+            }
+          ],
+          "action": "Sideways"
+        },
+        {
+          "action": "BattleIdle"
+        }
+      ]
+    }
+  },
+  "actions": {
+    "Adjust": [
+      {
+        "type": "DISABLE_REACTION",
+        "reaction": "TOO_CLOSE_ESCAPE"
+      },
+      {
+        "maxTime": 0,
+        "distance": 120,
+        "throwing": true,
+        "planOnly": true,
+        "targetType": "ENEMY",
+        "type": "NAVIGATE_ESCAPE_TARGET"
+      },
+      {
+        "time": 0,
+        "type": "CANCEL_IF_NAVIGATION_FAILED"
+      },
+      {
+        "passive": "IMMUNE",
+        "type": "CHANGE_ENEMY_ANNOTATION"
+      },
+      {
+        "value": -1,
+        "type": "SET_INVINCIBLE"
+      },
+      {
+        "value": "PASSIVE",
+        "type": "SET_COLL_TYPE"
+      },
+      {
+        "wait": false,
+        "viaWalkConfig": false,
+        "type": "SHOW_ANIMATION",
+        "anim": "hiding"
+      },
+      {
+        "time": 0.4,
+        "type": "WAIT"
+      },
+      {
+        "duration": -1,
+        "align": "BOTTOM",
+        "rotateFace": 0,
+        "flipLeftFace": false,
+        "wait": false,
+        "waitSkip": 0,
+        "actionDetached": false,
+        "group": "earth",
+        "type": "SHOW_EFFECT",
+        "effect": {
+          "sheet": "enemies.meerkat-alt",
+          "name": "earthDig"
+        }
+      },
+      {
+        "value": 250,
+        "type": "SET_SPEED"
+      },
+      {
+        "value": true,
+        "type": "FACE_TO_TARGET"
+      },
+      {
+        "maxTime": 1.5,
+        "type": "DO_NAVIGATION"
+      },
+      {
+        "group": "earth",
+        "type": "CLEAR_EFFECTS"
+      },
+      {
+        "type": "STOP_XY"
+      },
+      {
+        "value": 0,
+        "type": "SET_INVINCIBLE"
+      },
+      {
+        "value": "VIRTUAL",
+        "type": "SET_COLL_TYPE"
+      },
+      {
+        "wait": true,
+        "viaWalkConfig": false,
+        "type": "SHOW_ANIMATION",
+        "anim": "appear"
+      }
+    ],
+    "MolotovAttackMBA": [
+      {
+        "volume": 0.5,
+        "variance": 0.1,
+        "global": false,
+        "loop": false,
+        "type": "PLAY_SOUND",
+        "sound": "media/sound/battle/enemies/hillkat/hillkat-laugh-2.ogg"
+      },
+      {
+        "wait": false,
+        "viaWalkConfig": true,
+        "type": "SHOW_ANIMATION",
+        "anim": "_pre"
+      },
+      {
+        "active": "PRE_ATTACK",
+        "passive": "VULNERABLE",
+        "weapon": "RANGED",
+        "type": "CHANGE_ENEMY_ANNOTATION"
+      },
+      {
+        "value": "MASSIVE",
+        "type": "SET_HIT_STABLE"
+      },
+      {
+        "duration": 0,
+        "align": "CENTER",
+        "rotateFace": 0,
+        "flipLeftFace": false,
+        "wait": false,
+        "waitSkip": 0,
+        "actionDetached": false,
+        "fixPos": false,
+        "type": "SHOW_EFFECT",
+        "effect": {
+          "sheet": "enemies.meerkat-car",
+          "name": "chargeNormal"
+        },
+        "offset": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      },
+      {
+        "align": "CENTER",
+        "type": "SHOOT_PROXY",
+        "proxy": "molotovAim",
+        "offset": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      },
+      {
+        "wait": false,
+        "viaWalkConfig": true,
+        "type": "SHOW_ANIMATION",
+        "anim": "_pre"
+      },
+      {
+        "time": 0.8,
+        "type": "WAIT"
+      },
+      {
+        "active": "ATTACK",
+        "type": "CHANGE_ENEMY_ANNOTATION"
+      },
+      {
+        "wait": false,
+        "viaWalkConfig": true,
+        "type": "SHOW_ANIMATION",
+        "anim": "_throw"
+      },
+      {
+        "volume": 0.6,
+        "variance": 0.1,
+        "global": false,
+        "loop": false,
+        "speed": 0.6,
+        "type": "PLAY_SOUND",
+        "sound": "media/sound/battle/throw.ogg"
+      },
+      {
+        "time": 0.7,
+        "type": "WAIT"
+      },
+      {
+        "type": "CLEAR_ANIMATION"
+      },
+      {
+        "type": "ENABLE_REACTION",
+        "reaction": "CHARGE_WEAK"
+      },
+      {
+        "duration": -1,
+        "align": "CENTER",
+        "rotateFace": 0,
+        "flipLeftFace": false,
+        "wait": false,
+        "waitSkip": 0,
+        "actionDetached": false,
+        "fixPos": false,
+        "type": "SHOW_EFFECT",
+        "effect": {
+          "sheet": "enemies.meerkat-car",
+          "name": "chargeSpecialPre"
+        },
+        "offset": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        }
+      },
+      {
+        "time": 2.5,
+        "type": "WAIT"
+      },
+      {
+        "type": "DISABLE_REACTION",
+        "reaction": "CHARGE_WEAK"
+      }
+    ]
+  },
+  "reactions": {
+    "TOO_CLOSE_ESCAPE": {
+      "minDistance": 0,
+      "maxDistance": 48,
+      "preciseFace": false,
+      "checkCollision": false,
+      "action": "Adjust",
+      "conditions": [],
+      "ignoreParty": false,
+      "ignoreReplaceTargets": false,
+      "type": "TARGET_DISTANCE"
+    }
+  }
+}

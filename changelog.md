@@ -1,3 +1,16 @@
+## 0.13.0 (##/##/2026)
+### New Content
+- Added map: co-op-dng/nw/g/room-nw6
+- Added effects mba-custom.earthquakeNW6 and mba-custom.hillkatBurrow
+- Patched enemies/rhombus/meerkat-car to add a new state and behaviors in which it acts like a proper enemy
+### Changes
+- Updated mod description in ccmod.json
+- Additional decoration for map g.room-nw5
+  * Added extra cliff details
+  * Added extra ball plants
+  * Added stone detailing to left-1 exit
+- Added option to spawn rhombus/meerkat-car enemies in map mba-testing
+
 ## 0.12.0 (11/14/2026)
 ### New Content
 - Added pvp map: multibakery.pvp.co-op-room-3
