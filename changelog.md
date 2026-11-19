@@ -1,3 +1,7 @@
+## 0.13.1 (11/18/2026)
+### Fixes
+- Fixed a missing water tile behind a cliff in map g.room-nw6
+
 ## 0.13.0 (11/18/2026)
 ### General
 - Bumped multibakery minimum dependency version to 0.8.12
