@@ -1,3 +1,7 @@
+## 0.13.2 (11/21/2026)
+### New Content
+- Added map: co-op-dng/nw/g/room-nw7 (incomplete)
+
 ## 0.13.1 (11/18/2026)
 ### Fixes
 - Fixed a missing water tile behind a cliff in map g.room-nw6
